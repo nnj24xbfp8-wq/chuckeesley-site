@@ -1,3 +1,47 @@
-.time-line-container>div:last-child .education__time>.education__line {
-    display: none;
+/* ===== Typography ===== */
+
+body {
+  font-family: "Source Serif 4", Charter, Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.65;
+  font-feature-settings: "kern", "liga", "onum";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+  font-feature-settings: "kern", "liga", "ss01";
+}
+
+h1 { letter-spacing: -0.025em; }
+h2 { letter-spacing: -0.02em; }
+h3 { letter-spacing: -0.015em; }
+
+/* Buttons, nav, and UI chrome should stay sans-serif for legibility */
+button,
+.btn,
+.menu,
+.navbar,
+input,
+select,
+textarea,
+.label,
+.badge {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Slightly tighter line-height for short headings; serif body benefits from more room */
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+/* Inline code stays mono */
+code, pre, kbd {
+  font-family: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ===== Original template styles ===== */
+
+.time-line-container > div:last-child .education__time > .education__line {
+  display: none;
 }
