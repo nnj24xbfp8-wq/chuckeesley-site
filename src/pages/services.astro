@@ -3,38 +3,67 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 ---
 
-<BaseLayout title="Projects" sideBarActiveItemID="services">
+<BaseLayout title="Speaking" sideBarActiveItemID="services">
+
   <div>
-    <div class="text-3xl w-full font-bold mb-5">Services Header</div>
+    <div class="text-3xl w-full font-bold mb-2">Speaking</div>
+    <div class="mb-8 text-lg opacity-80">I speak regularly at universities, corporate innovation programs, policy convenings, and industry events. Current keynote topics are below; selected recent engagements appear at the bottom.</div>
   </div>
 
+  <div class="text-2xl w-full font-bold mb-4">Keynote Topics</div>
+
   <HorizontalCard
-    title="Service 1"
+    title="Inside the AI Startup Boom: Hype, Metrics, and What's Real"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    badge="NEW"
+    desc="What ARR actually measures (and doesn't), how venture due diligence is failing, and what the next 18 months will look like for investors, operators, and policymakers trying to separate signal from noise. Drawn from recent commentary in Bloomberg and an in-progress essay series."
     url="#"
   />
   <div class="divider my-0"></div>
+
   <HorizontalCard
-    title="Service 2"
+    title="How Universities Build Founders"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    desc="Forty years of Stanford alumni data, what the institutional environment around a university actually contributes versus the selection of who walks in the door, and what other universities and regions can — and can't — replicate. Based on the Stanford economic impact study (with William F. Miller) and ongoing research across MIT, Stanford, and UVA."
     url="#"
   />
   <div class="divider my-0"></div>
+
   <HorizontalCard
-    title="Service 3"
+    title="Export Controls and the Future of Innovation"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    desc="What the new geopolitics of technology means for startups, venture capital, and cross-border R&D. Drawn from current research on the global reallocation of VC investment under US export controls — including the counter-intuitive finding that controls can paradoxically attract capital to the very sectors they were designed to restrain."
     url="#"
-    badge="NEW"
   />
   <div class="divider my-0"></div>
+
   <HorizontalCard
-    title="Service 4"
+    title="The Entrepreneurial State: Industrial Policy in the New Climate Economy"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    desc="Industrial policy is back. The Inflation Reduction Act, China's NEV subsidies, and Europe's strategic autonomy programs are all reshaping who starts companies and where. What the evidence says works, what doesn't, and why policy credibility — not just policy scale — determines whether private capital actually mobilizes."
     url="#"
   />
+  <div class="divider my-0"></div>
+
+  <HorizontalCard
+    title="AI and Organizational Decision-Making"
+    img="/post_img.webp"
+    desc="How AI is changing how research-driven organizations actually make decisions. Drawn from a Stanford faculty initiative on AI's effects on innovation and organizations, and ongoing research on LLM-based methods in social science."
+    url="#"
+  />
+
+  <div class="text-2xl w-full font-bold mt-12 mb-4">Recent Engagements</div>
+
+  <ul class="list-disc mx-6 mb-10 grid gap-2">
+    <li>National Academies, GUIPRR Workshop — Washington, DC (April 2026)</li>
+    <li>Nanyang Technological University — Singapore (January 2026)</li>
+    <li>UNLV Troesh Research Conference (2026)</li>
+    <li>Aramco Lab7 Corporate Innovation Program — multi-session keynote series</li>
+    <li>Stanford Technology Ventures Program — recurring guest lectures</li>
+  </ul>
+
+  <div class="text-2xl w-full font-bold mt-8 mb-4">Booking</div>
+  <div class="mb-10 text-lg">
+    For speaking inquiries, please use the <a href="/contact" class="link">contact form</a> or email <a href="mailto:chuck@chuckeesley.com" class="link">chuck@chuckeesley.com</a> with date, location, audience, and topic of interest.
+  </div>
+
 </BaseLayout>
