@@ -5,61 +5,56 @@ import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug"
 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
 const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
-    <div class="py-2">
+    <div class="text-xl py-1">Hello 👋</div>
+    <div class="text-5xl font-bold">Chuck Eesley</div>
+    <div class="text-3xl py-3 font-bold">Professor of Management Science & Engineering, Stanford University</div>
+    <div class="text-xl py-1 italic opacity-80">The institutional environment around founders matters more than we usually admit. I study how, and why.</div>
+    <div class="py-4">
       <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
+        I am a Professor of Management Science & Engineering at Stanford University and Co-Director for International Entrepreneurship at the <b>Stanford Technology Ventures Program (STVP)</b>. My research examines how institutional environments, industrial policy, and platform design shape entrepreneurial outcomes — with particular focus on the United States, China, and emerging markets. Through STVP's global programs I have taught and run field research across six continents.
       </text>
     </div>
     <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
-      </a>
+      <a class="btn" href="https://substack.com/@ceesley" target="_blank">Read the Substack</a>
+      <a href="/contact" class="btn btn-outline ml-5">Speaking inquiries</a>
     </div>
   </div>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    <div class="text-3xl w-full font-bold mb-2">Featured research</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
+    title="The Algorithmic Financing of Online Misinformation"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    desc="Published in Nature. Tracing how programmatic advertising routes money to misinformation websites — and what advertisers can do about it. With Wajeeha Ahmad, Ananya Sen, and Erik Brynjolfsson."
+    url="/projects"
+    badge="NATURE"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="The Economic Impact of Stanford Alumni-Founded Companies"
+    img="/post_img.webp"
+    desc="Decades of data showing how a single university produces ventures whose annual revenues rival the GDP of a top-ten global economy. With William F. Miller."
+    url="/projects"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Export Controls and the Global Reallocation of Venture Capital"
+    img="/post_img.webp"
+    desc="How US export controls are reshaping where venture capital flows globally. With Yikai Cao."
+    url="/projects"
     badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
   />
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest essays</div>
   </div>
-
   {
     last_posts.map((post) => (
       <>
