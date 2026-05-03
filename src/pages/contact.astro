@@ -1,0 +1,106 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Contact" sideBarActiveItemID="contact">
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-2">Contact</div>
+    <div class="mb-8 text-lg opacity-80">For speaking inquiries, media requests, and research collaborations. Journalists on deadline can also email <a href="mailto:chuck@chuckeesley.com" class="link">chuck@chuckeesley.com</a> directly.</div>
+  </div>
+
+  <form
+    action="https://formspree.io/f/mkoyjnla"
+    method="POST"
+    class="grid gap-4 mb-10 max-w-2xl"
+  >
+    <div>
+      <label for="name" class="label">
+        <span class="label-text text-base">Name</span>
+      </label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        class="input input-bordered w-full"
+      />
+    </div>
+
+    <div>
+      <label for="email" class="label">
+        <span class="label-text text-base">Email</span>
+      </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        class="input input-bordered w-full"
+      />
+    </div>
+
+    <div>
+      <label for="affiliation" class="label">
+        <span class="label-text text-base">Affiliation / Organization</span>
+      </label>
+      <input
+        type="text"
+        id="affiliation"
+        name="affiliation"
+        class="input input-bordered w-full"
+      />
+    </div>
+
+    <div>
+      <label for="inquiry_type" class="label">
+        <span class="label-text text-base">Inquiry type</span>
+      </label>
+      <select
+        id="inquiry_type"
+        name="inquiry_type"
+        required
+        class="select select-bordered w-full"
+      >
+        <option value="" disabled selected>Select one</option>
+        <option value="Speaking">Speaking</option>
+        <option value="Media / Press">Media / Press</option>
+        <option value="Research collaboration">Research collaboration</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="event_details" class="label">
+        <span class="label-text text-base">If speaking inquiry: date, location, audience</span>
+      </label>
+      <input
+        type="text"
+        id="event_details"
+        name="event_details"
+        placeholder="e.g., June 12 in Chicago, 200 senior executives"
+        class="input input-bordered w-full"
+      />
+    </div>
+
+    <div>
+      <label for="message" class="label">
+        <span class="label-text text-base">Message</span>
+      </label>
+      <textarea
+        id="message"
+        name="message"
+        required
+        rows="6"
+        class="textarea textarea-bordered w-full"
+      ></textarea>
+    </div>
+
+    <input type="hidden" name="_subject" value="New inquiry from chuckeesley.com" />
+
+    <div>
+      <button type="submit" class="btn btn-primary">Send</button>
+    </div>
+  </form>
+
+</BaseLayout>
