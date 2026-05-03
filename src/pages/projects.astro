@@ -3,49 +3,69 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 ---
 
-<BaseLayout title = "Projects" sideBarActiveItemID="projects">
+<BaseLayout title="Research" sideBarActiveItemID="projects">
+
   <div>
-    <div class="text-3xl w-full font-bold mb-5">Projects Header</div>
+    <div class="text-3xl w-full font-bold mb-2">Research</div>
+    <div class="mb-5 text-lg opacity-80">A selection of recent and ongoing work. For the full list, see <a href="https://scholar.google.com/citations?user=ENeJ_gkAAAAJ&hl=en" target="_blank" class="link">Google Scholar</a>.</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
+    title="Companies Inadvertently Fund Online Misinformation Despite Consumer Backlash"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
+    desc="Published in Nature (2024). With Wajeeha Ahmad, Ananya Sen, and Erik Brynjolfsson. We show that advertising on misinformation websites is pervasive across industries and amplified by algorithmic ad platforms. Using an information-provision experiment, we find that companies advertising on misinformation sites face substantial consumer backlash — yet most decision-makers are unaware their ads appear there. We identify low-cost, scalable interventions that reduce the financial incentive to misinform by targeting the supply side rather than user-level fixes."
+    url="https://doi.org/10.1038/s41586-024-07404-1"
+    target="_blank"
+    badge="NATURE"
   />
   <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Projects Header</div>
-  </div>
 
   <HorizontalCard
-    title="Demo Project 3"
+    title="Impact: Stanford University's Economic Impact via Innovation and Entrepreneurship"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
+    desc="With William F. Miller. Published in Foundations and Trends in Entrepreneurship (2018). Based on a large-scale systematic survey of Stanford alumni, faculty, and staff, we estimate that 39,900 active companies trace their roots to Stanford. Collectively, they have created approximately 5.4 million jobs and generate $2.7 trillion in annual world revenues — making this network, were it an independent economy, the tenth largest in the world. The report details how Stanford's institutional environment fosters entrepreneurship and identifies best practices for ecosystem design."
+    url="https://doi.org/10.1561/0300000074"
+    target="_blank"
   />
   <div class="divider my-0"></div>
+
   <HorizontalCard
-    title="Demo Project 4"
+    title="When External Shocks Attract Capital: Export Controls and Venture Capital Allocation in China"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    desc="With Yikai Cao, Wanru Deng, and Guankai Zhai. We argue that US export controls function as institutional reclassification — elevating targeted categories into matters of national security and reshaping investors' evaluations of opportunity. Using a difference-in-differences design around the 2018 escalation of US controls against China, we find that Chinese semiconductor startups became 6 percentage points more likely to receive financing, raised ~12% more capital, and progressed faster through subsequent stages — paradoxically attracting the very investment the controls were designed to restrain."
+    url="https://scholar.google.com/citations?user=ENeJ_gkAAAAJ&hl=en"
+    target="_blank"
+    badge="UNDER REVIEW"
   />
   <div class="divider my-0"></div>
+
   <HorizontalCard
-    title="Demo Project 5"
+    title="Elite Pre-Entrepreneurship Programs and the Quality of Entrepreneurship"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    desc="With Stefan Weik and coauthors. Targeting Management Science. Using a fuzzy regression discontinuity design and proprietary data tracking 1,022 applicants 2–10 years post-program, we find that selective pre-entrepreneurship programs increase the likelihood of raising $10M+ in VC funding by 7–12 percentage points (off a control baseline of 0.7pp), with effects concentrated entirely in high-quality ventures. Mechanism analysis points to network formation as the primary channel — and reveals that despite equal participation rates, the program's network mechanisms operate unequally across gender."
+    url="https://scholar.google.com/citations?user=ENeJ_gkAAAAJ&hl=en"
+    target="_blank"
+    badge="SUBMITTED"
   />
+  <div class="divider my-0"></div>
+
+  <HorizontalCard
+    title="Entrepreneurship Programs as Viability Filters: Heterogeneous Effects on Engineering Graduates' Venture Composition"
+    img="/post_img.webp"
+    desc="Sole-authored. Targeting PNAS. Using nine decades of alumni data from MIT, Stanford, and the University of Virginia (N = 88,632) and instrumenting with the post-1998 expansion of Stanford's engineering entrepreneurship program (STVP), I test the common assumption that university entrepreneurship programs uniformly shift engineering graduates toward deep-technology founding. The average causal effect is null — but masks substantial heterogeneity: among founders with tech-driven ideas, STVP participation reduces deep-tech founding counts by 12.8 percentage points; among founders without a tech-driven idea, it slightly increases them. I interpret this through a viability-filter mechanism: programs help students assess market viability, filtering out marginal research-origin ideas while concentrating quality among the survivors."
+    url="https://scholar.google.com/citations?user=ENeJ_gkAAAAJ&hl=en"
+    target="_blank"
+    badge="WORKING PAPER"
+  />
+  <div class="divider my-0"></div>
+
+  <HorizontalCard
+    title="Industrial Policy Reshapes Venture Capital Allocation and Growth Trajectories in Climate Technologies"
+    img="/post_img.webp"
+    desc="With Yikai Cao, Rishee Jain, and Dinesh Moorjani. Targeting PNAS. Using firm-level data on 7,271 climate technology companies and 132,826 firm-quarter observations, we examine how the Inflation Reduction Act reshaped private capital allocation. We find the IRA selectively channeled venture capital toward policy-aligned technologies and longer-horizon investors, expanded pure-VC and non-dilutive ecosystem capital while contracting VC-debt structures, and identify policy credibility — measured via a novel index of statutory specificity, durability, and enforceability — as a critical channel. A natural stress test using 2025 legislative threats to IRA provisions confirms that policy durability itself shapes investment behavior."
+    url="https://scholar.google.com/citations?user=ENeJ_gkAAAAJ&hl=en"
+    target="_blank"
+    badge="WORKING PAPER"
+  />
+
 </BaseLayout>
