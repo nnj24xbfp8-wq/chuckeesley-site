@@ -8,8 +8,8 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueO
 const last_posts = posts.slice(0, 3);
 ---
 
-<BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
+<BaseLayout sideBarActiveItemID="home" image="/social_img.webp">
+<div class="pb-12 mt-5">
     <div class="text-5xl font-bold">Chuck Eesley</div>
     <div class="text-3xl py-3 font-bold">Professor of Management Science & Engineering, Stanford University</div>
     <div class="text-xl py-1 italic opacity-80">The institutional environment around founders matters more than we usually admit. I study how, and why.</div>
