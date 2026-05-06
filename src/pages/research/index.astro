@@ -1,0 +1,57 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Research";
+const description = "Research on how institutional environments, industrial policy, and platform design shape entrepreneurial outcomes.";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  sideBarActiveItemID="research"
+>
+  <div class="mb-10">
+    <h1 class="text-4xl font-bold mb-4">Research</h1>
+    <p class="text-lg leading-relaxed opacity-90">
+      My research examines how institutional environments — universities, industrial policy, export controls, AI, and platform design — shape who becomes a founder and what they build. Recent work centers on cross-border policy interventions and their downstream effects on entrepreneurship and venture capital.
+    </p>
+  </div>
+
+  <div class="mb-10">
+    <div class="text-2xl font-bold mb-4">Working papers</div>
+
+    <div class="mb-8 pb-8 border-b border-base-300">
+      <div class="text-xl font-bold mb-2">
+        <a class="link" href="/research/export-controls-vc">When External Shocks Attract Capital: Export Controls and Venture Capital Allocation in China</a>
+      </div>
+      <div class="text-base opacity-70 mb-2">With Yikai Cao, Wanru Deng, and Guankai Zhai · In preparation for <em>Management Science</em></div>
+      <p class="text-lg leading-relaxed">
+        U.S. export controls were meant to slow China's semiconductor sector. We find they increased VC funding to Chinese semiconductor startups by 6 percentage points and 12% in capital — driven by institutional reclassification, with state-backed investors acting as opportunity coordinators.
+      </p>
+    </div>
+
+    <div class="mb-8 pb-8 border-b border-base-300">
+      <div class="text-xl font-bold mb-2">
+        <a class="link" href="/research/ira-cleantech">Industrial Policy Reshapes Venture Capital Allocation and Growth Trajectories in Climate Technologies</a>
+      </div>
+      <div class="text-base opacity-70 mb-2">With Yikai Cao, Rishee Jain, and Dinesh Moorjani · In preparation for <em>PNAS</em></div>
+      <p class="text-lg leading-relaxed">
+        The Inflation Reduction Act selectively redirected venture capital toward climate-aligned technologies. Our Policy Credibility Index — scoring statutory specificity, durability, and enforceability — shows that institutional design quality, not just incentive size, determines whether private capital follows industrial policy.
+      </p>
+    </div>
+  </div>
+
+  <div class="mb-10">
+    <div class="text-2xl font-bold mb-4">Selected published work</div>
+    <p class="text-lg leading-relaxed mb-4">
+      For the full publication list, see <a class="link" href="https://scholar.google.com/citations?user=ENeJ_gkAAAAJ&hl=en" target="_blank">Google Scholar</a>.
+    </p>
+    <ul class="list-disc list-inside text-lg space-y-3">
+      <li>Ahmad, W., Sen, A., Eesley, C., Brynjolfsson, E. (2024). Companies inadvertently fund online misinformation despite consumer backlash. <em>Nature</em>, 630(8015), 123–131.</li>
+      <li>Eesley, C., & Miller, W.F. (2018). Impact: Stanford University's economic impact via innovation and entrepreneurship. <em>Foundations and Trends in Entrepreneurship</em>, 14(2).</li>
+      <li>Eesley, C., & Lee, Y.S. (2023). In Institutions We Trust? Trust in Government and the Allocation of Entrepreneurial Intentions. <em>Organization Science</em>, 34(2), 532–556.</li>
+      <li>Lee, Y.S., & Eesley, C. (2021). Do University Entrepreneurship Programs Promote Entrepreneurship? <em>Strategic Management Journal</em>, 42(4), 833–861.</li>
+      <li>Armanios, D., Eesley, C., Li, J., & Eisenhardt, K.M. (2017). How entrepreneurs leverage institutional intermediaries in emerging economies to acquire public resources. <em>Strategic Management Journal</em>, 38(7), 1373–1390.</li>
+    </ul>
+  </div>
+</BaseLayout>
