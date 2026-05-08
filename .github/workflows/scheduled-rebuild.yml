@@ -1,0 +1,25 @@
+name: Scheduled rebuild
+
+# Pings the Vercel Deploy Hook so the home page's Substack RSS pull stays
+# fresh even when no commits land. Set the VERCEL_DEPLOY_HOOK secret in
+# repo Settings → Secrets and variables → Actions.
+
+on:
+  schedule:
+    # Daily at 14:00 UTC (~07:00 Pacific). Adjust the cron expression as desired.
+    - cron: "0 14 * * *"
+  workflow_dispatch: # allow manual runs from the Actions tab
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel deploy hook
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "VERCEL_DEPLOY_HOOK secret is not set." >&2
+            exit 1
+          fi
+          curl -fsSL -X POST "$HOOK"
