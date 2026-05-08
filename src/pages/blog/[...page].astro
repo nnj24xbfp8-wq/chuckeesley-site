@@ -2,40 +2,104 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import HorizontalCard from "../../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
-import createSlug from "../../lib/createSlug"
+import createSlug from "../../lib/createSlug";
+import dayjs from "dayjs";
+
+// The Writing index merges Substack posts (pulled from the publication's RSS
+// feed at build time) with any locally-authored posts in the blog content
+// collection. Substack wins on duplicate titles. Falls back to local-only
+// if the feed fetch fails.
+
+type Essay = {
+  title: string;
+  url: string;
+  description: string;
+  pubDate: Date;
+  target: "_blank" | "_self";
+  badge?: string;
+  tags?: string[];
+};
 
 export async function getStaticPaths({ paginate }) {
-  const posts = await getCollection("blog");
-  posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-  return paginate(posts, { pageSize: 10 });
+  // Inline Substack fetch — getStaticPaths runs in an isolated scope and
+  // cannot reach module-level helpers or constants, so we keep them here.
+  const SUBSTACK_FEED = "https://ceesley.substack.com/feed";
+  const fetchSubstack = async (): Promise<Essay[]> => {
+    try {
+      const res = await fetch(SUBSTACK_FEED, {
+        headers: { "User-Agent": "chuckeesley.com" },
+      });
+      if (!res.ok) return [];
+      const xml = await res.text();
+      const items = xml.match(/<item>[\s\S]*?<\/item>/g) ?? [];
+      const pick = (block: string, tag: string) => {
+        const m = block.match(new RegExp(`<${tag}>([\\s\\S]*?)<\\/${tag}>`));
+        if (!m) return "";
+        return m[1].replace(/^<!\[CDATA\[/, "").replace(/\]\]>$/, "").trim();
+      };
+      return items.map((item) => ({
+        title: pick(item, "title"),
+        url: pick(item, "link"),
+        description: pick(item, "description").replace(/<[^>]+>/g, "").trim(),
+        pubDate: new Date(pick(item, "pubDate")),
+        target: "_blank" as const,
+        badge: "SUBSTACK",
+      }));
+    } catch (err) {
+      console.warn("[blog index] Substack RSS fetch failed:", err);
+      return [];
+    }
+  };
+  const substack = await fetchSubstack();
+  const local = (await getCollection("blog")).map<Essay>((post) => ({
+    title: post.data.title,
+    url: "/blog/" + createSlug(post.data.title, post.slug),
+    description: post.data.description,
+    pubDate: new Date(post.data.pubDate),
+    target: "_self",
+    badge: post.data.badge,
+    tags: post.data.tags,
+  }));
+
+  // De-duplicate by normalized title; Substack version wins.
+  const seen = new Set<string>();
+  const combined: Essay[] = [];
+  for (const e of [...substack, ...local]) {
+    const key = e.title.toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 60);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    combined.push(e);
+  }
+  combined.sort((a, b) => b.pubDate.valueOf() - a.pubDate.valueOf());
+
+  return paginate(combined, { pageSize: 10 });
 }
 
 const { page } = Astro.props;
 ---
 
-<BaseLayout title="Blog" sideBarActiveItemID="blog">
+<BaseLayout title="Writing" sideBarActiveItemID="blog">
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Blog</div>
+    <div class="text-3xl w-full font-bold">Writing</div>
   </div>
 
   {
     page.data.length === 0 ? (
       <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
         <p class="font-bold">Sorry!</p>
-        <p>There are no blog posts to show at the moment. Check back later!</p>
+        <p>There are no posts to show at the moment. Check back later!</p>
       </div>
     ) : (
       <ul>
-        {page.data.map((post) => (
+        {page.data.map((essay) => (
           <>
             <HorizontalCard
-              title={post.data.title}
-              img={post.data.heroImage}
-              desc={post.data.description}
-              url={"/blog/" + createSlug(post.data.title, post.slug)}
-              target="_self"
-              badge={post.data.badge}
-              tags={post.data.tags}
+              title={essay.title}
+              desc={`${dayjs(essay.pubDate).format("MMM D, YYYY")} · ${essay.description}`}
+              url={essay.url}
+              target={essay.target}
+              badge={essay.badge}
+              tags={essay.tags}
             />
             <div class="divider my-0" />
           </>
