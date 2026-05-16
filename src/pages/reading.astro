@@ -1,0 +1,101 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+// Pull all books from the reading collection.
+const allBooks = await getCollection("reading");
+
+// Category display order + labels. Keys must match the enum in src/content/config.ts.
+// To reorder categories on the page, reorder this array.
+const categories: { id: string; label: string; intro: string }[] = [
+  {
+    id: "foundational",
+    label: "How to think about technology entrepreneurship",
+    intro: "Books that shape the basic vocabulary and frameworks I keep returning to in the classroom.",
+  },
+  {
+    id: "institutional",
+    label: "Institutional and political economy of startups",
+    intro: "Why some places, eras, and policies produce founders — and which ones don't.",
+  },
+  {
+    id: "classroom",
+    label: "What I assign in my classes",
+    intro: "Course material from MS&E 178 / E145 and adjacent courses.",
+  },
+  {
+    id: "return-to",
+    label: "Books I keep returning to",
+    intro: "Outside the entrepreneurship canon — books that have changed how I think.",
+  },
+  {
+    id: "recent",
+    label: "Recently",
+    intro: "Books I've read or revisited in the last year.",
+  },
+];
+
+// Group books by category and sort within each (by optional `order`, then title).
+const booksByCategory = categories.map((cat) => ({
+  ...cat,
+  books: allBooks
+    .filter((b) => b.data.category === cat.id)
+    .sort((a, b) => {
+      const aOrder = a.data.order ?? 999;
+      const bOrder = b.data.order ?? 999;
+      if (aOrder !== bOrder) return aOrder - bOrder;
+      return a.data.title.localeCompare(b.data.title);
+    }),
+}));
+
+// Format a date as "Month YYYY" — used in the "Last updated" footer.
+const lastUpdated = new Date().toLocaleDateString("en-US", {
+  month: "long",
+  year: "numeric",
+});
+---
+
+<BaseLayout title="Reading list" sideBarActiveItemID="reading">
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Reading list</div>
+  </div>
+
+  <div class="mb-8 text-lg opacity-80 italic">
+    Books I recommend to entrepreneurs, students, and anyone trying to think more clearly about how innovation actually happens. Curated rather than comprehensive — opinions in the annotations are my own.
+  </div>
+
+  {booksByCategory.map((cat) => (
+    cat.books.length > 0 && (
+      <section class="mb-16">
+        <div class="text-2xl w-full font-bold mt-8 mb-2">{cat.label}</div>
+        <div class="mb-6 text-base opacity-70 italic">{cat.intro}</div>
+
+        <ul class="list-none p-0">
+          {cat.books.map((book) => (
+            <li class="mb-6">
+              <div class="font-bold text-lg leading-snug">
+                {book.data.link ? (
+                  <a href={book.data.link} target="_blank" rel="noopener noreferrer" class="link">
+                    {book.data.title}
+                  </a>
+                ) : (
+                  <span>{book.data.title}</span>
+                )}
+              </div>
+              <div class="text-sm opacity-70 mt-1">
+                {book.data.author}{book.data.year ? ` · ${book.data.year}` : ""}
+              </div>
+              <p class="text-base mt-2">{book.data.why}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  ))}
+
+  <div class="border-t border-base-300 mt-16 pt-6 text-sm opacity-70 italic">
+    Last refreshed {lastUpdated}. New books added as I read or re-read them — each book annotated rather than just listed, because the annotation is what makes a list useful.
+  </div>
+
+</BaseLayout>
