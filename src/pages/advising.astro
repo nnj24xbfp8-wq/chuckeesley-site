@@ -1,0 +1,233 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Advising";
+const description = "PhD students, postdoctoral researchers, and former students from Chuck Eesley's research group at Stanford MS&E.";
+
+// Current PhD students — from CV (Section: STUDENTS / Current), 1/6/2026
+const currentPhD = [
+  {
+    name: "Wajeeha Ahmed",
+    years: "September 2020 – present",
+    coAdvisor: "Erik Brynjolfsson",
+    thesis: "The Impact of Artificial Intelligence on Content Consumption and Production",
+    expected: "Anticipated 2026",
+    link: null,
+  },
+  {
+    name: "Yikai Cao",
+    years: "September 2024 – present",
+    coAdvisor: null,
+    thesis: "Semiconductors, Export Controls and Technology Entrepreneurship (preliminary)",
+    expected: "Anticipated 2029",
+    link: null,
+  },
+  {
+    name: "Zahra Hejrati",
+    years: "September 2018 – present",
+    coAdvisor: "Kathleen Eisenhardt",
+    thesis: "The Impact of Digital Technologies on Entrepreneurial Venture Formation",
+    expected: "Anticipated 2025",
+    link: null,
+  },
+  {
+    name: "Xilan Zhang",
+    years: "September 2024 – present",
+    coAdvisor: null,
+    thesis: "Randomized Field Experiments and Entrepreneurship (preliminary)",
+    expected: "Anticipated 2029",
+    link: null,
+  },
+];
+
+// Postdoctoral researchers — from CV (Section: Postdoctoral Researchers Supervised / Current)
+const postdocs = [
+  {
+    name: "Fanny (Zhuoxuan) Li",
+    years: "February 2020 – present",
+    role: "Postdoctoral researcher",
+    notes: "Co-author on Learning-by-Advising (working paper); leads field operations for the Thailand AIS/KBank accelerator RCT.",
+    link: "https://www.linkedin.com/in/zhuoxuanli/",
+  },
+];
+
+// Former PhD students — from CV (Section: STUDENTS / Former), sorted by graduation year (most recent first)
+const formerPhD = [
+  {
+    name: "Khonika Gope",
+    years: "September 2015 – June 2023",
+    coAdvisor: null,
+    thesis: "The Development of Entrepreneurial Skills and Motivation: The Role of Institutions",
+    graduated: "2023",
+    nowAt: null,
+    link: null,
+  },
+  {
+    name: "Carrington Motley",
+    years: "September 2017 – September 2022",
+    coAdvisor: null,
+    thesis: "Managing External and Internal Change: Lessons from Entrepreneurship",
+    graduated: "2022",
+    nowAt: null,
+    link: null,
+  },
+  {
+    name: "Ayinwi Muma",
+    years: "November 2021 – ABD",
+    coAdvisor: "Sarah Soule",
+    thesis: "Additive Manufacturing and Entrepreneurship",
+    graduated: "ABD",
+    nowAt: null,
+    link: null,
+  },
+  {
+    name: "Tyler Whittle",
+    years: "September 2014 – June 2021",
+    coAdvisor: null,
+    thesis: "Entrepreneurial Finance: From Accelerators to IPOs",
+    graduated: "2021",
+    nowAt: null,
+    link: null,
+  },
+  {
+    name: "Willow (You) Wu",
+    years: "September 2015 – June 2021",
+    coAdvisor: null,
+    thesis: "Entrepreneurial Strategies in Institutional Changes: Tackling the Conflicts Between New and Old Rules",
+    graduated: "2021",
+    nowAt: null,
+    link: null,
+  },
+  {
+    name: "Wesley Koo",
+    years: "September 2012 – June 2018",
+    coAdvisor: null,
+    thesis: "Online Sellers' Offline Environment: Implications for Platform Strategy",
+    graduated: "2018",
+    nowAt: null,
+    link: null,
+  },
+  {
+    name: "Jamber Li",
+    years: "September 2010 – September 2017",
+    coAdvisor: null,
+    thesis: "Entrepreneurship in Emerging Economies: Institutions and Relationships",
+    graduated: "2017",
+    nowAt: null,
+    link: null,
+  },
+  {
+    name: "Daniel Armanios",
+    years: "September 2009 – June 2015",
+    coAdvisor: "Kathleen Eisenhardt",
+    thesis: "What is the Role of the State in Entrepreneurship and Venture Performance?",
+    graduated: "2015",
+    nowAt: null,
+    link: null,
+  },
+  {
+    name: "Michael Leatherbee",
+    years: "September 2010 – May 2015",
+    coAdvisor: null,
+    thesis: "Discovering Entrepreneurial Opportunities",
+    graduated: "2015",
+    nowAt: null,
+    link: null,
+  },
+  {
+    name: "Robert Eberhart",
+    years: "September 2010 – June 2013",
+    coAdvisor: "Kathleen Eisenhardt",
+    thesis: "Institutional Change and Entrepreneurship",
+    graduated: "2013",
+    nowAt: null,
+    link: null,
+  },
+];
+---
+
+<BaseLayout title={title} description={description} sideBarActiveItemID="advising">
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Advising</div>
+  </div>
+
+  <div class="mb-10 text-lg leading-relaxed">
+    <p class="mb-4">
+      I advise PhD students in Stanford MS&amp;E whose work intersects entrepreneurship, institutional design, industrial policy, AI's effects on innovation, or the global political economy of technology. The list below covers students and postdocs I've worked with directly. For prospective students considering applying, see the <a class="link" href="/prospective-students">MS&amp;E PhD page</a>.
+    </p>
+  </div>
+
+  {/* CURRENT PhD STUDENTS */}
+  <div class="text-2xl w-full font-bold mt-10 mb-2">Current PhD students</div>
+  <div class="mb-6 text-base opacity-70 italic">
+    {currentPhD.length} students currently advising or co-advising.
+  </div>
+  <ul class="list-none p-0">
+    {currentPhD.map((s) => (
+      <li class="mb-7 pb-6 border-b border-base-300">
+        <div class="font-bold text-lg leading-snug">
+          {s.link ? (
+            <a href={s.link} target="_blank" rel="noopener noreferrer" class="link">{s.name}</a>
+          ) : (
+            <span>{s.name}</span>
+          )}
+          {s.coAdvisor && (
+            <span class="font-normal italic text-sm opacity-70"> · co-advised with {s.coAdvisor}</span>
+          )}
+        </div>
+        <div class="text-sm opacity-70 mt-1">{s.years} · {s.expected}</div>
+        <p class="text-base mt-2 italic">{s.thesis}</p>
+      </li>
+    ))}
+  </ul>
+
+  {/* POSTDOCTORAL RESEARCHERS */}
+  <div class="text-2xl w-full font-bold mt-12 mb-2">Postdoctoral researchers</div>
+  <ul class="list-none p-0">
+    {postdocs.map((p) => (
+      <li class="mb-7 pb-6 border-b border-base-300">
+        <div class="font-bold text-lg leading-snug">
+          {p.link ? (
+            <a href={p.link} target="_blank" rel="noopener noreferrer" class="link">{p.name}</a>
+          ) : (
+            <span>{p.name}</span>
+          )}
+        </div>
+        <div class="text-sm opacity-70 mt-1">{p.role} · {p.years}</div>
+        {p.notes && <p class="text-base mt-2">{p.notes}</p>}
+      </li>
+    ))}
+  </ul>
+
+  {/* FORMER PhD STUDENTS */}
+  <div class="text-2xl w-full font-bold mt-12 mb-2">Former PhD students</div>
+  <div class="mb-6 text-base opacity-70 italic">
+    {formerPhD.length} PhD students who completed their doctoral work under my advisement or co-advisement, in reverse chronological order by graduation year.
+  </div>
+  <ul class="list-none p-0">
+    {formerPhD.map((s) => (
+      <li class="mb-7 pb-6 border-b border-base-300">
+        <div class="font-bold text-lg leading-snug">
+          {s.link ? (
+            <a href={s.link} target="_blank" rel="noopener noreferrer" class="link">{s.name}</a>
+          ) : (
+            <span>{s.name}</span>
+          )}
+          {s.coAdvisor && (
+            <span class="font-normal italic text-sm opacity-70"> · co-advised with {s.coAdvisor}</span>
+          )}
+        </div>
+        <div class="text-sm opacity-70 mt-1">{s.years} · Graduated {s.graduated}</div>
+        <p class="text-base mt-2 italic">{s.thesis}</p>
+        {s.nowAt && <p class="text-sm opacity-80 mt-2">Currently: {s.nowAt}</p>}
+      </li>
+    ))}
+  </ul>
+
+  {/* ACKNOWLEDGMENT */}
+  <div class="border-t border-base-300 mt-16 pt-6 text-sm opacity-70 italic">
+    Pulled from my Stanford School of Engineering CV (last updated January 2026). The list focuses on PhD students and postdoctoral researchers I've directly advised or co-advised. It does not yet include undergraduate research assistants, predoctoral researchers, or external collaborators who deserve mention — those additions are coming.
+  </div>
+
+</BaseLayout>
