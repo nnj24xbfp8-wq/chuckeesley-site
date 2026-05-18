@@ -23,14 +23,6 @@ const currentPhD = [
     link: null,
   },
   {
-    name: "Zahra Hejrati",
-    years: "September 2018 – present",
-    coAdvisor: "Kathleen Eisenhardt",
-    thesis: "The Impact of Digital Technologies on Entrepreneurial Venture Formation",
-    expected: "Anticipated 2025",
-    link: null,
-  },
-  {
     name: "Xilan Zhang",
     years: "September 2024 – present",
     coAdvisor: null,
@@ -40,13 +32,23 @@ const currentPhD = [
   },
 ];
 
-// Postdoctoral researchers — from CV (Section: Postdoctoral Researchers Supervised / Current)
-const postdocs = [
+// Postdoctoral researchers — incoming and former
+const incomingPostdocs = [
   {
-    name: "Fanny (Zhuoxuan) Li",
-    years: "February 2020 – present",
+    name: "Tess Lallemant",
+    years: "Starting Fall 2026",
+    role: "Postdoctoral researcher (King Center sponsored)",
+    nowAt: "PhD candidate at Cornell Dyson School of Applied Economics & Management; previously Research Analyst at IFPRI and the World Bank. Research focuses on development economics, labor economics, and economics of education.",
+    link: "https://www.tesslallemant.com/",
+  },
+];
+
+const formerPostdocs = [
+  {
+    name: "Zhuoxuan Li",
+    years: "February 2020 – July 2025",
     role: "Postdoctoral researcher",
-    notes: "Co-author on Learning-by-Advising (working paper); leads field operations for the Thailand AIS/KBank accelerator RCT.",
+    nowAt: "Co-author on Learning-by-Advising (working paper); led field operations for the Thailand AIS/KBank accelerator RCT.",
     link: "https://www.linkedin.com/in/zhuoxuanli/",
   },
 ];
@@ -54,12 +56,30 @@ const postdocs = [
 // Former PhD students — from CV (Section: STUDENTS / Former), sorted by graduation year (most recent first)
 const formerPhD = [
   {
+    name: "Zahra Hejrati",
+    years: "September 2018 – August 2025",
+    coAdvisor: "Kathleen Eisenhardt",
+    thesis: "The Impact of Digital Technologies on Entrepreneurial Venture Formation",
+    graduated: "2025",
+    nowAt: "Research Fellow, The AMENA Center for Entrepreneurship and Development in Asia, the Middle East and North Africa (2025 – present)",
+    link: null,
+  },
+  {
     name: "Khonika Gope",
     years: "September 2015 – June 2023",
     coAdvisor: null,
     thesis: "The Development of Entrepreneurial Skills and Motivation: The Role of Institutions",
     graduated: "2023",
-    nowAt: null,
+    nowAt: "Assistant Professor of Management, University of Oregon Lundquist College of Business",
+    link: "https://business.uoregon.edu/directory/faculty-staff/all/khonika",
+  },
+  {
+    name: "Ayinwi Muma",
+    years: "September 2017 – 2023 (co-advised from November 2021)",
+    coAdvisor: "Sarah Soule",
+    thesis: "Additive Manufacturing and Entrepreneurship",
+    graduated: "ABD",
+    nowAt: "Partner at (c)AYA (since 2025); previously Senior Postdoctoral Research Fellow at Duke University (Aug 2023 – Jul 2025)",
     link: null,
   },
   {
@@ -68,17 +88,8 @@ const formerPhD = [
     coAdvisor: null,
     thesis: "Managing External and Internal Change: Lessons from Entrepreneurship",
     graduated: "2022",
-    nowAt: null,
-    link: null,
-  },
-  {
-    name: "Ayinwi Muma",
-    years: "November 2021 – ABD",
-    coAdvisor: "Sarah Soule",
-    thesis: "Additive Manufacturing and Entrepreneurship",
-    graduated: "ABD",
-    nowAt: null,
-    link: null,
+    nowAt: "Assistant Professor of Entrepreneurship, Carnegie Mellon University Tepper School of Business",
+    link: "https://www.cmu.edu/tepper/faculty-and-research/faculty-by-area/profiles/motley-carrington.html",
   },
   {
     name: "Tyler Whittle",
@@ -86,8 +97,8 @@ const formerPhD = [
     coAdvisor: null,
     thesis: "Entrepreneurial Finance: From Accelerators to IPOs",
     graduated: "2021",
-    nowAt: null,
-    link: null,
+    nowAt: "Product Lead at Project Eleven (previously Senior Associate, Floodgate)",
+    link: "https://www.linkedin.com/in/tyler-whittle-a54bb135/",
   },
   {
     name: "Willow (You) Wu",
@@ -95,8 +106,8 @@ const formerPhD = [
     coAdvisor: null,
     thesis: "Entrepreneurial Strategies in Institutional Changes: Tackling the Conflicts Between New and Old Rules",
     graduated: "2021",
-    nowAt: null,
-    link: null,
+    nowAt: "Assistant Professor, Department of Management, CUHK Business School",
+    link: "https://www.bschool.cuhk.edu.hk/staff/wu-willow-you/",
   },
   {
     name: "Wesley Koo",
@@ -104,8 +115,8 @@ const formerPhD = [
     coAdvisor: null,
     thesis: "Online Sellers' Offline Environment: Implications for Platform Strategy",
     graduated: "2018",
-    nowAt: null,
-    link: null,
+    nowAt: "Assistant Professor of Management & Organization, Johns Hopkins University Carey Business School (previously INSEAD)",
+    link: "https://carey.jhu.edu/faculty/wesley-w-koo-phd",
   },
   {
     name: "Jamber Li",
@@ -113,8 +124,8 @@ const formerPhD = [
     coAdvisor: null,
     thesis: "Entrepreneurship in Emerging Economies: Institutions and Relationships",
     graduated: "2017",
-    nowAt: null,
-    link: null,
+    nowAt: "Assistant Professor, National University of Singapore Business School (previously INSEAD)",
+    link: "https://jamberli.wixsite.com/academia",
   },
   {
     name: "Daniel Armanios",
@@ -122,8 +133,8 @@ const formerPhD = [
     coAdvisor: "Kathleen Eisenhardt",
     thesis: "What is the Role of the State in Entrepreneurship and Venture Performance?",
     graduated: "2015",
-    nowAt: null,
-    link: null,
+    nowAt: "BT Professor of Management and Chair of Major Programme Management, University of Oxford Saïd Business School; Professorial Fellow, St Anne's College, Oxford",
+    link: "https://www.sbs.ox.ac.uk/about-us/people/daniel-armanios",
   },
   {
     name: "Michael Leatherbee",
@@ -131,8 +142,8 @@ const formerPhD = [
     coAdvisor: null,
     thesis: "Discovering Entrepreneurial Opportunities",
     graduated: "2015",
-    nowAt: null,
-    link: null,
+    nowAt: "Associate Professor, Pontificia Universidad Católica de Chile; Academic Director, EPIC Lab",
+    link: "https://www.linkedin.com/in/leatherbee/",
   },
   {
     name: "Robert Eberhart",
@@ -140,8 +151,8 @@ const formerPhD = [
     coAdvisor: "Kathleen Eisenhardt",
     thesis: "Institutional Change and Entrepreneurship",
     graduated: "2013",
-    nowAt: null,
-    link: null,
+    nowAt: "Associate Professor of Management and Faculty Director, Ahlers Center of International Business, University of San Diego",
+    link: "https://www.reberhart.org/",
   },
 ];
 ---
@@ -182,28 +193,54 @@ const formerPhD = [
     ))}
   </ul>
 
-  {/* POSTDOCTORAL RESEARCHERS */}
-  <div class="text-2xl w-full font-bold mt-12 mb-2">Postdoctoral researchers</div>
-  <ul class="list-none p-0">
-    {postdocs.map((p) => (
-      <li class="mb-7 pb-6 border-b border-base-300">
-        <div class="font-bold text-lg leading-snug">
-          {p.link ? (
-            <a href={p.link} target="_blank" rel="noopener noreferrer" class="link">{p.name}</a>
-          ) : (
-            <span>{p.name}</span>
-          )}
-        </div>
-        <div class="text-sm opacity-70 mt-1">{p.role} · {p.years}</div>
-        {p.notes && <p class="text-base mt-2">{p.notes}</p>}
-      </li>
-    ))}
-  </ul>
+  {/* POSTDOCTORAL RESEARCHERS — INCOMING */}
+  {incomingPostdocs.length > 0 && (
+    <>
+      <div class="text-2xl w-full font-bold mt-12 mb-2">Incoming postdoctoral researchers</div>
+      <ul class="list-none p-0">
+        {incomingPostdocs.map((p) => (
+          <li class="mb-7 pb-6 border-b border-base-300">
+            <div class="font-bold text-lg leading-snug">
+              {p.link ? (
+                <a href={p.link} target="_blank" rel="noopener noreferrer" class="link">{p.name}</a>
+              ) : (
+                <span>{p.name}</span>
+              )}
+            </div>
+            <div class="text-sm opacity-70 mt-1">{p.role} · {p.years}</div>
+            {p.nowAt && <p class="text-base mt-2">{p.nowAt}</p>}
+          </li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  {/* POSTDOCTORAL RESEARCHERS — FORMER */}
+  {formerPostdocs.length > 0 && (
+    <>
+      <div class="text-2xl w-full font-bold mt-12 mb-2">Former postdoctoral researchers</div>
+      <ul class="list-none p-0">
+        {formerPostdocs.map((p) => (
+          <li class="mb-7 pb-6 border-b border-base-300">
+            <div class="font-bold text-lg leading-snug">
+              {p.link ? (
+                <a href={p.link} target="_blank" rel="noopener noreferrer" class="link">{p.name}</a>
+              ) : (
+                <span>{p.name}</span>
+              )}
+            </div>
+            <div class="text-sm opacity-70 mt-1">{p.role} · {p.years}</div>
+            {p.nowAt && <p class="text-base mt-2">{p.nowAt}</p>}
+          </li>
+        ))}
+      </ul>
+    </>
+  )}
 
   {/* FORMER PhD STUDENTS */}
   <div class="text-2xl w-full font-bold mt-12 mb-2">Former PhD students</div>
   <div class="mb-6 text-base opacity-70 italic">
-    {formerPhD.length} PhD students who completed their doctoral work under my advisement or co-advisement, in reverse chronological order by graduation year.
+    {formerPhD.length} students who completed their doctoral work under my advisement or co-advisement, in reverse chronological order by graduation year.
   </div>
   <ul class="list-none p-0">
     {formerPhD.map((s) => (
@@ -218,16 +255,18 @@ const formerPhD = [
             <span class="font-normal italic text-sm opacity-70"> · co-advised with {s.coAdvisor}</span>
           )}
         </div>
-        <div class="text-sm opacity-70 mt-1">{s.years} · Graduated {s.graduated}</div>
+        <div class="text-sm opacity-70 mt-1">
+          {s.years} · {s.graduated === "ABD" ? "ABD (did not complete dissertation)" : `Graduated ${s.graduated}`}
+        </div>
         <p class="text-base mt-2 italic">{s.thesis}</p>
-        {s.nowAt && <p class="text-sm opacity-80 mt-2">Currently: {s.nowAt}</p>}
+        {s.nowAt && <p class="text-sm mt-2"><span class="opacity-70">Now:</span> {s.nowAt}</p>}
       </li>
     ))}
   </ul>
 
   {/* ACKNOWLEDGMENT */}
   <div class="border-t border-base-300 mt-16 pt-6 text-sm opacity-70 italic">
-    Pulled from my Stanford School of Engineering CV (last updated January 2026). The list focuses on PhD students and postdoctoral researchers I've directly advised or co-advised. It does not yet include undergraduate research assistants, predoctoral researchers, or external collaborators who deserve mention — those additions are coming.
+    Pulled from my Stanford School of Engineering CV (last updated January 2026), with current affiliations verified as of May 2026. The list focuses on PhD students and postdoctoral researchers I've directly advised or co-advised. It does not yet include undergraduate research assistants, predoctoral researchers, or external collaborators who deserve mention — those additions are coming.
   </div>
 
 </BaseLayout>
