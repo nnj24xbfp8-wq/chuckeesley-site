@@ -74,15 +74,6 @@ const formerPhD = [
     link: "https://business.uoregon.edu/directory/faculty-staff/all/khonika",
   },
   {
-    name: "Ayinwi Muma",
-    years: "September 2017 – 2023 (co-advised from November 2021)",
-    coAdvisor: "Sarah Soule",
-    thesis: "Additive Manufacturing and Entrepreneurship",
-    graduated: "ABD",
-    nowAt: "Partner at (c)AYA (since 2025); previously Senior Postdoctoral Research Fellow at Duke University (Aug 2023 – Jul 2025)",
-    link: null,
-  },
-  {
     name: "Carrington Motley",
     years: "September 2017 – September 2022",
     coAdvisor: null,
@@ -154,6 +145,33 @@ const formerPhD = [
     nowAt: "Associate Professor of Management and Faculty Director, Ahlers Center of International Business, University of San Diego",
     link: "https://www.reberhart.org/",
   },
+];
+
+// Research assistants — current
+const currentRAs = [
+  { name: "Lilly May Graham", link: null },
+  { name: "Karetina Fekade-Tessema", link: "https://stvp.stanford.edu/people/karetina-fekade-tessema" },
+  { name: "Austin Chen", link: null },
+  { name: "Daniel Hadi", link: null },
+  { name: "Duy Nguyen", link: null },
+];
+
+// Research assistants — former
+const formerRAs = [
+  {
+    name: "Arianna Togelang",
+    note: "Stanford undergrad ('22); King Center Undergraduate Research Fellow on the Thailand accelerator entrepreneurship project.",
+    link: null,
+  },
+  {
+    name: "Alexander Ke",
+    note: "Stanford BS '21, MS '22; King Center Academic Year Research Fellow on the Silicon Valley accelerator cohort composition study.",
+    link: null,
+  },
+  { name: "Natalie Milan", note: null, link: null },
+  { name: "Faith Ziefuss", note: null, link: null },
+  { name: "Aurora Feng", note: null, link: null },
+  { name: "M Seng Maran", note: null, link: null },
 ];
 ---
 
@@ -264,9 +282,54 @@ const formerPhD = [
     ))}
   </ul>
 
+  {/* CURRENT RESEARCH ASSISTANTS */}
+  {currentRAs.length > 0 && (
+    <>
+      <div class="text-2xl w-full font-bold mt-12 mb-2">Current research assistants</div>
+      <div class="mb-6 text-base opacity-70 italic">
+        Students currently working on Eesley Lab research projects.
+      </div>
+      <ul class="list-none p-0 grid sm:grid-cols-2 gap-x-6">
+        {currentRAs.map((r) => (
+          <li class="mb-4 pb-3 border-b border-base-300">
+            <div class="font-bold text-base leading-snug">
+              {r.link ? (
+                <a href={r.link} target="_blank" rel="noopener noreferrer" class="link">{r.name}</a>
+              ) : (
+                <span>{r.name}</span>
+              )}
+            </div>
+            {r.note && <p class="text-sm opacity-80 mt-1">{r.note}</p>}
+          </li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  {/* FORMER RESEARCH ASSISTANTS */}
+  {formerRAs.length > 0 && (
+    <>
+      <div class="text-2xl w-full font-bold mt-12 mb-2">Former research assistants</div>
+      <ul class="list-none p-0">
+        {formerRAs.map((r) => (
+          <li class="mb-5 pb-4 border-b border-base-300">
+            <div class="font-bold text-base leading-snug">
+              {r.link ? (
+                <a href={r.link} target="_blank" rel="noopener noreferrer" class="link">{r.name}</a>
+              ) : (
+                <span>{r.name}</span>
+              )}
+            </div>
+            {r.note && <p class="text-sm opacity-80 mt-1">{r.note}</p>}
+          </li>
+        ))}
+      </ul>
+    </>
+  )}
+
   {/* ACKNOWLEDGMENT */}
   <div class="border-t border-base-300 mt-16 pt-6 text-sm opacity-70 italic">
-    Pulled from my Stanford School of Engineering CV (last updated January 2026), with current affiliations verified as of May 2026. The list focuses on PhD students and postdoctoral researchers I've directly advised or co-advised. It does not yet include undergraduate research assistants, predoctoral researchers, or external collaborators who deserve mention — those additions are coming.
+    Pulled from my Stanford School of Engineering CV (last updated January 2026), with current affiliations verified as of May 2026. Predoctoral researchers and external collaborators not yet listed — those additions are coming.
   </div>
 
 </BaseLayout>
