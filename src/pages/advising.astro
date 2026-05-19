@@ -10,7 +10,8 @@ const currentPhD = [
     name: "Wajeeha Ahmed",
     years: "September 2020 – present",
     coAdvisor: "Erik Brynjolfsson",
-    thesis: "The Impact of Artificial Intelligence on Content Consumption and Production",
+    thesis: "Delegating to AI: Essays on Managing Misalignment in Markets, Platforms and Organizations",
+    committee: "Erik Brynjolfsson (Co-advisor), Eric Horvitz, Ramesh Johari, Diyi Yang (Chair)",
     expected: "Finishing Summer 2026 · joining Columbia Business School (Management Division)",
     link: null,
   },
@@ -309,6 +310,9 @@ const formerRAs = [
         </div>
         <div class="text-sm opacity-70 mt-1">{s.years} · {s.expected}</div>
         <p class="text-base mt-2 italic">{s.thesis}</p>
+        {s.committee && (
+          <p class="text-sm opacity-70 mt-2"><span class="font-semibold not-italic">Committee:</span> {s.committee}</p>
+        )}
       </li>
     ))}
   </ul>
