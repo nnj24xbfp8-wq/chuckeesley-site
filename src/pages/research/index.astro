@@ -2,7 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const title = "Research";
-const description = "Research on how institutional environments, industrial policy, and platform design shape entrepreneurial outcomes.";
+const description = "Research on how institutional environments, industrial policy, platform governance, and methodological design shape entrepreneurial outcomes — across institutional change; platforms, information ecosystems & stakeholder influence; alumni entrepreneur surveys; and methodological contributions.";
 ---
 
 <BaseLayout
@@ -10,13 +10,19 @@ const description = "Research on how institutional environments, industrial poli
   description={description}
   sideBarActiveItemID="research"
 >
-  <div class="mb-10">
+  <div class="mb-6">
     <h1 class="text-4xl font-bold mb-4">Research</h1>
     <p class="text-lg leading-relaxed opacity-90">
-      My research examines how institutional environments — universities, industrial policy, export controls, AI, and platform design — shape who becomes a founder and what they build. Recent work centers on cross-border policy interventions and their downstream effects on entrepreneurship and venture capital.
+      My research examines how institutional environments — universities, industrial policy, export controls, AI, and platform design — shape who becomes a founder and what they build. The work is organized below into four themes, each led by a foundational concept I have introduced or helped develop. Recent work centers on cross-border policy interventions, the platform financing of online misinformation, and the methodological infrastructure (alumni entrepreneur surveys, RCTs, AI-enabled methods) that makes large-scale empirical entrepreneurship research possible.
     </p>
   </div>
 
+  {/* CITATIONS IMPACT LINE */}
+  <div class="mb-10 text-sm uppercase tracking-[0.16em] opacity-70">
+    Research cited 6,862+ times across management, economics, and information systems · <a class="link" href="https://scholar.google.com/citations?user=ENeJ_gkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+  </div>
+
+  {/* RESEARCH OVERVIEW VIDEO */}
   <div class="mb-12">
     <div class="text-xs uppercase tracking-[0.16em] opacity-60 mb-3">Research overview · short video</div>
     <div class="aspect-video border border-base-300 rounded overflow-hidden">
@@ -32,64 +38,387 @@ const description = "Research on how institutional environments, industrial poli
     </div>
   </div>
 
-  <div class="mb-10">
-    <div class="text-2xl font-bold mb-4">Working papers</div>
-
-    <div class="mb-8 pb-8 border-b border-base-300">
-      <div class="text-xl font-bold mb-2">
-        <a class="link" href="/research/export-controls-vc">When External Shocks Attract Capital: Export Controls and Venture Capital Allocation in China</a>
-      </div>
-      <div class="text-base opacity-70 mb-2">With Yikai Cao, Wanru Deng, and Guankai Zhai · In preparation for <em>Management Science</em></div>
-      <p class="text-lg leading-relaxed">
-        U.S. export controls were meant to slow China's semiconductor sector. We find they increased VC funding to Chinese semiconductor startups by 6 percentage points and 12% in capital — driven by institutional reclassification, with state-backed investors acting as opportunity coordinators.
-      </p>
-    </div>
-
-    <div class="mb-8 pb-8 border-b border-base-300">
-      <div class="text-xl font-bold mb-2">
-        <a class="link" href="/research/ira-cleantech">Industrial Policy Reshapes Venture Capital Allocation and Growth Trajectories in Climate Technologies</a>
-      </div>
-      <div class="text-base opacity-70 mb-2">With Yikai Cao, Rishee Jain, and Dinesh Moorjani · In preparation for <em>PNAS</em></div>
-      <p class="text-lg leading-relaxed">
-        The Inflation Reduction Act selectively redirected venture capital toward climate-aligned technologies. Our Policy Credibility Index — scoring statutory specificity, durability, and enforceability — shows that institutional design quality, not just incentive size, determines whether private capital follows industrial policy.
-      </p>
-    </div>
-
-    <div class="mb-8 pb-8 border-b border-base-300">
-      <div class="text-xl font-bold mb-2">
-        <a class="link" href="/research/battery-subsidies">Subsidy Design Without Capability Screening: Entry Composition in China's Battery Sector</a>
-      </div>
-      <div class="text-base opacity-70 mb-2">With Guankai Zhai (Stanford MS&E) · In preparation for <em>Research Policy</em></div>
-      <p class="text-lg leading-relaxed">
-        China's local governments have deployed massive supply-side subsidies to attract battery manufacturers across 300 prefecture-level cities. The subsidies do attract more firms — but the marginal entrants are non-corporate, short-lived, generate no patents, and exit at elevated rates even in cities where the underlying battery cluster is thriving. Subsidies designed without capability screening attract participation without productive commitment.
-      </p>
-    </div>
-
-    <div class="mb-8 pb-8 border-b border-base-300">
-      <div class="text-xl font-bold mb-2">
-        Learning-by-Advising? Startup Learning as an Advice-Giver in Accelerators
-      </div>
-      <div class="text-base opacity-70 mb-2">With Zhuoxuan (Fanny) Li and Jungyun Han · Working paper, December 2024</div>
-      <p class="text-lg leading-relaxed">
-        A five-year collaboration with two major Thai corporate partners — AIS (Advanced Info Service) and KBank (Kasikornbank) — anchored a randomized field experiment across multiple accelerator program rounds (2021–2023, n=166 early-stage startups). The study tests whether providing structured peer evaluations benefits the advice-giver, a question most prior peer-learning research has ignored in favor of advice-receiver effects. Treatment teams gained an average +0.217 points on independent pitch-quality scores (p = 0.004, ~⅓ of a standard deviation) and +0.108 points on idea usefulness (p = 0.042); no significant effect on idea novelty. Two mechanisms supported in qualitative interviews and pitch-deck content analysis: reinforced memory from applying evaluation rubrics, and metacognitive self-reflection triggered by judging peers' work. Implication for accelerator design: structured peer advising is a learning intervention for the advice-giver, not just the receiver.
-      </p>
-      <div class="text-sm opacity-70 italic mt-3">
-        Background coverage: <a href="https://kingcenter.stanford.edu/news/engineering-entrepreneurial-success-emerging-economies" target="_blank" rel="noopener noreferrer" class="link">Stanford King Center on Global Development ↗</a> (October 2020)
-      </div>
+  {/* SELECTED HONORS & SERVICE */}
+  <div class="mb-14 border border-base-300 rounded-lg p-6 bg-base-200">
+    <div class="text-sm uppercase tracking-wider opacity-60 mb-3">Selected honors &amp; service</div>
+    <ul class="text-base leading-relaxed space-y-1.5 list-disc list-inside">
+      <li><strong>W.M. Keck Foundation Faculty Scholar</strong>, Stanford University (2017–present)</li>
+      <li><strong>Independent Non-Executive Director &amp; Remuneration Committee Chair</strong>, Vobile Group (HKEX: 3738) (2018–present)</li>
+      <li><strong>Presenter</strong>, National Academies GUIPRR (Government-University-Industry Research Roundtable), Washington, DC (April 2026)</li>
+      <li><strong>Congressional briefing</strong>, Joint Economic Committee Republicans — industrial policy &amp; U.S.–China technology competition</li>
+      <li><strong>Stanford Social Impact Labs Design Fellowship</strong> (2024) — Uganda refugee entrepreneurship RCT</li>
+      <li><strong>IACMR–RRBM Responsible Research in Management Award</strong> (2020)</li>
+      <li><strong>TUM Research Excellence Award</strong> &amp; <strong>Institute for Advanced Studies Visiting Fellowship</strong>, Technical University of Munich (2018, 2019)</li>
+      <li><strong>Editorial Board</strong>, <em>Strategic Management Journal</em> (2014–present) &amp; <em>Strategic Entrepreneurship Journal</em> (2021–present)</li>
+    </ul>
+    <div class="mt-4 text-sm opacity-70 italic">
+      Full list and earlier honors on the <a class="link" href="/cv">About / CV page</a>.
     </div>
   </div>
 
-  <div class="mb-10">
-    <div class="text-2xl font-bold mb-4">Selected published work</div>
-    <p class="text-lg leading-relaxed mb-4">
-      For the full publication list, see <a class="link" href="https://scholar.google.com/citations?user=ENeJ_gkAAAAJ&hl=en" target="_blank">Google Scholar</a>.
+  {/* ===========================================================
+      THEME 1 — INSTITUTIONAL CHANGE AND ENTREPRENEURSHIP QUALITY
+      =========================================================== */}
+  <section class="mb-16">
+    <div class="text-xs uppercase tracking-[0.18em] opacity-70 mb-2">Theme 1</div>
+    <h2 class="text-3xl font-bold mb-3">Institutional Change and Entrepreneurship Quality</h2>
+    <p class="text-base leading-relaxed opacity-90 mb-8 italic">
+      Foundational concept: <strong class="not-italic">institutional barriers to entrepreneurship quality</strong> — institutions shape not only how many firms get founded but the durability, innovativeness, and growth trajectories of those firms. Subsidies and market catalysts that boost entry volume can quietly hollow out quality.
     </p>
-    <ul class="list-disc list-inside text-lg space-y-3">
-      <li>Ahmad, W., Sen, A., Eesley, C., Brynjolfsson, E. (2024). Companies inadvertently fund online misinformation despite consumer backlash. <em>Nature</em>, 630(8015), 123–131.</li>
-      <li>Eesley, C., & Miller, W.F. (2018). Impact: Stanford University's economic impact via innovation and entrepreneurship. <em>Foundations and Trends in Entrepreneurship</em>, 14(2).</li>
-      <li>Eesley, C., & Lee, Y.S. (2023). In Institutions We Trust? Trust in Government and the Allocation of Entrepreneurial Intentions. <em>Organization Science</em>, 34(2), 532–556.</li>
-      <li>Lee, Y.S., & Eesley, C. (2021). Do University Entrepreneurship Programs Promote Entrepreneurship? <em>Strategic Management Journal</em>, 42(4), 833–861.</li>
-      <li>Armanios, D., Eesley, C., Li, J., & Eisenhardt, K.M. (2017). How entrepreneurs leverage institutional intermediaries in emerging economies to acquire public resources. <em>Strategic Management Journal</em>, 38(7), 1373–1390.</li>
-    </ul>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">
+        <a class="link" href="/research/export-controls-vc">When External Shocks Attract Capital: Export Controls and Venture Capital Allocation in China</a>
+      </h3>
+      <div class="text-sm opacity-70 mb-2">Working paper, with Yikai Cao, Wanru Deng, and Guankai Zhai · In preparation for <em>Management Science</em></div>
+      <p class="text-base leading-relaxed">
+        U.S. export controls were meant to slow China's semiconductor sector. We find they <em>increased</em> VC funding to Chinese semiconductor startups by 6 percentage points and 12% in capital — driven by institutional reclassification, with state-backed investors acting as opportunity coordinators.
+      </p>
+    </article>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">
+        <a class="link" href="/research/ira-cleantech">Industrial Policy Reshapes Venture Capital Allocation and Growth Trajectories in Climate Technologies</a>
+      </h3>
+      <div class="text-sm opacity-70 mb-2">Working paper, with Yikai Cao, Rishee Jain, and Dinesh Moorjani · In preparation for <em>PNAS</em></div>
+      <p class="text-base leading-relaxed">
+        The Inflation Reduction Act selectively redirected venture capital toward climate-aligned technologies. Our Policy Credibility Index — scoring statutory specificity, durability, and enforceability — shows that institutional design quality, not just incentive size, determines whether private capital follows industrial policy.
+      </p>
+    </article>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">
+        <a class="link" href="/research/battery-subsidies">Subsidy Design Without Capability Screening: Entry Composition in China's Battery Sector</a>
+      </h3>
+      <div class="text-sm opacity-70 mb-2">Working paper, with Guankai Zhai (Stanford MS&amp;E) · In preparation for <em>Research Policy</em></div>
+      <p class="text-base leading-relaxed">
+        Local government supply-side subsidies across 300 Chinese prefectures do attract more battery-sector entrants — but the marginal entrants are non-corporate, short-lived, generate no patents, and exit at elevated rates even in cities where the underlying battery cluster is thriving. Subsidies without capability screening attract participation without productive commitment.
+      </p>
+    </article>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">In Institutions We Trust? Trust in Government and the Allocation of Entrepreneurial Intentions</h3>
+      <div class="text-sm opacity-70 mb-2">With Yong Suk Lee · <em>Organization Science</em>, 34(2), 532–556 (2023)</div>
+      <p class="text-base leading-relaxed">
+        Trust in government predicts which Stanford alumni become entrepreneurs and which sectors they enter — with implications for South Korea's policy reforms and other contexts where institutional trust varies sharply across demographic groups.
+      </p>
+    </article>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">The Dark Side of Junior Stock Exchanges</h3>
+      <div class="text-sm opacity-70 mb-2">With Robert Eberhart · <em>Strategic Management Journal</em> (2018)</div>
+      <p class="text-base leading-relaxed mb-3">
+        Market catalysts — incubators, science parks, junior stock exchanges — are designed to stimulate venture creation. Analysis of 19,000 firms in Japan shows they produce unintended negative consequences: more competition and information asymmetry, ultimately fewer quality IPOs and less economic growth. The clearest single illustration of the institutional-quality concept above.
+      </p>
+      <a href="https://doi.org/10.1002/smj.2934" target="_blank" rel="noopener noreferrer" class="link text-sm">Read the paper ↗</a>
+    </article>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">Entrepreneurial Strategies During Institutional Changes</h3>
+      <div class="text-sm opacity-70 mb-2">With Lynn Wu and Yao Yang · <em>Strategic Entrepreneurship Journal</em> (2022)</div>
+      <p class="text-base leading-relaxed mb-3">
+        What China's regional economic transition tells us about which entrepreneurial strategies pay off when institutions shift.
+      </p>
+      <a href="https://doi.org/10.1002/sej.1399" target="_blank" rel="noopener noreferrer" class="link text-sm">Read the paper ↗</a>
+    </article>
+
+    <article class="mb-2">
+      <h3 class="font-bold text-xl mb-2">How Entrepreneurs Leverage Institutional Intermediaries in Emerging Economies</h3>
+      <div class="text-sm opacity-70 mb-2">With Daniel Armanios, Jamber Li, and Kathleen Eisenhardt · <em>Strategic Management Journal</em> (2017)</div>
+      <p class="text-base leading-relaxed mb-3">
+        How founders in emerging economies use incubators, accelerators, and business associations to acquire public resources they couldn't otherwise reach.
+      </p>
+      <a href="https://doi.org/10.1002/smj.2575" target="_blank" rel="noopener noreferrer" class="link text-sm">Read the paper ↗</a>
+    </article>
+
+    <div class="mt-8 text-sm opacity-70 italic leading-relaxed">
+      Related ongoing work: China's national laboratory system, CHIPS Act effects on U.S. semiconductor entrepreneurship, and South Korean institutional reforms (with current and former PhD students).
+    </div>
+  </section>
+
+  {/* ===========================================================
+      THEME 2 — PLATFORMS, INFORMATION ECOSYSTEMS & STAKEHOLDER INFLUENCE
+      =========================================================== */}
+  <section class="mb-16">
+    <div class="text-xs uppercase tracking-[0.18em] opacity-70 mb-2">Theme 2</div>
+    <h2 class="text-3xl font-bold mb-3">Platforms, Information Ecosystems &amp; Stakeholder Influence</h2>
+    <p class="text-base leading-relaxed opacity-90 mb-8 italic">
+      Foundational concept: <strong class="not-italic">platforms as quasi-regulators</strong> — algorithmic monetization and matching decisions act as de facto regulatory infrastructure for the information environment, for the digital divide, and for whose voice shifts firm behavior. Firms inadvertently fund systems they would never knowingly underwrite; founders' access to mentor networks and learning platforms compounds prior advantage.
+    </p>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">Companies Inadvertently Fund Online Misinformation Despite Consumer Backlash</h3>
+      <div class="text-sm opacity-70 mb-2">With Wajeeha Ahmad, Ananya Sen, and Erik Brynjolfsson · <em>Nature</em>, 630(8015), 123–131 (2024)</div>
+      <p class="text-base leading-relaxed mb-3">
+        Programmatic ad-tech systematically directs major-brand advertising dollars to misinformation publishers, even when those brands explicitly want to avoid them. The paper traces the algorithmic pipeline and the consumer-backlash evidence that follows when brand placements become visible.
+      </p>
+    </article>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">For Startups, Adaptability and Mentor Network Diversity Can Be Pivotal</h3>
+      <div class="text-sm opacity-70 mb-2">With Lynn Wu · <em>MIS Quarterly</em> (2020)</div>
+      <p class="text-base leading-relaxed mb-3">
+        Evidence from a randomized field experiment on the NovoEd MOOC platform — what kinds of mentor connections, and what kinds of adaptability, actually predict whether early-stage ventures succeed. Among the earliest large-scale platform-RCTs in entrepreneurship research.
+      </p>
+      <a href="https://doi.org/10.25300/MISQ/2020/15138" target="_blank" rel="noopener noreferrer" class="link text-sm">Read the paper ↗</a>
+    </article>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">Through the Mud or in the Boardroom</h3>
+      <div class="text-sm opacity-70 mb-2">With Katherine DeCelles and Michael Lenox · <em>Strategic Management Journal</em> (2016)</div>
+      <p class="text-base leading-relaxed mb-3">
+        Activist tactics and how firms get targeted for social change — when secondary stakeholder pressure tactics succeed in shifting firm behavior, and when they don't.
+      </p>
+      <a href="https://doi.org/10.1002/smj.2458" target="_blank" rel="noopener noreferrer" class="link text-sm">Read the paper ↗</a>
+    </article>
+
+    <article class="mb-2">
+      <h3 class="font-bold text-xl mb-2">Platform-Mediated Education, Rural–Urban Participation, and Return Migration in China</h3>
+      <div class="text-sm opacity-70 mb-2">Working papers in preparation, with current PhD students</div>
+      <p class="text-base leading-relaxed">
+        A line of work examining how online learning platforms, e-commerce platforms, and gig platforms differ in their downstream effects on rural-to-urban migration patterns, return migration to home provinces, and the entrepreneurial pathways available to founders outside Tier-1 cities — the second-order digital divide in practice.
+      </p>
+    </article>
+  </section>
+
+  {/* ===========================================================
+      THEME 4 — ALUMNI ENTREPRENEUR SURVEYS (pioneered methodology)
+      =========================================================== */}
+  <section class="mb-16">
+    <div class="text-xs uppercase tracking-[0.18em] opacity-70 mb-2">Theme 3 · pioneered methodology</div>
+    <h2 class="text-3xl font-bold mb-3">Alumni Entrepreneur Surveys</h2>
+    <p class="text-base leading-relaxed opacity-90 mb-8 italic">
+      Foundational contribution: <strong class="not-italic">large-scale alumni entrepreneur surveys as a research instrument.</strong> Pioneered first with Ed Roberts at MIT (2009), then extended at Stanford (2012) with William F. Miller, the University of Virginia (2014), and Tsinghua University. The surveys created the empirical infrastructure for an entire downstream literature on university entrepreneurship, founder ethnicity, founding-team composition, mentor networks, and the institutional environment around technology entrepreneurship.
+    </p>
+
+    {/* SURVEYS THEMSELVES */}
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">Stanford Innovation Survey (2011–present)</h3>
+      <div class="text-sm opacity-70 mb-2">With William F. Miller · Foundational publication: <em>Foundations and Trends in Entrepreneurship</em>, 14(2) (2018)</div>
+      <p class="text-base leading-relaxed mb-3">
+        Survey of more than 140,000 Stanford alumni. Showed that companies founded by Stanford alumni generate trillions of dollars in revenue and millions of jobs globally — the empirical backbone of the "Stanford economic impact" finding now widely cited in policy and university-impact discourse.
+      </p>
+      <div class="aspect-video mb-3 border border-base-300 rounded overflow-hidden">
+        <iframe
+          src="https://player.vimeo.com/video/414063301"
+          title="Stanford Innovation Study — economic impact of Stanford entrepreneurship"
+          class="w-full h-full"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+      <div class="text-xs opacity-60 italic mt-1">
+        Press coverage:{' '}
+        <a href="https://www.forbes.com/sites/petercohan/2012/11/06/stanfords-2-7-trillion-economic-jolt-beats-mits-2-trillion/" target="_blank" rel="noopener noreferrer" class="link">Forbes (2012) ↗</a>{' '}·{' '}
+        <a href="https://engineering.stanford.edu/news/study-reports-stanford-alumni-create-nearly-3-trillion-economic-impact" target="_blank" rel="noopener noreferrer" class="link">Stanford Engineering ↗</a>
+      </div>
+    </article>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">Entrepreneurial Impact: The Role of MIT</h3>
+      <div class="text-sm opacity-70 mb-2">With Edward B. Roberts · Kauffman Foundation report (2009)</div>
+      <p class="text-base leading-relaxed mb-3">
+        The MIT alumni-impact study — and the methodological forerunner of the Stanford Innovation Survey. Found that companies founded by MIT alumni would, if grouped as an independent nation, generate roughly $2 trillion in annual worldwide sales — the 11th largest economy in the world at the time.
+      </p>
+      <a href="http://entrepreneurship.mit.edu/Downloads/ExecSummary_Entrepreneurial_Impact_The_Role_of_MIT.pdf" target="_blank" rel="noopener noreferrer" class="link text-sm">Read the executive summary (PDF) ↗</a>
+      <div class="text-xs opacity-60 italic mt-2">
+        Press coverage:{' '}
+        <a href="https://news.mit.edu/2009/kauffman-study-0217" target="_blank" rel="noopener noreferrer" class="link">MIT News (2009) ↗</a>
+      </div>
+    </article>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">The Economic Impact of Entrepreneurial Alumni: University of Virginia</h3>
+      <div class="text-sm opacity-70 mb-2">With Michael Lenox, Andrew King, and Asif Mehedi · UVA Darden Batten Institute (2014)</div>
+      <p class="text-base leading-relaxed mb-3">
+        The third in the alumni-impact trilogy (after MIT 2009 and Stanford 2012), applying the same methodology to UVA. Survey of more than 135,000 UVA alumni (22,757 valid responses) found 65,000 alumni-founded companies, 2.3 million employees worldwide, and an estimated $1.6 trillion in annual global revenues.
+      </p>
+      <a href="https://web3.darden.virginia.edu/uva-alumni/download/U.Va.%20Entrepreneurial%20Alumni.pdf" target="_blank" rel="noopener noreferrer" class="link text-sm">Read the full report (PDF) ↗</a>
+    </article>
+
+    <article class="mb-12 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">Tsinghua University Alumni Survey</h3>
+      <div class="text-sm opacity-70 mb-2">With Tsinghua School of Economics and Management collaborators</div>
+      <p class="text-base leading-relaxed">
+        Extended the alumni-survey methodology to one of China's leading research universities. Provides the empirical base for comparative work on how university entrepreneurship education differs across institutional contexts.
+      </p>
+    </article>
+
+    {/* PAPERS BUILT ON THE SURVEYS */}
+    <div class="text-xl font-bold mb-4 mt-12">Papers built on the alumni-survey infrastructure</div>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">Do University Entrepreneurship Programs Promote Entrepreneurship?</h3>
+      <div class="text-sm opacity-70 mb-2">With Yong Suk Lee · <em>Strategic Management Journal</em>, 42(4), 833–861 (2021)</div>
+      <p class="text-base leading-relaxed mb-3">
+        Survey of 27,783 Stanford alumni asking what CES at the GSB and STVP at the Engineering School actually did to entrepreneurship rates. CES participation had a negative-to-zero effect on rates and STVP had no effect — but CES participants saw lower startup failure and higher long-term firm revenue.
+      </p>
+      <div class="aspect-video mb-3 border border-base-300 rounded overflow-hidden">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/1N7OQ9Nu0rM"
+          title="Do university entrepreneurship programs promote entrepreneurship? — SMJ Video Abstract"
+          class="w-full h-full"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+      <a href="https://doi.org/10.1002/smj.3246" target="_blank" rel="noopener noreferrer" class="link text-sm">Read the paper ↗</a>
+    </article>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">The Persistence of Entrepreneurship and Innovative Immigrants</h3>
+      <div class="text-sm opacity-70 mb-2">With Yong Suk Lee · <em>Research Policy</em> (2018)</div>
+      <p class="text-base leading-relaxed mb-3">
+        Stanford alumni survey work showing that Asian American alumni are more entrepreneurial than white American alumni, but non-American Asian alumni are substantially less so — with parental entrepreneurship a strong predictor regardless of group, and intergenerational persistence highest among non-American Asians.
+      </p>
+      <a href="https://doi.org/10.1016/j.respol.2018.03.007" target="_blank" rel="noopener noreferrer" class="link text-sm">Read the paper ↗</a>
+    </article>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">Founding Team Composition and Venture Performance</h3>
+      <div class="text-sm opacity-70 mb-2">With David Hsu and Edward B. Roberts · <em>Strategic Management Journal</em> (2014)</div>
+      <p class="text-base leading-relaxed mb-3">
+        Survey of 2,067 MIT alumni-founded ventures showing that all-technical founding teams have a 12.8% greater likelihood of favorable exit in cooperative business environments — challenging the conventional wisdom that diverse business skills always matter most.
+      </p>
+      <a href="https://doi.org/10.1002/smj.2183" target="_blank" rel="noopener noreferrer" class="link text-sm">Read the paper ↗</a>
+    </article>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">Born into Chaos</h3>
+      <div class="text-sm opacity-70 mb-2">With Carrington Motley and Wesley Koo · <em>Strategic Entrepreneurship Journal</em> (2023)</div>
+      <p class="text-base leading-relaxed mb-3">
+        How founding conditions shape whether ventures survive or thrive through environmental change — based on the longitudinal data of the alumni cohort.
+      </p>
+      <div class="aspect-video mb-3 border border-base-300 rounded overflow-hidden">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/4S30_WHgTi8"
+          title="Born into Chaos — research conversation"
+          class="w-full h-full"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+      <a href="https://doi.org/10.1002/sej.1461" target="_blank" rel="noopener noreferrer" class="link text-sm">Read the paper ↗</a>
+    </article>
+
+    {/* PUBLIC-FACING ARTIFACTS — Bechtolsheim, Cheriton, ETL ecosystem */}
+    <div class="text-xl font-bold mb-4 mt-12">Public-facing artifacts of the alumni-survey work</div>
+    <p class="text-base leading-relaxed opacity-90 mb-6">
+      Founder interviews recorded as part of the Stanford alumni cohort and the technology entrepreneurship course built around it.
+    </p>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">Andy Bechtolsheim — Sun Microsystems co-founder, first check to Google</h3>
+      <p class="text-base mb-3">
+        Recorded with former Stanford Provost William Miller in 2012. On founding Sun, how to decide when to pursue a startup opportunity, the discipline of risk, and the story behind writing the first check to Google.
+      </p>
+      <div class="aspect-video mb-3 border border-base-300 rounded overflow-hidden">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/gubmUIZI35Q"
+          title="Andy Bechtolsheim — interview from the Stanford alumni cohort, 2012"
+          class="w-full h-full"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </article>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">David Cheriton — Stanford CS, serial founder, co-author of the original Google check</h3>
+      <p class="text-base mb-3">
+        Recorded in 2012. Cheriton on serial founding, the practice of writing the original angel check to Google with Andy Bechtolsheim, and the academic-founder pathway.
+      </p>
+      <div class="aspect-video mb-3 border border-base-300 rounded overflow-hidden">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/NCIiQoPDFjc"
+          title="David Cheriton — interview from the Stanford alumni cohort, 2012"
+          class="w-full h-full"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </article>
+
+    <article class="mb-2">
+      <h3 class="font-bold text-xl mb-2">ETL alumni-impact collection — eCorner</h3>
+      <p class="text-base mb-3">
+        The Stanford Entrepreneurial Thought Leaders (ETL) talks featuring Stanford-alumni founders, organized as a "Fully Charged" playlist on Stanford eCorner.
+      </p>
+      <a href="https://ecorner.stanford.edu/collection/chuck-eesleys-fully-charged-playlist-startups/" target="_blank" rel="noopener noreferrer" class="link text-sm">Browse the collection on eCorner ↗</a>
+    </article>
+  </section>
+
+  {/* ===========================================================
+      THEME 5 — METHODOLOGICAL CONTRIBUTIONS
+      =========================================================== */}
+  <section class="mb-16">
+    <div class="text-xs uppercase tracking-[0.18em] opacity-70 mb-2">Theme 4</div>
+    <h2 class="text-3xl font-bold mb-3">Methodological Contributions</h2>
+    <p class="text-base leading-relaxed opacity-90 mb-8 italic">
+      Two distinct methodological contributions: <strong class="not-italic">large-scale alumni entrepreneur surveys</strong> (Theme 3 above), and <strong class="not-italic">early adoption of randomized controlled trials, difference-in-differences, and regression discontinuity designs in entrepreneurship research</strong> — including the first wave of platform-RCTs in MOOC and accelerator settings, and more recently AI-enabled methods for analyzing regulatory and policy corpora.
+    </p>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">Learning-by-Advising? Startup Learning as an Advice-Giver in Accelerators</h3>
+      <div class="text-sm opacity-70 mb-2">Working paper, with Zhuoxuan (Fanny) Li and Jungyun Han (December 2024)</div>
+      <p class="text-base leading-relaxed mb-3">
+        Randomized field experiment in a Thai online accelerator (AIS and KBank, 2021–2023, n=166 startups across multiple cohorts). Tests whether structured peer evaluations benefit the advice-giver, not just the receiver. Treatment teams gained +0.217 on independent pitch-quality scores (~⅓ of a SD, p=0.004) and +0.108 on idea usefulness (p=0.042); no significant novelty effect. Mechanisms: rubric-applying memory reinforcement, and metacognitive self-reflection.
+      </p>
+      <div class="text-xs opacity-60 italic">
+        Background coverage:{' '}
+        <a href="https://kingcenter.stanford.edu/news/engineering-entrepreneurial-success-emerging-economies" target="_blank" rel="noopener noreferrer" class="link">Stanford King Center on Global Development (2020) ↗</a>
+      </div>
+    </article>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">Uganda Refugee Entrepreneurship RCT</h3>
+      <div class="text-sm opacity-70 mb-2">With Zahra Hejrati, the AMENA Center, and local Ugandan partners · Stanford Social Impact Labs Design Fellowship (2024)</div>
+      <p class="text-base leading-relaxed">
+        Field-experimental study of entrepreneurship training in refugee camps and settlements across Uganda. Foundation-supported program operations and rigorous evaluation, designed in partnership with the practitioners running the program.
+      </p>
+    </article>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">Platform-RCT on the NovoEd MOOC</h3>
+      <div class="text-sm opacity-70 mb-2">With Lynn Wu · <em>MIS Quarterly</em> (2020)</div>
+      <p class="text-base leading-relaxed mb-3">
+        Among the earliest large-scale randomized experiments embedded in an online entrepreneurship platform — testing what kinds of mentor connections and what kinds of adaptability actually predict whether early-stage ventures succeed.
+      </p>
+      <a href="https://doi.org/10.25300/MISQ/2020/15138" target="_blank" rel="noopener noreferrer" class="link text-sm">Read the paper ↗</a>
+    </article>
+
+    <article class="mb-10 pb-8 border-b border-base-300">
+      <h3 class="font-bold text-xl mb-2">Difference-in-Differences and Regression Discontinuity in Industrial Policy Evaluation</h3>
+      <div class="text-sm opacity-70 mb-2">Working papers, with Yikai Cao, Guankai Zhai, Wanru Deng, Rishee Jain, and Dinesh Moorjani</div>
+      <p class="text-base leading-relaxed">
+        The export-controls, IRA cleantech, and China battery-subsidies papers (Theme 1) each rely on quasi-experimental designs to identify the causal effect of large-scale policy shocks on venture capital allocation and firm entry composition.
+      </p>
+    </article>
+
+    <article class="mb-2">
+      <h3 class="font-bold text-xl mb-2">Four Paradigms for AI-Enabled Social Science Research</h3>
+      <div class="text-sm opacity-70 mb-2">Lightning talk, with Guankai Zhai · FDS Workshop on AI for Social Science Research Methods, Yale University (May 22, 2026)</div>
+      <p class="text-base leading-relaxed">
+        How generative AI is reshaping social-science research design — from automated coding and synthetic experimentation to LLM-based content analysis of regulatory and policy corpora. Reflects the methodological direction of the current research program.
+      </p>
+    </article>
+  </section>
+
+  {/* ===========================================================
+      FOOTER
+      =========================================================== */}
+  <div class="border-t border-base-300 mt-12 pt-6">
+    <p class="text-base leading-relaxed">
+      For the full publication list, see <a class="link" href="https://scholar.google.com/citations?user=ENeJ_gkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>. For talks, interviews, and recorded conversations, see <a class="link" href="/talks">Talks &amp; Media</a>. For PhD students and lab members, see <a class="link" href="/advising">Advising</a>.
+    </p>
   </div>
 </BaseLayout>
