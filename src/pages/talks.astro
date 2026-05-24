@@ -12,11 +12,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     A selected set of talks, interviews, and lectures — organized by what they're about, not when they happened.
   </div>
 
-  {/* INTRO VIDEO — placeholder; do not auto-fill */}
-  <div class="aspect-video border border-base-300 rounded-lg flex items-center justify-center bg-base-200 mb-12">
-    <div class="text-center px-6">
-      <div class="text-sm uppercase tracking-wider opacity-60 mb-2">Intro</div>
-      <div class="text-base opacity-50 italic">60-second on-camera intro to be added</div>
+  {/* INTRO VIDEO — research overview short, doubles as the page intro */}
+  <div class="mb-12">
+    <div class="text-xs uppercase tracking-[0.16em] opacity-60 mb-3">Intro · short overview</div>
+    <div class="aspect-video border border-base-300 rounded overflow-hidden">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/fLFQ8g4Zvyk"
+        title="Chuck Eesley — Research overview"
+        class="w-full h-full"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
     </div>
   </div>
 
@@ -257,9 +265,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </article>
 
   <article class="mb-12">
-    <h3 class="font-bold text-xl mb-2">Entrepreneurial Strategies During Institutional Changes</h3>
+    <h3 class="font-bold text-xl mb-2">Entrepreneurial Strategies During Institutional Changes: Evidence from China's Economic Transition</h3>
     <p class="text-base mb-4">
-      What China's regional economic transition tells us about which entrepreneurial strategies pay off when institutions shift. <em>Strategic Entrepreneurship Journal</em>, 2022 (with Wu and Yang).
+      What China's regional economic transition tells us about which entrepreneurial strategies pay off when institutions shift. <em>Strategic Entrepreneurship Journal</em>, 2022 (with You (Willow) Wu and Delin Yang).
     </p>
     <div class="aspect-video mb-3 border border-base-300 rounded overflow-hidden">
       <iframe
