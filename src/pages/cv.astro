@@ -5,8 +5,17 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 
 <BaseLayout title="About" sideBarActiveItemID="cv">
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">About</div>
+  <div class="mb-5 flex flex-wrap items-baseline justify-between gap-3">
+    <div class="text-3xl font-bold">About</div>
+    <a
+      href="/eesley-cv.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link text-sm font-medium"
+      download
+    >
+      Download CV (PDF) ↓
+    </a>
   </div>
   <div class="mb-10 text-justify">
     <p class="mb-4">

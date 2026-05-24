@@ -4,24 +4,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const title = "Advising";
 const description = "PhD students, postdoctoral researchers, and former students from Chuck Eesley's research group at Stanford MS&E.";
 
-// Current PhD students — from CV (Section: STUDENTS / Current), 1/6/2026
+// Current PhD students — from CV (Section: STUDENTS / Current), updated May 2026
 const currentPhD = [
-  {
-    name: "Wajeeha Ahmed",
-    years: "September 2020 – present",
-    coAdvisor: "Erik Brynjolfsson",
-    thesis: "Delegating to AI: Essays on Managing Misalignment in Markets, Platforms and Organizations",
-    committee: "Erik Brynjolfsson (Co-advisor), Eric Horvitz, Ramesh Johari, Diyi Yang (Chair)",
-    expected: "Finishing Summer 2026 · joining Columbia Business School (Management Division)",
-    link: null,
-  },
   {
     name: "Yikai Cao",
     years: "September 2024 – present",
     coAdvisor: null,
     thesis: "Semiconductors, Export Controls and Technology Entrepreneurship (preliminary)",
     expected: "Anticipated 2029",
-    link: null,
+    link: "https://www.linkedin.com/in/yk-cao/",
   },
   {
     name: "Xilan Zhang",
@@ -29,7 +20,7 @@ const currentPhD = [
     coAdvisor: null,
     thesis: "Randomized Field Experiments and Entrepreneurship (preliminary)",
     expected: "Anticipated 2029",
-    link: null,
+    link: "https://www.linkedin.com/in/xilan-zhang/",
   },
 ];
 
@@ -56,6 +47,15 @@ const formerPostdocs = [
 
 // Former PhD students — from CV (Section: STUDENTS / Former), sorted by graduation year (most recent first)
 const formerPhD = [
+  {
+    name: "Wajeeha Ahmad",
+    years: "September 2020 – 2026",
+    coAdvisor: "Erik Brynjolfsson",
+    thesis: "Delegating to AI: Essays on Managing Misalignment in Markets, Platforms and Organizations",
+    graduated: "2026",
+    nowAt: "Incoming Assistant Professor, Columbia Business School (Management Division). Dissertation committee: Erik Brynjolfsson (co-advisor), Eric Horvitz, Ramesh Johari, Diyi Yang (chair).",
+    link: null,
+  },
   {
     name: "Zahra Hejrati",
     years: "September 2018 – August 2025",
@@ -150,12 +150,12 @@ const formerPhD = [
 
 // Research assistants — current
 const currentRAs = [
-  { name: "Lilly May Graham", link: null },
+  { name: "Lilly May Graham", link: "https://www.linkedin.com/in/lilly-graham-5013012b8/" },
   { name: "Karetina Fekade-Tessema", link: "https://stvp.stanford.edu/people/karetina-fekade-tessema" },
   { name: "Austin Chen", link: null },
-  { name: "Daniel Hadi", link: null },
-  { name: "Duy Nguyen", link: null },
-  { name: "Luv Jawahrani", link: null },
+  { name: "Daniel Hadi", link: "https://www.linkedin.com/in/dhadi/" },
+  { name: "Duy Nguyen", link: "https://www.linkedin.com/in/duynguy/" },
+  { name: "Luv Jawahrani", link: "https://www.linkedin.com/in/luv-jawahrani-503b43238/" },
 ];
 
 // Research assistants — former (sorted alphabetically by last name)
@@ -182,8 +182,8 @@ const formerRAs = [
   },
   {
     name: "Alexander Ke",
-    note: "Stanford BS '21, MS '22; King Center Academic Year Research Fellow on the Silicon Valley accelerator cohort composition study.",
-    link: null,
+    note: "Stanford BS '21, MS '22; King Center Academic Year Research Fellow on the Silicon Valley accelerator cohort composition study. Now at General Catalyst.",
+    link: "https://www.linkedin.com/in/alexke/",
   },
   {
     name: "Rose (Meitong) Li",
@@ -222,8 +222,8 @@ const formerRAs = [
   },
   {
     name: "Danielle Suh (DongJoo)",
-    note: "Research assistant while Chuck was a doctoral student at MIT.",
-    link: null,
+    note: "Research assistant while Chuck was a doctoral student at MIT. Later: MBA from Wharton, JD from University of San Francisco; attorney at Perkins Coie; inventor with multiple patents.",
+    link: "https://www.linkedin.com/in/daniellesuh/",
   },
   {
     name: "Monica Tavassoli",
@@ -232,8 +232,8 @@ const formerRAs = [
   },
   {
     name: "Arianna Togelang",
-    note: "Stanford undergrad ('22); King Center Undergraduate Research Fellow on the Thailand accelerator entrepreneurship project.",
-    link: null,
+    note: "Stanford '22 (Economics, Human Rights minor); King Center Undergraduate Research Fellow on the Thailand accelerator entrepreneurship project. Now at the Public Equity Group in New York.",
+    link: "https://www.linkedin.com/in/arianna-togelang/",
   },
   {
     name: "Johnathan Vicente",
@@ -294,10 +294,10 @@ const formerRAs = [
   <div class="mb-12 border border-base-300 rounded-lg p-6 bg-base-200">
     <div class="text-sm uppercase tracking-wider opacity-60 mb-2">Placement record</div>
     <div class="text-2xl font-bold leading-snug mb-2">
-      8 of 10 former doctoral students hold tenure-track faculty positions.
+      9 of 11 former doctoral students hold tenure-track faculty positions.
     </div>
     <p class="text-base opacity-80 leading-relaxed">
-      Placements include Oxford Saïd, Carnegie Mellon Tepper, Johns Hopkins Carey, USC Marshall, National University of Singapore, CUHK, the University of Oregon Lundquist, the University of San Diego, and Pontificia Universidad Católica de Chile — alongside leadership roles in industry research and policy at organizations including the AMENA Center for Entrepreneurship and Development and Project Eleven.
+      Placements include Columbia Business School, Oxford Saïd, Carnegie Mellon Tepper, Johns Hopkins Carey, National University of Singapore, CUHK Business School, the University of Oregon Lundquist, the University of San Diego, and Pontificia Universidad Católica de Chile — alongside leadership roles in industry research and policy at organizations including the AMENA Center for Entrepreneurship and Development and Project Eleven.
     </p>
   </div>
 
