@@ -30,7 +30,7 @@ async function fetchSubstackEssays(): Promise<Essay[]> {
       if (!m) return "";
       return m[1].replace(/^<!\[CDATA\[/, "").replace(/\]\]>$/, "").trim();
     };
-    return items.slice(0, 3).map((item) => ({
+    return items.slice(0, 5).map((item) => ({
       title: pick(item, "title"),
       url: pick(item, "link"),
       description: pick(item, "description").replace(/<[^>]+>/g, "").trim(),
@@ -48,7 +48,7 @@ if (essays.length === 0) {
   const posts = (await getCollection("blog")).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
   );
-  essays = posts.slice(0, 3).map((post) => ({
+  essays = posts.slice(0, 5).map((post) => ({
     title: post.data.title,
     url: "/blog/" + createSlug(post.data.title, post.slug),
     description: post.data.description,
