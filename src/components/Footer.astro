@@ -2,9 +2,18 @@
 const today = new Date();
 ---
 
-<footer class="footer footer-center block mb-5 pt-10">
-  <div class="pb-2 opacity-75">
-    &copy; {today.getFullYear()} Chuck Eesley
+<footer class="footer footer-center block mb-5 pt-10 px-4">
+  <nav class="lg:hidden mb-4 flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm opacity-80">
+    <a class="link" href="/cv">About</a>
+    <a class="link" href="/research">Research</a>
+    <a class="link" href="/teaching">Teaching</a>
+    <a class="link" href="/advising">Advising</a>
+    <a class="link" href="/talks">Talks</a>
+    <a class="link" href="/reading">Reading</a>
+    <a class="link" href="/contact">Contact</a>
+  </nav>
+  <div class="pb-2 opacity-75 text-sm">
+    &copy; {today.getFullYear()} Chuck Eesley · <a class="link" href="https://profiles.stanford.edu/charles-eesley" target="_blank" rel="noopener noreferrer">Stanford profile ↗</a>
   </div>
 </footer>
 
