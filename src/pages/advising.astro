@@ -11,7 +11,8 @@ const currentPhD = [
     years: "September 2024 – present",
     coAdvisor: null,
     thesis: "Semiconductors, Export Controls and Technology Entrepreneurship (preliminary)",
-    expected: "Anticipated 2029 · UGVR alum (Stanford visiting researcher) before joining the PhD program",
+    expected: "Anticipated 2029",
+    priorAffiliation: "UGVR alum (Stanford visiting researcher) before joining the PhD program",
     link: "https://www.linkedin.com/in/yk-cao/",
   },
   {
@@ -52,8 +53,9 @@ const formerPhD = [
     years: "September 2020 – 2026",
     coAdvisor: "Erik Brynjolfsson",
     thesis: "Delegating to AI: Essays on Managing Misalignment in Markets, Platforms and Organizations",
+    committee: "Erik Brynjolfsson (co-advisor), Chuck Eesley (co-advisor), Eric Horvitz, Ramesh Johari, Diyi Yang (chair)",
     graduated: "2026",
-    nowAt: "Incoming Assistant Professor, Columbia Business School (Management Division). Dissertation committee: Erik Brynjolfsson (co-advisor), Eric Horvitz, Ramesh Johari, Diyi Yang (chair).",
+    nowAt: "Incoming Assistant Professor, Columbia Business School (Management Division).",
     link: null,
   },
   {
@@ -96,7 +98,8 @@ const formerPhD = [
     name: "Willow (You) Wu",
     years: "September 2015 – June 2021",
     coAdvisor: null,
-    thesis: "Entrepreneurial Strategies in Institutional Changes: Tackling the Conflicts Between New and Old Rules. UGVR alum (Stanford visiting researcher) before joining the PhD program.",
+    thesis: "Entrepreneurial Strategies in Institutional Changes: Tackling the Conflicts Between New and Old Rules",
+    priorAffiliation: "UGVR alum (Stanford visiting researcher) before joining the PhD program",
     graduated: "2021",
     nowAt: "Assistant Professor, Department of Management, CUHK Business School",
     link: "https://www.bschool.cuhk.edu.hk/staff/wu-willow-you/",
@@ -305,9 +308,7 @@ const formerRAs = [
 
 <BaseLayout title={title} description={description} sideBarActiveItemID="advising">
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Advising</div>
-  </div>
+  <h1 class="text-3xl w-full font-bold mb-5">Advising</h1>
 
   <div class="mb-10 text-lg leading-relaxed">
     <p class="mb-4">
@@ -362,7 +363,7 @@ const formerRAs = [
   </div>
 
   {/* CURRENT PhD STUDENTS */}
-  <div class="text-2xl w-full font-bold mt-10 mb-2">Current PhD students</div>
+  <h2 class="text-2xl w-full font-bold mt-10 mb-2">Current PhD students</h2>
   <div class="mb-6 text-base opacity-70 italic">
     {currentPhD.length} students currently advising or co-advising.
   </div>
@@ -381,6 +382,9 @@ const formerRAs = [
         </div>
         <div class="text-sm opacity-70 mt-1">{s.years} · {s.expected}</div>
         <p class="text-base mt-2 italic">{s.thesis}</p>
+        {s.priorAffiliation && (
+          <p class="text-sm opacity-70 mt-2">{s.priorAffiliation}</p>
+        )}
         {s.committee && (
           <p class="text-sm opacity-70 mt-2"><span class="font-semibold not-italic">Committee:</span> {s.committee}</p>
         )}
@@ -391,7 +395,7 @@ const formerRAs = [
   {/* POSTDOCTORAL RESEARCHERS — INCOMING */}
   {incomingPostdocs.length > 0 && (
     <>
-      <div class="text-2xl w-full font-bold mt-12 mb-2">Incoming postdoctoral researchers</div>
+      <h2 class="text-2xl w-full font-bold mt-12 mb-2">Incoming postdoctoral researchers</h2>
       <ul class="list-none p-0">
         {incomingPostdocs.map((p) => (
           <li class="mb-7 pb-6 border-b border-base-300">
@@ -413,7 +417,7 @@ const formerRAs = [
   {/* POSTDOCTORAL RESEARCHERS — FORMER */}
   {formerPostdocs.length > 0 && (
     <>
-      <div class="text-2xl w-full font-bold mt-12 mb-2">Former postdoctoral researchers</div>
+      <h2 class="text-2xl w-full font-bold mt-12 mb-2">Former postdoctoral researchers</h2>
       <ul class="list-none p-0">
         {formerPostdocs.map((p) => (
           <li class="mb-7 pb-6 border-b border-base-300">
@@ -433,7 +437,7 @@ const formerRAs = [
   )}
 
   {/* FORMER PhD STUDENTS */}
-  <div class="text-2xl w-full font-bold mt-12 mb-2">Former PhD students</div>
+  <h2 class="text-2xl w-full font-bold mt-12 mb-2">Former PhD students</h2>
   <div class="mb-6 text-base opacity-70 italic">
     {formerPhD.length} students who completed their doctoral work under my advisement or co-advisement, in reverse chronological order by graduation year.
   </div>
@@ -454,6 +458,12 @@ const formerRAs = [
           {s.years} · {s.graduated === "ABD" ? "ABD (did not complete dissertation)" : `Graduated ${s.graduated}`}
         </div>
         <p class="text-base mt-2 italic">{s.thesis}</p>
+        {s.priorAffiliation && (
+          <p class="text-sm opacity-70 mt-2">{s.priorAffiliation}</p>
+        )}
+        {s.committee && (
+          <p class="text-sm opacity-70 mt-2"><span class="font-semibold not-italic">Committee:</span> {s.committee}</p>
+        )}
         {s.nowAt && <p class="text-sm mt-2"><span class="opacity-70">Now:</span> {s.nowAt}</p>}
       </li>
     ))}
@@ -462,7 +472,7 @@ const formerRAs = [
   {/* CURRENT RESEARCH ASSISTANTS */}
   {currentRAs.length > 0 && (
     <>
-      <div class="text-2xl w-full font-bold mt-12 mb-2">Current research assistants</div>
+      <h2 class="text-2xl w-full font-bold mt-12 mb-2">Current research assistants</h2>
       <div class="mb-6 text-base opacity-70 italic">
         Students currently working on Eesley Lab research projects.
       </div>
@@ -486,7 +496,7 @@ const formerRAs = [
   {/* FORMER RESEARCH ASSISTANTS */}
   {formerRAs.length > 0 && (
     <>
-      <div class="text-2xl w-full font-bold mt-12 mb-2">Former research assistants</div>
+      <h2 class="text-2xl w-full font-bold mt-12 mb-2">Former research assistants</h2>
       <div class="mb-6 text-base opacity-70 italic">
         {formerRAs.length} former research assistants, listed alphabetically.
       </div>

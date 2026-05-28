@@ -60,7 +60,7 @@ if (essays.length === 0) {
 
 <BaseLayout sideBarActiveItemID="home" image="/social_img.webp">
 <div class="pb-12 mt-5">
-    <div class="text-5xl font-bold">Chuck Eesley</div>
+    <h1 class="text-5xl font-bold">Chuck Eesley</h1>
     <div class="text-3xl py-3 font-bold">Professor of Management Science & Engineering, Stanford University</div>
     <div class="text-xl py-1 italic opacity-80">The institutional environment around founders matters more than we usually admit. I study how — and why.</div>
     <div class="py-4">
@@ -75,9 +75,7 @@ if (essays.length === 0) {
     </div>
   </div>
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">Featured research</div>
-  </div>
+  <h2 class="text-3xl w-full font-bold mb-2">Featured research</h2>
 
 <HorizontalCard
   title="The Algorithmic Financing of Online Misinformation"
@@ -111,9 +109,7 @@ if (essays.length === 0) {
   target="_self"
 />
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest essays</div>
-  </div>
+  <h2 class="text-3xl w-full font-bold mb-5 mt-10">Latest essays</h2>
   {
     essays.map((essay) => (
       <>

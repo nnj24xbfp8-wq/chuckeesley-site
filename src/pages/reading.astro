@@ -54,9 +54,7 @@ const lastUpdated = "May 2026";
 
 <BaseLayout title="Reading list" sideBarActiveItemID="reading">
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Reading list</div>
-  </div>
+  <h1 class="text-3xl w-full font-bold mb-5">Reading list</h1>
 
   <div class="mb-8 text-lg opacity-80 italic">
     Books I recommend to entrepreneurs, students, and anyone trying to think more clearly about how innovation actually happens. Curated rather than comprehensive — opinions in the annotations are my own.
@@ -65,7 +63,7 @@ const lastUpdated = "May 2026";
   {booksByCategory.map((cat) => (
     cat.books.length > 0 && (
       <section class="mb-16">
-        <div class="text-2xl w-full font-bold mt-8 mb-2">{cat.label}</div>
+        <h2 class="text-2xl w-full font-bold mt-8 mb-2">{cat.label}</h2>
         <div class="mb-6 text-base opacity-70 italic">{cat.intro}</div>
 
         <ul class="list-none p-0">
