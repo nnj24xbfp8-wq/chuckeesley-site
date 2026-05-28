@@ -9,6 +9,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="mb-8 text-lg opacity-80">For speaking inquiries, media requests, and research collaborations. Journalists on deadline can <a href="mailto:chuck@chuckeesley.com" class="link">email me directly</a>.</div>
   </div>
 
+  <div class="mb-8 p-5 border border-base-300 rounded-lg bg-base-200/40 max-w-2xl">
+    <div class="font-bold text-lg mb-2">Before you fill this out</div>
+    <ul class="list-disc list-inside text-base space-y-1 opacity-90">
+      <li>Prospective PhD applicants &mdash; please read the <a class="link" href="/prospective-students">prospective students page</a> first. I don't pre-screen applications.</li>
+      <li>Undergraduate research / RA inquiries &mdash; see the <a class="link" href="/advising">advising page</a>; I hire through MS&amp;E REU, the King Center, and EcoRamp.</li>
+      <li>Board, advisory, or investment inquiries &mdash; brief email to <a class="link" href="mailto:chuck@chuckeesley.com">chuck@chuckeesley.com</a> is best.</li>
+      <li>Speaking, media, and research collaborations &mdash; the form below is the right channel.</li>
+    </ul>
+  </div>
+
 <form
     action="https://formspree.io/f/mkoyjnla"
     method="POST"
@@ -98,6 +108,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
 
     <input type="hidden" name="_subject" value="New website inquiry" />
+    <div class="hidden" aria-hidden="true">
+      <label>Don't fill this out if you're human: <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
+    </div>
 
     <div>
       <button type="submit" class="btn btn-primary">Send</button>
