@@ -12,6 +12,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     A selected set of talks, interviews, and lectures — organized by what they're about, not when they happened.
   </div>
 
+  {/* JUMP LINKS */}
+  <nav class="mb-12 text-sm flex flex-wrap gap-x-5 gap-y-2 opacity-80">
+    <a href="#upcoming" class="link">Upcoming</a>
+    <a href="#industrial-policy" class="link">Industrial policy & competitiveness</a>
+    <a href="#research-findings" class="link">Research findings</a>
+    <a href="#teaching" class="link">Teaching & frameworks</a>
+    <a href="#conversations" class="link">Conversations & interviews</a>
+  </nav>
+
   {/* INTRO VIDEO — research overview short, doubles as the page intro */}
   <div class="mb-12">
     <div class="text-xs uppercase tracking-[0.16em] opacity-60 mb-3">Intro · short overview</div>
@@ -31,7 +40,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   {/* ===========================================================
       UPCOMING
       =========================================================== */}
-  <div class="text-3xl w-full font-bold mt-4 mb-2">Upcoming</div>
+  <div id="upcoming" class="text-3xl w-full font-bold mt-4 mb-2 scroll-mt-8">Upcoming</div>
   <div class="mb-8 text-base opacity-70 italic">
     Invited seminars and convenings on the calendar.
   </div>
@@ -61,19 +70,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </article>
 
   {/* ===========================================================
-      RECENT TALKS
+      INDUSTRIAL POLICY THROUGHLINE
       =========================================================== */}
-  <div class="text-3xl w-full font-bold mt-16 mb-2">Recent talks</div>
+  <div id="industrial-policy" class="text-3xl w-full font-bold mt-16 mb-2 scroll-mt-8">Industrial policy & national competitiveness</div>
   <div class="mb-8 text-base opacity-70 italic">
-    Conference presentations and workshop talks from the past year.
+    A throughline across recent policy-relevant talks — how subsidies, export controls, and federal R&amp;D allocations shape who builds what, and where.
   </div>
-
-  <article class="mb-10">
-    <h3 class="font-bold text-xl mb-2">Four Paradigms for AI-Enabled Social Science Research</h3>
-    <p class="text-base mb-2">
-      Lightning talk at the FDS Workshop on AI for Social Science Research Methods, Yale University, May 22, 2026 (with Guankai Zhai; Chuck presenting). On how generative AI is reshaping social-science research design — from automated coding and synthetic experimentation to LLM-based content analysis of regulatory corpora.
-    </p>
-  </article>
 
   <article class="mb-10">
     <h3 class="font-bold text-xl mb-2">Subsidizing the Supply Side: Industrial Policy, Firm Entry, and Innovation in China's Battery Manufacturing Sector</h3>
@@ -81,14 +83,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       Paper presentation at the 14th Annual Strategy Symposium on Emerging Markets, Rice Business, May 14, 2026 (with Guankai Zhai). Evidence that supply-side subsidies without capability screening attract more entrants — but the marginal firms are short-lived, non-innovative, and exit at elevated rates even in thriving battery clusters.
     </p>
   </article>
-
-  {/* ===========================================================
-      INDUSTRIAL POLICY THROUGHLINE
-      =========================================================== */}
-  <div class="text-3xl w-full font-bold mt-16 mb-2">Industrial policy & national competitiveness</div>
-  <div class="mb-8 text-base opacity-70 italic">
-    A throughline across recent policy-relevant talks — how subsidies, export controls, and federal R&amp;D allocations shape who builds what, and where.
-  </div>
 
   <article class="mb-10">
     <h3 class="font-bold text-xl mb-2">National Academies — GUIPRR Workshop</h3>
@@ -100,14 +94,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <article class="mb-10">
     <h3 class="font-bold text-xl mb-2">JEC Republicans — Congressional Briefing</h3>
     <p class="text-base mb-2">
-      Briefing for the Joint Economic Committee on industrial policy, export controls, and U.S.–China technology competition.
+      Joint Economic Committee staff briefing on industrial policy, export controls, and U.S.–China technology competition. Washington, DC, March 13, 2026.
     </p>
   </article>
 
   <article class="mb-10">
     <h3 class="font-bold text-xl mb-2">UNLV Troesh Research Conference</h3>
     <p class="text-base mb-2">
-      2026 conference on national competitiveness and regional innovation ecosystems.
+      Conference on national competitiveness and regional innovation ecosystems. Las Vegas, January 29–30, 2026.
     </p>
   </article>
 
@@ -126,7 +120,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <figure class="my-4">
       <img
         src="/images/kaohsiung-smart-tech-forum.jpg"
-        alt="Chuck Eesley speaking at the Smart Technology Global Trends Forum at the Kaohsiung Smart Technology Innovation Park, with the 智 in 高點 (Smart in Heights) event signage visible at left"
+        alt="Chuck Eesley speaking at the Smart Technology Global Trends Forum, Kaohsiung Smart Technology Innovation Park, Taiwan"
         class="w-full border border-base-300 rounded"
         loading="lazy"
       />
@@ -139,10 +133,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   {/* ===========================================================
       RESEARCH FINDINGS
       =========================================================== */}
-  <div class="text-3xl w-full font-bold mt-16 mb-2">Research findings</div>
+  <div id="research-findings" class="text-3xl w-full font-bold mt-16 mb-2 scroll-mt-8">Research findings</div>
   <div class="mb-8 text-base opacity-70 italic">
     How institutional environments shape who becomes an entrepreneur and which ventures scale.
   </div>
+
+  <article class="mb-12">
+    <h3 class="font-bold text-xl mb-2">Four Paradigms for AI-Enabled Social Science Research</h3>
+    <p class="text-base mb-4">
+      Lightning talk at the FDS Workshop on AI for Social Science Research Methods, Yale University, May 22, 2026 (with Guankai Zhai; Chuck presenting). On how generative AI is reshaping social-science research design — from automated coding and synthetic experimentation to LLM-based content analysis of regulatory corpora.
+    </p>
+  </article>
 
   <article class="mb-12">
     <h3 class="font-bold text-xl mb-2">Stanford Innovation Study: The Economic Impact of Stanford Entrepreneurship</h3>
@@ -345,15 +346,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   {/* ===========================================================
       TEACHING & FRAMEWORKS
       =========================================================== */}
-  <div class="text-3xl w-full font-bold mt-16 mb-2">Teaching & frameworks</div>
+  <div id="teaching" class="text-3xl w-full font-bold mt-16 mb-2 scroll-mt-8">Teaching & frameworks</div>
   <div class="mb-8 text-base opacity-70 italic">
-    Ideas from the classroom — MS&E 272, ETL, and international programs.
+    Ideas from the classroom — E145, MS&E 272, ETL, and international programs.
   </div>
 
   <article class="mb-12">
-    <h3 class="font-bold text-xl mb-2">Technology Entrepreneurship — Stanford E145 / MS&E 178</h3>
+    <h3 class="font-bold text-xl mb-2">Technology Entrepreneurship — Stanford E145</h3>
     <p class="text-base mb-4">
-      Course preview for the flagship Stanford technology entrepreneurship course Chuck has taught since 2009 (cross-listed as Stanford Engineering 145 undergraduate and MS&E 178 graduate).
+      Course preview for the flagship Stanford technology entrepreneurship course Chuck has taught since 2009.
     </p>
     <p class="text-base mb-4">
       The 27-lecture video collection on the Stanford YouTube channel was recorded for the online version of the course, which ran free for five years and reached more than 200,000 students worldwide, seeding many companies in its wake. The platform Chuck built to deliver it spun out as NovoEd, later acquired by Devonshire Investors / Fidelity.
@@ -361,7 +362,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="aspect-video mb-3 border border-base-300 rounded overflow-hidden">
       <iframe
         src="https://player.vimeo.com/video/115996333"
-        title="Technology Entrepreneurship — Stanford Engineering 145 / MS&E 178 course preview"
+        title="Technology Entrepreneurship — Stanford E145 course preview"
         class="w-full h-full"
         allow="autoplay; fullscreen; picture-in-picture"
         allowfullscreen
@@ -418,7 +419,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   {/* ===========================================================
       CONVERSATIONS & INTERVIEWS
       =========================================================== */}
-  <div class="text-3xl w-full font-bold mt-16 mb-2">Conversations & interviews</div>
+  <div id="conversations" class="text-3xl w-full font-bold mt-16 mb-2 scroll-mt-8">Conversations & interviews</div>
   <div class="mb-8 text-base opacity-70 italic">
     Long-form discussions on research, career, and the institutional view of entrepreneurship.
   </div>

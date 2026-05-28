@@ -48,11 +48,8 @@ const booksByCategory = categories.map((cat) => ({
     }),
 }));
 
-// Format a date as "Month YYYY" — used in the "Last updated" footer.
-const lastUpdated = new Date().toLocaleDateString("en-US", {
-  month: "long",
-  year: "numeric",
-});
+// Manually maintained — update when adding or revising entries.
+const lastUpdated = "May 2026";
 ---
 
 <BaseLayout title="Reading list" sideBarActiveItemID="reading">
