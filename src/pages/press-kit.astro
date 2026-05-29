@@ -1,0 +1,120 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Press Kit";
+const description = "Bios, headshot, speaking topics, and booking contact for event organizers and journalists.";
+---
+
+<BaseLayout title={title} description={description} sideBarActiveItemID="press-kit">
+
+  <h1 class="text-3xl w-full font-bold mb-5">Press Kit</h1>
+
+  <div class="mb-10 text-lg opacity-80">
+    Bios, headshot, and topic areas for event programs, journalist briefings, and podcast intros. For media inquiries, see the <a class="link" href="/contact">contact page</a> or email <a class="link" href="mailto:chuck@chuckeesley.com">chuck@chuckeesley.com</a>.
+  </div>
+
+  {/* QUICK FACTS */}
+  <div class="mb-12 border border-base-300 rounded-lg p-6 bg-base-200/40">
+    <div class="text-sm uppercase tracking-wider opacity-60 mb-3">Quick facts</div>
+    <ul class="text-base space-y-1.5 leading-relaxed">
+      <li><strong>Name:</strong> Chuck Eesley (pronounced "EES-lee")</li>
+      <li><strong>Full name (formal):</strong> Charles E. Eesley</li>
+      <li><strong>Title:</strong> Professor of Management Science &amp; Engineering, Stanford University</li>
+      <li><strong>Concurrent:</strong> Co-Director for International Entrepreneurship, Stanford Technology Ventures Program (STVP)</li>
+      <li><strong>Distinguished appointment:</strong> W.M. Keck Foundation Faculty Scholar</li>
+      <li><strong>Affiliations:</strong> Faculty affiliate at Stanford HAI and the Stanford Center for AI Safety (SAFE)</li>
+      <li><strong>Public-company board:</strong> Independent Non-Executive Director and Remuneration Committee Chair, Vobile Group (HKEX: 3738)</li>
+    </ul>
+  </div>
+
+  {/* HEADSHOT */}
+  <h2 class="text-2xl w-full font-bold mb-4 mt-6">Headshot</h2>
+  <div class="mb-12 flex flex-col md:flex-row items-start gap-6">
+    <img
+      src="/headshot.jpg"
+      alt="Chuck Eesley professional headshot"
+      class="w-48 md:w-56 rounded border border-base-300"
+    />
+    <div class="text-base leading-relaxed">
+      <p class="mb-3">High-resolution headshot for print and web. Suitable for event programs, podcast cards, and conference websites.</p>
+      <a class="link font-semibold" href="/headshot.jpg" download>Download headshot (JPG, 87 KB) ↓</a>
+      <p class="mt-4 text-sm opacity-70 italic">Photo credit: Stanford University. No attribution required for editorial use.</p>
+    </div>
+  </div>
+
+  {/* BIOS */}
+  <h2 class="text-2xl w-full font-bold mb-4 mt-12">Bios</h2>
+
+  <article class="mb-10 pb-8 border-b border-base-300">
+    <h3 class="font-bold text-lg mb-2">Short bio (~50 words)</h3>
+    <p class="text-base leading-relaxed bg-base-200/40 p-5 rounded border border-base-300">
+      Chuck Eesley is a Professor of Management Science &amp; Engineering at Stanford University and Co-Director for International Entrepreneurship at the Stanford Technology Ventures Program. His research on industrial policy, export controls, and platform design has been published in <em>Nature</em>, <em>Strategic Management Journal</em>, and <em>Organization Science</em>.
+    </p>
+  </article>
+
+  <article class="mb-10 pb-8 border-b border-base-300">
+    <h3 class="font-bold text-lg mb-2">Medium bio (~120 words)</h3>
+    <p class="text-base leading-relaxed bg-base-200/40 p-5 rounded border border-base-300">
+      Chuck Eesley is a Professor of Management Science &amp; Engineering at Stanford University and Co-Director for International Entrepreneurship at the Stanford Technology Ventures Program (STVP). His research examines how institutional environments, industrial policy, and platform design shape entrepreneurial outcomes — with active work on AI-mediated entrepreneurial cognition, the algorithmic financing of online misinformation, U.S.–China export controls and venture capital, the Inflation Reduction Act and cleantech entrepreneurship, and the Stanford alumni economic impact study with William F. Miller. He is a W.M. Keck Foundation Faculty Scholar and a faculty affiliate at Stanford HAI and the Stanford Center for AI Safety. He holds a PhD from MIT Sloan and a BS in Neuroscience from Duke.
+    </p>
+  </article>
+
+  <article class="mb-10 pb-8 border-b border-base-300">
+    <h3 class="font-bold text-lg mb-2">Long bio (~250 words)</h3>
+    <p class="text-base leading-relaxed bg-base-200/40 p-5 rounded border border-base-300">
+      Chuck Eesley is a Professor of Management Science &amp; Engineering at Stanford University and Co-Director for International Entrepreneurship at the Stanford Technology Ventures Program (STVP). His research examines how AI, institutional environments, industrial policy, and platform design shape entrepreneurial outcomes — with active work on AI-mediated entrepreneurial cognition, the algorithmic financing of online misinformation, U.S.–China export controls and the global reallocation of venture capital, the Inflation Reduction Act and cleantech entrepreneurship, and the Stanford alumni economic impact study with William F. Miller.<br/><br/>
+      He is a W.M. Keck Foundation Faculty Scholar and a faculty affiliate at Stanford HAI and the Stanford Center for AI Safety. He has reached more than 200,000 students globally through Stanford's online and global teaching programs, including the flagship Stanford E145 technology entrepreneurship course. His research has been published in <em>Nature</em>, <em>Strategic Management Journal</em>, and <em>Organization Science</em>, and his commentary has appeared in <em>Bloomberg</em> and on Stanford Engineering's <em>The Future of Everything</em>.<br/><br/>
+      Outside Stanford, Chuck is an independent non-executive director and Remuneration Committee chair at Vobile Group (HKEX: 3738), a venture partner and LP at Brave Capital, and a co-founder of the Zhou &amp; Eesley Family Foundation with his wife, Lijie Zhou. He holds a PhD from MIT Sloan, where he was advised by Edward B. Roberts, and a BS in Neuroscience from Duke.
+    </p>
+  </article>
+
+  {/* SPEAKING TOPICS */}
+  <h2 class="text-2xl w-full font-bold mb-4 mt-12">Speaking topics</h2>
+  <div class="mb-10">
+    <ul class="list-disc list-inside text-base space-y-2 leading-relaxed">
+      <li>Inside the AI Startup Boom: Hype, Metrics, and What's Real</li>
+      <li>How Universities Build Founders — and What Other Universities and Regions Can Replicate</li>
+      <li>Export Controls and the Future of Innovation</li>
+      <li>The Entrepreneurial State: Industrial Policy in the New Climate Economy</li>
+      <li>AI and Organizational Decision-Making</li>
+    </ul>
+    <p class="text-sm opacity-70 italic mt-4">Full topic descriptions on the <a class="link" href="/services">Speaking page</a>.</p>
+  </div>
+
+  {/* SUGGESTED INTROS */}
+  <h2 class="text-2xl w-full font-bold mb-4 mt-12">Suggested introductions</h2>
+
+  <article class="mb-8 pb-6 border-b border-base-300">
+    <h3 class="font-bold text-lg mb-2">For a keynote</h3>
+    <p class="text-base leading-relaxed bg-base-200/40 p-5 rounded border border-base-300 italic">
+      "Our next speaker is Chuck Eesley, Professor of Management Science &amp; Engineering at Stanford University and Co-Director for International Entrepreneurship at the Stanford Technology Ventures Program. Chuck's research on industrial policy, export controls, and the institutional environment around founders has been published in <em>Nature</em> and the <em>Strategic Management Journal</em>, and his work on the economic impact of university entrepreneurship has shaped how Stanford, MIT, and other research universities think about their contribution to the economy. Please welcome Chuck Eesley."
+    </p>
+  </article>
+
+  <article class="mb-8 pb-6 border-b border-base-300">
+    <h3 class="font-bold text-lg mb-2">For a podcast</h3>
+    <p class="text-base leading-relaxed bg-base-200/40 p-5 rounded border border-base-300 italic">
+      "I'm joined today by Chuck Eesley. Chuck is a Stanford professor whose research looks at how institutional environments — universities, industrial policy, export controls, platforms — actually shape who becomes a founder and what they build. He's published in <em>Nature</em>, advises a public-company board in Hong Kong, has reached more than 200,000 students through Stanford's MOOC, and co-founded a family foundation with his wife focused on entrepreneurship training in underserved communities globally."
+    </p>
+  </article>
+
+  <article class="mb-8 pb-6 border-b border-base-300">
+    <h3 class="font-bold text-lg mb-2">For a policy briefing or expert panel</h3>
+    <p class="text-base leading-relaxed bg-base-200/40 p-5 rounded border border-base-300 italic">
+      "Professor Chuck Eesley joins us from Stanford, where he holds the W.M. Keck Foundation Faculty Scholar appointment in Management Science &amp; Engineering. His current research examines U.S. export controls and venture capital allocation in China, the Inflation Reduction Act's effects on cleantech entrepreneurship, and the algorithmic financing of online misinformation. He has briefed the Joint Economic Committee, presented at the National Academies' GUIPRR workshop, and advises the National Science Foundation on STEM translation and commercialization."
+    </p>
+  </article>
+
+  {/* BOOKING */}
+  <h2 class="text-2xl w-full font-bold mb-4 mt-12">Booking</h2>
+  <div class="mb-10 text-base leading-relaxed">
+    <p class="mb-3">For speaking inquiries, please include date, location, audience, and topic of interest. For media inquiries on deadline, email directly.</p>
+    <p>
+      <strong>Email:</strong> <a class="link" href="mailto:chuck@chuckeesley.com">chuck@chuckeesley.com</a><br/>
+      <strong>Inquiry form:</strong> <a class="link" href="/contact">/contact</a><br/>
+      <strong>Recent engagements:</strong> <a class="link" href="/services">/services</a><br/>
+      <strong>Selected media:</strong> <a class="link" href="/press">/press</a>
+    </p>
+  </div>
+
+</BaseLayout>
