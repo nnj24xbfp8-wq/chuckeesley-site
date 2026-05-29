@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { METRICS } from "../config";
 
 const title = "Press Kit";
 const description = "Bios, headshot, speaking topics, and booking contact for event organizers and journalists.";
@@ -24,7 +25,7 @@ const description = "Bios, headshot, speaking topics, and booking contact for ev
       <li><strong>Distinguished appointment:</strong> W.M. Keck Foundation Faculty Scholar</li>
       <li><strong>Affiliations:</strong> Steering Committee, Stanford King Center on Global Development &middot; Faculty affiliate at Stanford HAI, the Stanford Center for AI Safety (SAFE), the Stanford Center on China's Economy and Institutions (SCCEI), and the Stanford Woods Institute for the Environment</li>
       <li><strong>Selected publications:</strong> <em>Nature</em>, <em>Strategic Management Journal</em>, <em>Organization Science</em>, <em>Research Policy</em></li>
-      <li><strong>Citations:</strong> 6,800+ (Google Scholar)</li>
+      <li><strong>Citations:</strong> {METRICS.citations} (Google Scholar, as of {METRICS.citationsAsOf})</li>
       <li><strong>Teaching reach:</strong> 200,000+ students worldwide through Stanford courses and the E145 / NovoEd MOOC</li>
       <li><strong>Doctoral placement record:</strong> 9 of 11 former doctoral students hold tenure-track faculty positions (Columbia, Oxford Saïd, CMU Tepper, Johns Hopkins Carey, NUS, CUHK Business School, Oregon, Pontificia Universidad Católica de Chile, and others)</li>
       <li><strong>Public-company board:</strong> Independent Non-Executive Director and Remuneration Committee Chair, Vobile Group (HKEX: 3738)</li>

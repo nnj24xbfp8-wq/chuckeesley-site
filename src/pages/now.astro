@@ -1,0 +1,106 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Now";
+const description = "What Chuck Eesley is researching, teaching, reading, and working on right now.";
+
+// Update this date whenever you update the page content.
+const lastUpdated = "May 2026";
+---
+
+<BaseLayout title={title} description={description} sideBarActiveItemID="now">
+
+  <h1 class="text-3xl w-full font-bold mb-5">Now</h1>
+
+  <div class="mb-10 text-lg opacity-80">
+    What I'm working on right now &mdash; updated quarterly. Inspired by Derek Sivers's <a class="link" href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">/now page</a> convention.
+  </div>
+
+  {/* ===========================================================
+      RESEARCH
+      =========================================================== */}
+  <h2 class="text-2xl w-full font-bold mb-4 mt-6">Research</h2>
+  <div class="mb-10 text-base leading-relaxed">
+    <p class="mb-3">Three working papers active with PhD students:</p>
+    <ul class="list-disc list-inside space-y-2 mb-4">
+      <li><a class="link" href="/research/export-controls-vc">U.S. export controls and venture capital reallocation in China's semiconductor sector</a> &mdash; with Yikai Cao, Wanru Deng, and Guankai Zhai. In preparation for <em>Management Science</em>.</li>
+      <li><a class="link" href="/research/ira-cleantech">Inflation Reduction Act and cleantech entrepreneurship</a> &mdash; with Yikai Cao, Rishee Jain, and Dinesh Moorjani. In preparation for <em>PNAS</em>.</li>
+      <li><a class="link" href="/research/battery-subsidies">China's battery subsidies and entry composition</a> &mdash; with Guankai Zhai. In preparation for <em>Research Policy</em>.</li>
+    </ul>
+    <p>Also working on a methodological paper on AI-enabled social science research design, presented at the FDS Workshop at Yale (May 2026).</p>
+  </div>
+
+  {/* ===========================================================
+      TEACHING
+      =========================================================== */}
+  <h2 class="text-2xl w-full font-bold mb-4 mt-12">Teaching</h2>
+  <div class="mb-10 text-base leading-relaxed">
+    <p class="mb-3">Spring quarter wrapping up. Summer focused on:</p>
+    <ul class="list-disc list-inside space-y-2">
+      <li>Prepping the Stanford BOSP Shenzhen Global Seminar (Faculty Director, August 2026)</li>
+      <li>Continuing the ITRI&ndash;Stanford Advancing Technology Ventures Program</li>
+      <li>Refreshing materials for <a class="link" href="/teaching">MS&amp;E 272 (Entrepreneurship Without Borders)</a> with Vimbayi Kajese for Fall</li>
+    </ul>
+  </div>
+
+  {/* ===========================================================
+      SPEAKING
+      =========================================================== */}
+  <h2 class="text-2xl w-full font-bold mb-4 mt-12">Speaking &amp; convenings</h2>
+  <div class="mb-10 text-base leading-relaxed">
+    <p class="mb-3">On the calendar:</p>
+    <ul class="list-disc list-inside space-y-2">
+      <li>Guanghua School of Management, Peking University &mdash; invited seminar, September 15, 2026</li>
+      <li>INFORMS Annual Meeting, San Francisco &mdash; session organizer, November 1&ndash;4, 2026</li>
+      <li>Ross School of Business, University of Michigan &mdash; invited seminar, November 20, 2026</li>
+    </ul>
+    <p class="mt-4 text-sm"><a class="link" href="/talks">Full upcoming list on the Talks page &rarr;</a></p>
+  </div>
+
+  {/* ===========================================================
+      ADVISING
+      =========================================================== */}
+  <h2 class="text-2xl w-full font-bold mb-4 mt-12">Advising</h2>
+  <div class="mb-10 text-base leading-relaxed">
+    <p>Actively advising two current PhD students (Yikai Cao and Xilan Zhang) and welcoming an incoming postdoctoral researcher (Tess Lallemant, Fall 2026, King Center sponsored). One recent graduate (Wajeeha Ahmad) heading to Columbia Business School as an incoming assistant professor.</p>
+    <p class="mt-3 text-sm"><a class="link" href="/advising">Full group on the Advising page &rarr;</a></p>
+  </div>
+
+  {/* ===========================================================
+      WRITING
+      =========================================================== */}
+  <h2 class="text-2xl w-full font-bold mb-4 mt-12">Writing</h2>
+  <div class="mb-10 text-base leading-relaxed">
+    <p>Drafting essays on the Substack at <a class="link" href="https://ceesley.substack.com" target="_blank" rel="noopener noreferrer">ceesley.substack.com</a>. Recent threads: the algorithmic financing of misinformation, what universities actually contribute to entrepreneurship, and reflections on Ed Roberts and the academic lineage I inherited through him.</p>
+  </div>
+
+  {/* ===========================================================
+      READING
+      =========================================================== */}
+  <h2 class="text-2xl w-full font-bold mb-4 mt-12">Reading</h2>
+  <div class="mb-10 text-base leading-relaxed">
+    <p class="mb-3">Currently on the desk:</p>
+    <ul class="list-disc list-inside space-y-2">
+      <li><em>Chip Champion</em> (Owen Hung-Wen Lin) &mdash; complement to Chris Miller's <em>Chip War</em> on the firm-level view of TSMC and Taiwan.</li>
+      <li><em>Breakneck</em> (Dan Wang) &mdash; how China actually builds, alongside our battery-subsidies work.</li>
+      <li><em>Celebrating Entrepreneurship</em> (Edward B. Roberts) &mdash; Ed's career retrospective on the MIT Entrepreneurship Center he founded.</li>
+    </ul>
+    <p class="mt-4 text-sm"><a class="link" href="/reading">Full curated reading list &rarr;</a></p>
+  </div>
+
+  {/* ===========================================================
+      BOARD &amp; ADVISORY
+      =========================================================== */}
+  <h2 class="text-2xl w-full font-bold mb-4 mt-12">Board &amp; advisory</h2>
+  <div class="mb-10 text-base leading-relaxed">
+    <p>Continuing as Independent Non-Executive Director and Remuneration Committee chair at Vobile Group (HKEX: 3738), advisor/investor at TSVC, Vectors Capital, and Empo Health, and Venture Partner / LP at Brave Capital. Foundation work with Lijie Zhou at the <a class="link" href="https://zhoueesleyfoundation.com" target="_blank" rel="noopener noreferrer">Zhou &amp; Eesley Family Foundation</a>.</p>
+  </div>
+
+  {/* ===========================================================
+      FOOTER
+      =========================================================== */}
+  <div class="border-t border-base-300 mt-12 pt-6 text-sm opacity-70 italic">
+    Last updated {lastUpdated}. The /now convention is described at <a class="link not-italic" href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">nownownow.com</a>.
+  </div>
+
+</BaseLayout>

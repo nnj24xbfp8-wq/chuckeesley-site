@@ -4,6 +4,7 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug";
 import dayjs from "dayjs";
+import { METRICS } from "../config";
 
 // "Latest essays" is pulled from Substack RSS at build time.
 // If the fetch fails, we fall back to the local blog content collection.
@@ -82,16 +83,16 @@ if (essays.length === 0) {
     <div class="text-xs uppercase tracking-[0.18em] opacity-70 mb-6">Engineering impact, by the numbers</div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
       <div>
-        <div class="text-3xl md:text-4xl font-bold font-display leading-tight">200,000+</div>
+        <div class="text-3xl md:text-4xl font-bold font-display leading-tight">{METRICS.studentsReached}</div>
         <div class="text-sm mt-2 opacity-80 leading-snug">students reached through Stanford E145 and the global MOOC</div>
       </div>
       <div>
-        <div class="text-3xl md:text-4xl font-bold font-display leading-tight">$6T+</div>
+        <div class="text-3xl md:text-4xl font-bold font-display leading-tight">{METRICS.alumniRevenueDocumented}</div>
         <div class="text-sm mt-2 opacity-80 leading-snug">in alumni-founded company revenue documented across MIT, Stanford, and UVA</div>
       </div>
       <div>
-        <div class="text-3xl md:text-4xl font-bold font-display leading-tight">6,862+</div>
-        <div class="text-sm mt-2 opacity-80 leading-snug">citations across management, economics, and information systems · <a class="link" href="https://scholar.google.com/citations?user=ENeJ_gkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a></div>
+        <div class="text-3xl md:text-4xl font-bold font-display leading-tight">{METRICS.citations}</div>
+        <div class="text-sm mt-2 opacity-80 leading-snug">citations across management, economics, and information systems · <a class="link" href={METRICS.scholarUrl} target="_blank" rel="noopener noreferrer">Google Scholar ↗</a></div>
       </div>
       <div>
         <div class="text-3xl md:text-4xl font-bold font-display leading-tight">4</div>

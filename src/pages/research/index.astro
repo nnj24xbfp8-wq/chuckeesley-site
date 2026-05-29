@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { METRICS } from "../../config";
 
 const title = "Research";
 const description = "Research on how institutional environments, industrial policy, platform governance, and methodological design shape entrepreneurial outcomes — across institutional change; platforms, information ecosystems & stakeholder influence; alumni entrepreneur surveys; and methodological contributions.";
@@ -30,7 +31,7 @@ const description = "Research on how institutional environments, industrial poli
 
   {/* CITATIONS IMPACT LINE */}
   <div class="mb-10 text-sm uppercase tracking-[0.16em] opacity-70">
-    Research cited 6,862+ times across management, economics, and information systems · <a class="link" href="/publications">Full publications list →</a> · <a class="link" href="https://scholar.google.com/citations?user=ENeJ_gkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+    Research cited {METRICS.citations} times across management, economics, and information systems · <a class="link" href="/publications">Full publications list →</a> · <a class="link" href={METRICS.scholarUrl} target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
   </div>
 
   {/* RESEARCH OVERVIEW VIDEO */}
