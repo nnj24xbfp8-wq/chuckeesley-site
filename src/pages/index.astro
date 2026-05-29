@@ -159,7 +159,25 @@ if (essays.length === 0) {
   target="_self"
 />
 
-  <h2 class="text-3xl w-full font-bold mb-5 mt-10">Latest essays</h2>
+  <div class="mt-12 mb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+    <div>
+      <h2 class="text-3xl font-bold">Latest essays</h2>
+      <p class="text-base opacity-80 mt-2 max-w-2xl">
+        Long-form writing on entrepreneurship, institutions, industrial policy, and the global political economy of technology. New essays land roughly monthly on Substack.
+      </p>
+    </div>
+    <div class="flex flex-wrap gap-3 shrink-0">
+      <a
+        href="https://ceesley.substack.com/subscribe"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        Subscribe on Substack
+      </a>
+      <a href="/blog" class="btn btn-outline">All essays →</a>
+    </div>
+  </div>
   {
     essays.map((essay) => (
       <>

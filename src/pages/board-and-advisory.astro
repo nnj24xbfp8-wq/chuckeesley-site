@@ -1,0 +1,118 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Board & advisory";
+const description = "Board service, venture and fund roles, prior operating experience, and philanthropic governance for Chuck Eesley — Professor of Management Science & Engineering at Stanford.";
+---
+
+<BaseLayout title={title} description={description} sideBarActiveItemID="cv">
+
+  <div class="mb-5 flex flex-wrap items-baseline justify-between gap-3">
+    <h1 class="text-3xl font-bold">Board &amp; advisory</h1>
+    <a href="/cv" class="link text-sm font-medium">← Back to About</a>
+  </div>
+
+  <div class="mb-10 text-lg leading-relaxed">
+    <p>
+      Outside Stanford, I serve on the board of a publicly listed technology company, hold venture and limited-partner roles, and helped found and govern an EdTech company later acquired by Devonshire / Fidelity. I co-founded the Zhou &amp; Eesley Family Foundation with my wife and serve as its co-director.
+    </p>
+  </div>
+
+  {/* PUBLIC-COMPANY BOARD */}
+  <h2 class="text-2xl font-bold mt-10 mb-4">Public-company board service</h2>
+
+  <article class="mb-8 pb-8 border-b border-base-300">
+    <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+      <h3 class="text-xl font-bold leading-snug">
+        <a class="link" href="https://www.vobilegroup.com/" target="_blank" rel="noopener noreferrer">Vobile Group Ltd.</a>
+        <span class="text-base font-normal opacity-70">· HKEX: 3738</span>
+      </h3>
+      <span class="text-sm opacity-70">Hong Kong</span>
+    </div>
+    <div class="text-sm uppercase tracking-wider opacity-70 mb-3">
+      Independent Non-Executive Director · Chair, Remuneration Committee · Member, Audit Committee
+    </div>
+    <p class="text-base leading-relaxed">
+      Vobile is a Hong Kong-listed software-as-a-service company providing digital content protection, monetization, and authentication infrastructure to film studios, sports leagues, and digital platforms worldwide. As Chair of the Remuneration Committee I oversee executive compensation policy, equity-incentive plan design, and the alignment of pay outcomes with long-term shareholder value; on the Audit Committee I review the company's external audit, internal controls, and financial-reporting integrity.
+    </p>
+  </article>
+
+  {/* VENTURE / FUND ROLES */}
+  <h2 class="text-2xl font-bold mt-10 mb-4">Venture &amp; fund roles</h2>
+
+  <article class="mb-8 pb-8 border-b border-base-300">
+    <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+      <h3 class="text-xl font-bold leading-snug">Brave Capital</h3>
+      <span class="text-sm opacity-70">Venture Partner &amp; LP</span>
+    </div>
+    <p class="text-base leading-relaxed">
+      Venture partner and limited partner at Brave Capital, supporting diligence, founder coaching, and portfolio company guidance at the intersection of technology entrepreneurship and institutional environment — the same set of questions my academic research has examined for nearly twenty years.
+    </p>
+  </article>
+
+  <article class="mb-8 pb-8 border-b border-base-300">
+    <h3 class="text-xl font-bold leading-snug mb-2">Active angel investing</h3>
+    <p class="text-base leading-relaxed">
+      Active angel investor across early-stage technology companies, primarily originated through Stanford and MIT alumni networks. Personal positions are held separately from any Foundation investment activity, which is disclosed publicly on the <a class="link" href="https://zhoueesleyfoundation.com/impact/portfolio/" target="_blank" rel="noopener noreferrer">Zhou &amp; Eesley Family Foundation portfolio page</a>.
+    </p>
+  </article>
+
+  {/* FOUNDER / PAST OPERATING */}
+  <h2 class="text-2xl font-bold mt-10 mb-4">Founder &amp; past operating</h2>
+
+  <article class="mb-8 pb-8 border-b border-base-300">
+    <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+      <h3 class="text-xl font-bold leading-snug">NovoEd</h3>
+      <span class="text-sm opacity-70">Co-founder · Acquired by Devonshire Investors / Fidelity</span>
+    </div>
+    <p class="text-base leading-relaxed">
+      Co-founded NovoEd, a cohort-based online learning platform spun out of Stanford research on the role of peer interaction and team-based projects in online education. The company's platform was used by Stanford, the Wharton School, Carnegie Mellon, the World Bank Group, and a range of corporate learning programs before being acquired by Devonshire Investors, a Fidelity Investments-affiliated private investment firm. The acquisition validated the cohort-based model that has since become standard across the EdTech industry.
+    </p>
+  </article>
+
+  <article class="mb-8 pb-8 border-b border-base-300">
+    <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+      <h3 class="text-xl font-bold leading-snug">Refuge Advisors, LLC</h3>
+      <span class="text-sm opacity-70">Founder &amp; Principal · 2016–2023</span>
+    </div>
+    <p class="text-base leading-relaxed">
+      Founded and ran Refuge Advisors, LLC, an independent registered investment advisory firm managing client portfolios on a discretionary basis using fundamental, bottom-up value investing. The firm operated for seven years before being wound down to focus on academic, board, and Foundation work.
+    </p>
+  </article>
+
+  {/* PHILANTHROPIC GOVERNANCE */}
+  <h2 class="text-2xl font-bold mt-10 mb-4">Philanthropic governance</h2>
+
+  <article class="mb-8 pb-8 border-b border-base-300">
+    <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+      <h3 class="text-xl font-bold leading-snug">
+        <a class="link" href="https://zhoueesleyfoundation.com" target="_blank" rel="noopener noreferrer">Zhou &amp; Eesley Family Foundation</a>
+      </h3>
+      <span class="text-sm opacity-70">Co-founder &amp; Co-Director · 2021–present</span>
+    </div>
+    <p class="text-base leading-relaxed mb-3">
+      A private operating foundation co-founded with my wife, Lijie Zhou, in January 2021 (EIN 86-2048582). The Foundation supports computer-science training, entrepreneurship training, and program-related and mission-related investments in underserved communities globally — currently running teaching programs across nine geographies and an MRI/PRI portfolio of eleven active positions.
+    </p>
+    <p class="text-base leading-relaxed">
+      Governance documents — the investment policy, conflict-of-interest policy, and 990-PF filings via ProPublica — are public on the Foundation site under <a class="link" href="https://zhoueesleyfoundation.com/about/#governance" target="_blank" rel="noopener noreferrer">About / Governance</a>.
+    </p>
+  </article>
+
+  {/* AVAILABILITY */}
+  <div class="mt-12 mb-12 border border-base-300 rounded-lg p-6 bg-base-200/40">
+    <div class="text-sm uppercase tracking-wider opacity-60 mb-3">Availability</div>
+    <p class="text-base leading-relaxed mb-3">
+      I selectively consider additional board, advisory, and consulting engagements at the intersection of <strong>AI, industrial policy, entrepreneurship, and the institutional environment of innovation</strong>. Preferred shapes:
+    </p>
+    <ul class="list-disc list-inside text-base leading-relaxed space-y-1.5">
+      <li>Independent non-executive director or board observer roles at growth-stage and public technology companies, especially in compensation, audit, governance, or strategic-review committee work.</li>
+      <li>Venture partner, scientific advisory board, or LP advisory committee positions at venture funds active in AI, climate tech, deep tech, or emerging-market innovation.</li>
+      <li>Advisory work for foundations, multilateral institutions, and government agencies on entrepreneurship ecosystems, industrial policy design, or evidence-based innovation policy.</li>
+      <li>Expert testimony, due diligence, or strategic-review consulting where the question matches my research areas.</li>
+    </ul>
+    <p class="text-base leading-relaxed mt-4">
+      To discuss a role, please reach out via the <a class="link" href="/contact">contact form</a> or email <a class="link" href="mailto:chuck@chuckeesley.com">chuck@chuckeesley.com</a> with the company or organization, the role on offer, time commitment, and a brief description of the work.
+    </p>
+  </div>
+
+</BaseLayout>
