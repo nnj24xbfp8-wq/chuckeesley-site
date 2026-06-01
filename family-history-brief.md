@@ -34,8 +34,9 @@ Chuck = **Charles Eric Eesley**, b. Dec 4, 1979.
 
 **Paternal — Eesley / Chenoweth / McMaster / Anderson** (from Bean register + Maggie deck):
 
-- John Eesley & Hannah Bubb (Stratford-on-Avon, England) — emigrated ~1858
-- → Albert Robert Eesley (1837–1902) m. **Jeanie Goldie** (Scotland) — Albert came to work in the Goldie flour mill (the 1985 cover drawing)
+- **Joseph & Frances Eesley** (Hanwell, Oxfordshire) — earliest documented Eesley patriarch; only Hanwell baptism for this couple is their son John, 1799. Earlier generation contested (see *Oxford library research notes*).
+- → **John Eesley** (1799 bap. Hanwell – 1870), journeyman miller in Old Stratford, m. **Susan Babbs** of Charlecote (10 May 1819). *Brief earlier called her "Hannah Bubb" — that was a name conflation; Hannah was their daughter, baptized 1819. The wife is Susan Babbs. Confirmed by Oxford library notes.*
+- → **Albert Robert Eesley** (1837 Old Stratford – 1902) — emigrated to Scotland ~1858 to work in the Goldie flour mill (the 1985 cover drawing); m. **Jeanie Goldie** there.
 - → Charles Leonard Eesley (1879–1972) m. Lillie Dale Chenoweth (1877–1970)
   - Chenoweth line: Joseph Hill Chenoweth & Mary Ohio Timmons Chenoweth → John K. Timmons
 - → **Wilbur "Will" Eesley** (1910–1986), *architect* — drew the 1985 cover and the 1942 ration-card Christmas card — m. Margaret "Peggy" McMaster (1914–2007)
