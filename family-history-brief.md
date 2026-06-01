@@ -40,7 +40,7 @@ Chuck = **Charles Eric Eesley**, b. Dec 4, 1979.
   - Chenoweth line: Joseph Hill Chenoweth & Mary Ohio Timmons Chenoweth → John K. Timmons
 - → **Wilbur "Will" Eesley** (1910–1986), *architect* — drew the 1985 cover and the 1942 ration-card Christmas card — m. Margaret "Peggy" McMaster (1914–2007)
   - McMaster/Anderson line: Robert Thompson McMaster (civil engineer; a bridge of his appeared in textbooks) & Alice Anderson McMaster (schoolteacher); Rev. Abraham Ramsey Anderson (1894 letter) & Nancy Jane Shaw; Gilbert Clement McMaster & Margaret Thompson McMaster; Alice's brother Donald A. McMaster ran the NE U.S. communications power grid in WWII
-- → Charles Eesley (b. 1947) m. **Terri Wildermuth** → **Chuck**
+- → **Charles McMaster Eesley** (1947–2015, Marietta) m. Terrie Lee Wildermuth → **Chuck**
   - Will & Peggy's daughter **Maggie** (b. 1951) built the archive deck — Chuck's paternal aunt
 
 **Maternal — Wildermuth / Fleming** (from the memoirs):
@@ -50,7 +50,7 @@ Chuck = **Charles Eric Eesley**, b. Dec 4, 1979.
 - → Earl Adam Wildermuth (machinist) m. **Sadye Irene Fleming**
   - Fleming line includes **John Roe, a Revolutionary War veteran**
 - → **Robert Earl Wildermuth** (b. ~1924; WWII B-24 navigator; later attended **Stanford** on the GI Bill; Korea; Pentagon; Lt. Col.) m. Dorothy "Dottie" Davis
-- → **Terrie Lee Wildermuth** (b. 1949), m. Charles Eesley → **Terrie Lee Eesley** — *Chuck's mother. Confirmed: this is the hinge joining the maternal and paternal lines.*
+- → **Terrie Lee Wildermuth** (1949–2017, Marietta), m. Charles Eesley → **Terrie Lee Eesley** (later Bain) — *Chuck's mother. Confirmed: this is the hinge joining the maternal and paternal lines.*
 
 **Resonance worth surfacing on the site:** Robert Earl attended Stanford a generation before Chuck joined the faculty, and he closed his family history explicitly addressing "future genealogists." This project is the next generation answering that.
 
