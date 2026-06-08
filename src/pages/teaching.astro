@@ -3,6 +3,71 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const title = "Teaching";
 const description = "Courses, programs, and pedagogical work — E145, MS&E 272, MS&E 379, NovoEd, BASES, and Stanford's international entrepreneurship programs.";
+
+// Course assistants — tracked over time. Add the current year's CAs to the
+// `currentCAs` array each quarter; move the previous year's into `formerCAs`
+// when their term ends. `note` typically covers the course and term they served,
+// plus where they are now for former CAs.
+const currentCAs = [
+  {
+    name: "Xilan Zhang",
+    note: "E145 (Fall 2026). Stanford MS&E PhD student.",
+    link: "https://www.linkedin.com/in/xilan-zhang/",
+  },
+  {
+    name: "Korina Arpasova",
+    note: "E145 (Fall 2026).",
+    link: null,
+  },
+  {
+    name: "Yikai Cao",
+    note: "MS&E 272 (Spring 2026). Stanford MS&E PhD student.",
+    link: "https://www.linkedin.com/in/yk-cao/",
+  },
+  {
+    name: "Xinyu Chang",
+    note: "MS&E 272 (Spring 2026).",
+    link: null,
+  },
+];
+
+const formerCAs: Array<{ name: string; note: string; link: string | null }> = [
+  {
+    name: "Amos Sha",
+    note: "MS&E 272 (Spring 2025).",
+    link: null,
+  },
+  {
+    name: "Baani",
+    note: "MS&E 272 (Spring 2025).",
+    link: null,
+  },
+  {
+    name: "Niyata Kawewong",
+    note: "Former CA via the SESAMI program.",
+    link: "https://www.linkedin.com/in/niyata-kawewong-91773913/",
+  },
+  {
+    name: "Thomas Haymore",
+    note: "E145 (former CA, several years back).",
+    link: "https://www.linkedin.com/in/thomashaymore/",
+  },
+  {
+    name: "Zoe von Gerlach",
+    note: "Former CA.",
+    link: "https://www.linkedin.com/in/zoevongerlach/",
+  },
+  {
+    name: "David Hutton",
+    note: "E145 (2010).",
+    link: "https://www.linkedin.com/in/david-hutton-8b2376/",
+  },
+  {
+    name: "Henning Piezunka",
+    note: "E145.",
+    link: null,
+  },
+];
 ---
 
 <BaseLayout title={title} description={description} sideBarActiveItemID="teaching">
@@ -177,9 +242,45 @@ const description = "Courses, programs, and pedagogical work — E145, MS&E 272,
 
   <article class="mb-10 pb-8 border-b border-base-300">
     <h3 class="font-bold text-xl mb-2">Course assistants</h3>
-    <p class="text-base leading-relaxed">
-      Many course assistants have taught alongside me in E145, MS&amp;E 272, MS&amp;E 372, MS&amp;E 379, and the international programs since 2009 &mdash; their work is part of what makes large-enrollment engineering entrepreneurship pedagogy possible at this scale. This year's CAs across the courses include Xilan Zhang, Yikai Cao, Xinyu Chang, and Korina Arpasova.
+    <p class="text-base leading-relaxed mb-4">
+      Many course assistants have taught alongside me in E145, MS&amp;E 272, MS&amp;E 372, MS&amp;E 379, and the international programs since 2009 &mdash; their work is part of what makes large-enrollment engineering entrepreneurship pedagogy possible at this scale.
     </p>
+
+    <h4 class="font-bold text-base mt-5 mb-2">Current CAs</h4>
+    <ul class="list-none p-0 mb-4">
+      {currentCAs.map((ca) => (
+        <li class="mb-3">
+          <div class="font-semibold text-base">
+            {ca.link ? (
+              <a href={ca.link} target="_blank" rel="noopener noreferrer" class="link">{ca.name}</a>
+            ) : (
+              <span>{ca.name}</span>
+            )}
+          </div>
+          <div class="text-sm opacity-70">{ca.note}</div>
+        </li>
+      ))}
+    </ul>
+
+    {formerCAs.length > 0 && (
+      <>
+        <h4 class="font-bold text-base mt-6 mb-2">Former CAs</h4>
+        <ul class="list-none p-0">
+          {formerCAs.map((ca) => (
+            <li class="mb-3">
+              <div class="font-semibold text-base">
+                {ca.link ? (
+                  <a href={ca.link} target="_blank" rel="noopener noreferrer" class="link">{ca.name}</a>
+                ) : (
+                  <span>{ca.name}</span>
+                )}
+              </div>
+              <div class="text-sm opacity-70">{ca.note}</div>
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
   </article>
 
   {/* ===========================================================
