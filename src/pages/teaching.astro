@@ -40,7 +40,7 @@ const formerCAs: Array<{ name: string; note: string; link: string | null }> = [
   {
     name: "Amos Sha",
     note: "MS&E 272 (Spring 2025).",
-    link: null,
+    link: "https://www.linkedin.com/in/amossha/",
   },
   {
     name: "Baani Leen",
@@ -287,9 +287,9 @@ const formerCAs: Array<{ name: string; note: string; link: string | null }> = [
     </p>
 
     <h4 class="font-bold text-base mt-5 mb-2">Current CAs</h4>
-    <ul class="list-none p-0 mb-4">
+    <ul class="list-none p-0 mb-4 grid md:grid-cols-2 gap-x-6 gap-y-3">
       {currentCAs.map((ca) => (
-        <li class="mb-3">
+        <li>
           <div class="font-semibold text-base">
             {ca.link ? (
               <a href={ca.link} target="_blank" rel="noopener noreferrer" class="link">{ca.name}</a>
@@ -305,9 +305,9 @@ const formerCAs: Array<{ name: string; note: string; link: string | null }> = [
     {formerCAs.length > 0 && (
       <>
         <h4 class="font-bold text-base mt-6 mb-2">Former CAs</h4>
-        <ul class="list-none p-0">
+        <ul class="list-none p-0 grid md:grid-cols-2 gap-x-6 gap-y-3">
           {formerCAs.map((ca) => (
-            <li class="mb-3">
+            <li>
               <div class="font-semibold text-base">
                 {ca.link ? (
                   <a href={ca.link} target="_blank" rel="noopener noreferrer" class="link">{ca.name}</a>
