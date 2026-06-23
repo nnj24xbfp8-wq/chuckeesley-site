@@ -1,0 +1,136 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Impact and Translational Work";
+const description =
+  "Software, instruments, and ventures that grew out of the research and reached the world: NovoEd, the university entrepreneurial impact studies, Genocea Biosciences, the Policy Credibility Index, and Empo Health.";
+
+// Five tiles, in deliberate order: built, measured, translated, building, backed to market.
+const tiles = [
+  {
+    role: "Built",
+    name: "NovoEd",
+    body:
+      "Co-founded the social learning platform that grew out of Stanford's Social Algorithms Lab, and taught the first entrepreneurship MOOC on it. The platform scaled to tens of thousands of learners across more than 100 countries and was acquired by Devonshire Investors (Fidelity). With the platform built, a randomized controlled trial ran on its data: Eesley and Wu, MIS Quarterly 2020, one of the first randomized field experiments in entrepreneurship, linking startup strategy and mentor network diversity to venture outcomes. Built the instrument, then measured the effect on it.",
+    grandChallenge: "connects to Advance Personalized Learning.",
+    links: [
+      { label: "novoed.com", url: "https://novoed.com" },
+      {
+        label: "MISQ paper",
+        url: "https://doi.org/10.25300/MISQ/2020/15138",
+      },
+    ],
+  },
+  {
+    role: "Measured",
+    name: "University Entrepreneurial Impact Study",
+    body:
+      "Built the measurement methodology with Bill Miller (Stanford) and Ed Roberts (MIT) to quantify the economic footprint of university-trained entrepreneurs. The Stanford study documented nearly 40,000 companies (39,900) generating roughly $2.7 trillion in annual revenue and 5.4 million jobs. The method has since been used to measure entrepreneurial impact at universities worldwide.",
+    grandChallenge: null,
+    links: [
+      {
+        label: "Stanford Engineering report",
+        url: "https://engineering.stanford.edu/news/study-reports-stanford-alumni-create-nearly-3-trillion-economic-impact",
+      },
+    ],
+  },
+  {
+    role: "Translated",
+    name: "Genocea Biosciences",
+    body:
+      "As an associate at Lux Capital, a founding investor in Genocea, I contributed to the company's early formation: worked with the founding CEO to identify and in-license core intellectual property out of Harvard, and recruited the initial senior scientific team. Genocea became a clinical-stage immunotherapy company and went public on NASDAQ in 2014. An investor-side company-building role, moving science out of the lab and assembling the team.",
+    grandChallenge: null,
+    links: [
+      {
+        label: "Company profile",
+        url: "https://www.luxcapital.com/companies/genocea-biosciences",
+      },
+    ],
+  },
+  {
+    role: "Building",
+    name: "Policy Credibility Index (Prototype)",
+    body:
+      "A live research instrument, built with Rishee Jain and team. For each policy, it aggregates source information daily, scores how credible the signal looks, maps the trend over time, and attributes which sources move the score. A master ledger of policy signals, organized for capital decisions. Current work, shown as a research tool rather than a product.",
+    grandChallenge: "connects to Engineer the Tools of Scientific Discovery.",
+    links: [{ label: "pcindex.vercel.app", url: "https://pcindex.vercel.app" }],
+  },
+  {
+    role: "Backed to market",
+    name: "Empo Health",
+    body:
+      "Early backer and advisor to Empo Health, a Bay Area medical-device company founded by MIT- and Stanford-trained engineers. Empo built the FDA-listed Empo Footprint, an at-home imaging scale paired with a HIPAA-compliant remote monitoring platform that detects diabetic foot ulcers early, a condition that drives preventable amputations and tens of billions in annual cost. In 2025 the company commercialized the system and began initial sales, having raised about $15 million to date. An early backing and advisory role on a venture that reached the clinic.",
+    grandChallenge:
+      "connects to Advance Health Informatics, and Engineer Better Medicines.",
+    links: [{ label: "empohealth.com", url: "https://empohealth.com" }],
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  sideBarActiveItemID="impact"
+>
+  <div class="mb-10">
+    <div class="text-xs uppercase tracking-[0.18em] opacity-70 mb-3">
+      Impact and Translational Work
+    </div>
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">
+      Software and ventures that reached the world.
+    </h1>
+    <p class="text-lg leading-relaxed opacity-90">
+      A record of the software, instruments, and companies that grew out of the
+      research and made it into use. The five below run in a deliberate arc:
+      built, measured, translated, building, and backed to market. Where the
+      work maps cleanly onto an NAE Grand Challenge, that connection is noted.
+    </p>
+  </div>
+
+  {
+    tiles.map((tile) => (
+      <article class="mb-6 border border-base-300 rounded-lg p-6">
+        <div class="text-xs uppercase tracking-[0.18em] opacity-60 mb-2">
+          {tile.role}
+        </div>
+        <h2 class="text-xl font-bold mb-3">{tile.name}</h2>
+        <p class="text-base leading-relaxed opacity-90">{tile.body}</p>
+        {tile.grandChallenge && (
+          <p class="text-sm italic opacity-65 mt-3">
+            Grand Challenge: {tile.grandChallenge}
+          </p>
+        )}
+        <div class="mt-4 text-sm">
+          {tile.links.map((link, i) => (
+            <>
+              {i > 0 && <span class="opacity-40 mx-2">·</span>}
+              <a
+                class="link"
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.label} ↗
+              </a>
+            </>
+          ))}
+        </div>
+      </article>
+    ))
+  }
+
+  <div class="mt-8 text-sm leading-relaxed opacity-75">
+    <span class="font-semibold opacity-90">Advising and investing.</span> Early
+    advisor to{" "}
+    <a
+      class="link"
+      href="https://nexa.ai"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Nexa.ai
+    </a>{" "}
+    (acquired by Qualcomm), and angel investor across roughly two dozen
+    early-stage ventures.
+  </div>
+</BaseLayout>
