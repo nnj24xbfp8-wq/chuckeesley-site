@@ -1,214 +1,191 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
-import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug";
-import dayjs from "dayjs";
-import { METRICS } from "../config";
-
-// "Latest essays" is pulled from Substack RSS at build time.
-// If the fetch fails, we fall back to the local blog content collection.
-const SUBSTACK_FEED = "https://ceesley.substack.com/feed";
-
-type Essay = {
-  title: string;
-  url: string;
-  description: string;
-  pubDate: Date;
-  target: "_blank" | "_self";
-};
-
-async function fetchSubstackEssays(): Promise<Essay[]> {
-  try {
-    const res = await fetch(SUBSTACK_FEED, {
-      headers: { "User-Agent": "chuckeesley.com" },
-    });
-    if (!res.ok) return [];
-    const xml = await res.text();
-    const items = xml.match(/<item>[\s\S]*?<\/item>/g) ?? [];
-    const pick = (block: string, tag: string) => {
-      const m = block.match(new RegExp(`<${tag}>([\\s\\S]*?)<\\/${tag}>`));
-      if (!m) return "";
-      return m[1].replace(/^<!\[CDATA\[/, "").replace(/\]\]>$/, "").trim();
-    };
-    return items.slice(0, 5).map((item) => ({
-      title: pick(item, "title"),
-      url: pick(item, "link"),
-      description: pick(item, "description").replace(/<[^>]+>/g, "").trim(),
-      pubDate: new Date(pick(item, "pubDate")),
-      target: "_blank" as const,
-    }));
-  } catch (err) {
-    console.warn("[index] Substack RSS fetch failed:", err);
-    return [];
-  }
-}
-
-let essays = await fetchSubstackEssays();
-if (essays.length === 0) {
-  const posts = (await getCollection("blog")).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-  );
-  essays = posts.slice(0, 5).map((post) => ({
-    title: post.data.title,
-    url: "/blog/" + createSlug(post.data.title, post.slug),
-    description: post.data.description,
-    pubDate: post.data.pubDate,
-    target: "_self" as const,
-  }));
-}
 ---
 
 <BaseLayout sideBarActiveItemID="home" image="/og-home.webp">
-<div class="pb-12 mt-5">
-    <h1 class="text-5xl font-bold">Chuck Eesley</h1>
-    <div class="text-3xl py-3 font-bold">Professor of Management Science & Engineering, Stanford University School of Engineering</div>
-    <div class="text-xl py-1 italic opacity-80">The institutional environment around founders matters more than we usually admit. I measure how, and build systems to change them.</div>
-    <div class="py-4">
-      <p class="text-lg">
-        I am a Professor of Management Science & Engineering at the <a class="link" href="https://profiles.stanford.edu/charles-eesley" target="_blank" rel="noopener noreferrer">Stanford University School of Engineering</a> and Co-Director for International Entrepreneurship at the <b>Stanford Technology Ventures Program (STVP)</b>. My research examines how institutional environments, industrial policy, and platform design shape entrepreneurial outcomes — with particular focus on the United States, China, and emerging markets. Through STVP's global programs I have taught and run field research across six continents.
-      </p>
-      <p class="text-lg mt-4">
-        I write a <a class="link" href="/blog/">newsletter on entrepreneurship and innovation policy</a> &mdash; recent essays on the site, full archive at <a class="link" href="https://newsletter.chuckeesley.com" target="_blank" rel="noopener noreferrer">newsletter.chuckeesley.com</a>.
-      </p>
-    </div>
-
-    {/* CURRENTLY — board / advisory / book signal for inbound from NAE, trade press, boards, consulting prospects */}
-    <div class="mt-4 mb-2 border-l-4 border-base-300 pl-4 py-1 text-base leading-relaxed opacity-90">
-      <span class="text-xs uppercase tracking-[0.18em] opacity-70 mr-2">Currently</span>
-      Working on a trade-press book on the institutional engineering of innovation ecosystems. Selectively considering additional <a class="link" href="/board-and-advisory">board, advisory, and consulting engagements</a> at the intersection of AI, industrial policy, and entrepreneurship. <a class="link" href="/press-kit">Press kit</a> &middot; <a class="link" href="/services">speaking inquiries</a>.
-    </div>
-
+  {/* =========================================================
+      1. HERO — primary line + identity + contributions deck
+      ========================================================= */}
+  <div class="pt-5 pb-10">
+    <h1 class="text-3xl md:text-4xl font-bold leading-tight max-w-3xl">
+      The institutional environment around founders matters more than we usually
+      admit. I study how, and why.
+    </h1>
+    <p class="text-lg md:text-xl mt-5 opacity-90 max-w-3xl">
+      Chuck Eesley. Professor of Management Science &amp; Engineering, Stanford
+      University. Co-director for international entrepreneurship at the Stanford
+      Technology Ventures Program (STVP).
+    </p>
+    <p class="text-base mt-3 opacity-80 max-w-3xl">
+      <span class="font-semibold opacity-90">Named contributions:</span>
+      institutional barriers to entry and growth, institutional inconsistency,
+      platforms as private regulators of ventures.
+    </p>
     <div class="mt-6 flex flex-wrap gap-3">
-      <a class="btn" href="/blog/">Read the newsletter</a>
-      <a href="/press-kit" class="btn btn-outline">Press kit</a>
-      <a href="/board-and-advisory" class="btn btn-outline">Board &amp; advisory</a>
-      <a href="/services" class="btn btn-outline">Speaking</a>
-      <a class="btn btn-outline" href="https://profiles.stanford.edu/charles-eesley" target="_blank" rel="noopener noreferrer">Stanford profile ↗</a>
-    </div>
-  </div>
-
-  {/* =========================================================
-      ENGINEERING IMPACT — BY THE NUMBERS
-      ========================================================= */}
-  <section class="mb-14 border-y border-base-300 py-8">
-    <div class="text-xs uppercase tracking-[0.18em] opacity-70 mb-6">Engineering impact, by the numbers</div>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
-      <div>
-        <div class="text-3xl md:text-4xl font-bold font-display leading-tight">{METRICS.studentsReached}</div>
-        <div class="text-sm mt-2 opacity-80 leading-snug">students reached through Stanford E145 and the global MOOC</div>
-      </div>
-      <div>
-        <div class="text-3xl md:text-4xl font-bold font-display leading-tight">{METRICS.alumniRevenueDocumented}</div>
-        <div class="text-sm mt-2 opacity-80 leading-snug">in alumni-founded company revenue documented across MIT, Stanford, and UVA</div>
-      </div>
-      <div>
-        <div class="text-3xl md:text-4xl font-bold font-display leading-tight">{METRICS.citations}</div>
-        <div class="text-sm mt-2 opacity-80 leading-snug">citations across management, economics, and information systems · <a class="link" href={METRICS.scholarUrl} target="_blank" rel="noopener noreferrer">Google Scholar ↗</a></div>
-      </div>
-      <div>
-        <div class="text-3xl md:text-4xl font-bold font-display leading-tight">9 of 11</div>
-        <div class="text-sm mt-2 opacity-80 leading-snug">former doctoral students in tenure-track faculty positions (Columbia, Oxford Saïd, CMU Tepper, JHU Carey, NUS, CUHK, Oregon, PUC Chile, &amp; more) · <a class="link" href="/advising">Advising ↗</a></div>
-      </div>
-      <div>
-        <div class="text-3xl md:text-4xl font-bold font-display leading-tight">8+</div>
-        <div class="text-sm mt-2 opacity-80 leading-snug">research universities using the alumni-survey methodology (MIT, Stanford, UVA, Tsinghua, Technion, Toronto, Alberta, CUHK, and others) — pioneered with Edward B. Roberts</div>
-      </div>
-    </div>
-  </section>
-
-  {/* =========================================================
-      FEATURED IN — MEDIA / PUBLICATIONS
-      ========================================================= */}
-  <section class="mb-14">
-    <div class="text-xs uppercase tracking-[0.18em] opacity-70 mb-4 text-center md:text-left">Featured in</div>
-    <div class="flex flex-wrap gap-x-6 gap-y-3 text-base md:text-lg font-display italic opacity-90 justify-center md:justify-start items-baseline">
-      <span>Nature</span>
-      <span class="opacity-40">·</span>
-      <span>World Economic Forum</span>
-      <span class="opacity-40">·</span>
-      <span>Bloomberg</span>
-      <span class="opacity-40">·</span>
-      <span>Stanford Report</span>
-      <span class="opacity-40">·</span>
-      <span>Stanford Engineering</span>
-      <span class="opacity-40">·</span>
-      <span>Forbes</span>
-      <span class="opacity-40">·</span>
-      <span>MIT News</span>
-      <span class="opacity-40">·</span>
-      <span>Strategic Management Journal</span>
-    </div>
-    <div class="mt-4 text-sm opacity-70">
-      <a class="link" href="/press">Full press &amp; media coverage →</a>
-    </div>
-  </section>
-
-  <h2 class="text-3xl w-full font-bold mb-2">Featured research</h2>
-
-<HorizontalCard
-  title="The Algorithmic Financing of Online Misinformation"
-  desc="Published in Nature. Tracing how programmatic advertising routes money to misinformation websites — and what advertisers can do about it. With Wajeeha Ahmad, Ananya Sen, and Erik Brynjolfsson."
-  url="https://doi.org/10.1038/s41586-024-07404-1"
-  badge="NATURE"
-  target="_blank"
-/>
-<div class="divider my-0"></div>
-<HorizontalCard
-  title="When External Shocks Attract Capital: Export Controls and Venture Capital Allocation in China"
-  desc="U.S. export controls were meant to slow China's semiconductor sector. Instead, Chinese semiconductor startups received 6 percentage points more financing and raised about 12% more capital than comparable peers. With Yikai Cao, Wanru Deng, and Guankai Zhai."
-  url="/research/export-controls-vc"
-  badge="NEW"
-  target="_self"
-/>
-<div class="divider my-0"></div>
-<HorizontalCard
-  title="Industrial Policy Reshapes Venture Capital in Climate Tech"
-  desc="The IRA selectively redirected venture capital toward climate-aligned technologies. We build a Policy Credibility Index showing institutional design quality matters as much as incentive size. With Yikai Cao, Rishee Jain, and Dinesh Moorjani."
-  url="/research/ira-cleantech"
-  badge="NEW"
-  target="_self"
-/>
-<div class="divider my-0"></div>
-<HorizontalCard
-  title="Subsidy Design Without Capability Screening (China battery subsidies)"
-  desc="China's massive battery subsidies attract more firms — but the marginal entrants are short-lived, low-commitment participants who never build productive capacity. Subsidies without capability screening produce participation without commitment. With Guankai Zhai."
-  url="/research/battery-subsidies"
-  badge="NEW"
-  target="_self"
-/>
-
-  <div class="mt-12 mb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-    <div>
-      <h2 class="text-3xl font-bold">Latest essays</h2>
-      <p class="text-base opacity-80 mt-2 max-w-2xl">
-        Long-form writing on entrepreneurship, institutions, industrial policy, and the global political economy of technology. New essays land roughly monthly on Substack.
-      </p>
-    </div>
-    <div class="flex flex-wrap gap-3 shrink-0">
+      <a class="btn btn-primary" href="#selected-writing">Read the research ↓</a>
       <a
+        class="btn btn-outline"
         href="https://newsletter.chuckeesley.com/subscribe"
         target="_blank"
         rel="noopener noreferrer"
-        class="btn btn-primary"
       >
-        Subscribe on Substack
+        Substack
       </a>
-      <a href="/blog" class="btn btn-outline">All essays →</a>
     </div>
   </div>
-  {
-    essays.map((essay) => (
-      <>
-        <HorizontalCard
-          title={essay.title}
-          desc={`${dayjs(essay.pubDate).format("MMM D, YYYY")} · ${essay.description}`}
-          url={essay.url}
-          target={essay.target}
-          badge="SUBSTACK"
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
+
+  {/* =========================================================
+      2. IMPACT BAND — single most legible artifact
+      ========================================================= */}
+  <section class="mb-14 border-y border-base-300 py-8">
+    <div class="text-xs uppercase tracking-[0.18em] opacity-70 mb-4">Impact</div>
+    <p class="text-xl md:text-2xl font-bold leading-snug max-w-3xl">
+      Forty years of Stanford alumni data. ~40,000 active companies. $2.7T in
+      annual revenue. 5.4M jobs.
+    </p>
+    <p class="text-base md:text-lg mt-3 opacity-90 max-w-3xl">
+      What a university's institutional environment contributes to
+      entrepreneurship, separated from the selection of who walks in the door.
+      With William F. Miller.
+    </p>
+    <p class="text-sm mt-3 opacity-70 max-w-3xl">
+      Field research and teaching across six continents, more than 200,000
+      students reached through STVP's global programs.
+    </p>
+    <div class="mt-4 text-sm">
+      <a
+        class="link"
+        href="https://engineering.stanford.edu/news/study-reports-stanford-alumni-create-nearly-3-trillion-economic-impact"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read the study →
+      </a>
+    </div>
+  </section>
+
+  {/* =========================================================
+      3. VALIDATION STRIP — quiet authority, scholarly markers
+      ========================================================= */}
+  <section class="mb-14">
+    <div class="text-sm md:text-base opacity-85 leading-loose">
+      <span class="text-xs uppercase tracking-[0.18em] opacity-60 mr-2"
+        >Published in</span
+      >
+      <span class="font-display italic"
+        >Nature · Strategic Management Journal · Organization Science</span
+      >
+    </div>
+    <div class="text-sm md:text-base opacity-85 leading-loose mt-3">
+      <span class="text-xs uppercase tracking-[0.18em] opacity-60 mr-2"
+        >Featured in</span
+      >
+      <span class="font-display italic"
+        >World Economic Forum · Bloomberg · Stanford Engineering, The Future of
+        Everything</span
+      >
+    </div>
+  </section>
+
+  {/* =========================================================
+      4. CURRENTLY — active research signal, out of hero contention
+      ========================================================= */}
+  <div
+    class="mb-14 border-l-4 border-base-300 pl-4 py-1 text-base leading-relaxed opacity-90"
+  >
+    <span class="text-xs uppercase tracking-[0.18em] opacity-70 mr-2"
+      >Currently</span
+    >
+    Working on a trade-press book on the institutional engineering of innovation
+    ecosystems. Selectively considering additional <a
+      class="link"
+      href="/board-and-advisory">board, advisory, and consulting engagements</a
+    > at the intersection of AI, industrial policy, and entrepreneurship.
+  </div>
+
+  {/* =========================================================
+      5. SELECTED WRITING — curated five, NAE reader ordering
+      ========================================================= */}
+  <section id="selected-writing" class="scroll-mt-24">
+    <h2 class="text-3xl font-bold mb-2">Selected writing</h2>
+    <p class="text-base opacity-80 mb-6 max-w-2xl">
+      Peer-reviewed research and policy writing, hand-picked for readers new to
+      the work rather than listed by date.
+    </p>
+
+    <HorizontalCard
+      title="The Algorithmic Financing of Online Misinformation"
+      desc="Published in Nature. How programmatic advertising routes money to misinformation sites, and what advertisers can do about it. With Wajeeha Ahmad, Ananya Sen, and Erik Brynjolfsson."
+      url="https://doi.org/10.1038/s41586-024-07404-1"
+      badge="NATURE"
+      target="_blank"
+    />
+    <div class="divider my-0"></div>
+    <HorizontalCard
+      title="Stanford Alumni Economic-Impact Study"
+      desc="With William F. Miller. Decades of data on how one university produces ventures whose annual revenues rival a top-ten economy."
+      url="https://engineering.stanford.edu/news/study-reports-stanford-alumni-create-nearly-3-trillion-economic-impact"
+      badge="STUDY"
+      target="_blank"
+    />
+    <div class="divider my-0"></div>
+    <HorizontalCard
+      title="Export Controls and the Global Reallocation of Venture Capital"
+      desc="Working paper. U.S. controls meant to slow China's semiconductor sector coincided with Chinese chip startups raising roughly 12% more, and 6 percentage points more financing."
+      url="/research/export-controls-vc"
+      badge="WORKING PAPER"
+      target="_self"
+    />
+    <div class="divider my-0"></div>
+    <HorizontalCard
+      title="The Institutional Layer of an Innovation Economy"
+      desc="World Economic Forum, sole-author essay, June 2026. The decisive ingredient is the institutional layer between state spending and market freedom: tech-transfer offices, university-industry programs, accelerators, and founder-mentor networks."
+      url="https://www.weforum.org/stories/2026/06/research-ai-innovation-beyond-market-freedom-versus-state-funding/"
+      badge="ESSAY"
+      target="_blank"
+    />
+    <div class="divider my-0"></div>
+    <HorizontalCard
+      title="CHIPS Act and Semiconductor Venture Capital"
+      desc="Han and Eesley, working paper. How industrial-policy credibility, not just scale, shapes where private capital actually moves."
+      url="/research"
+      badge="WORKING PAPER"
+      target="_self"
+    />
+
+    <div
+      class="mt-6 text-sm opacity-80 flex flex-wrap gap-x-6 gap-y-2"
+    >
+      <a
+        class="link"
+        href="https://newsletter.chuckeesley.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        More writing on the Substack →
+      </a>
+      <a class="link" href="/publications">Full publication list →</a>
+    </div>
+  </section>
+
+  {/* =========================================================
+      6. FOOTER UTILITY ROW — demoted links, one home each
+      ========================================================= */}
+  <div
+    class="border-t border-base-300 mt-14 pt-6 text-sm flex flex-wrap gap-x-6 gap-y-2 opacity-80"
+  >
+    <a class="link" href="/press-kit">Press kit</a>
+    <a class="link" href="/board-and-advisory">Board &amp; advisory</a>
+    <a class="link" href="/services">Speaking</a>
+    <a
+      class="link"
+      href="https://profiles.stanford.edu/charles-eesley"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Stanford profile ↗
+    </a>
+    <a class="link" href="/cv">Full CV</a>
+  </div>
 </BaseLayout>
