@@ -16,7 +16,7 @@ const categories: { id: string; label: string; intro: string }[] = [
   {
     id: "institutional",
     label: "Institutional and political economy of startups",
-    intro: "Why some places, eras, and policies produce founders — and which ones don't.",
+    intro: "Why some places, eras, and policies produce founders, and which ones don't.",
   },
   {
     id: "classroom",
@@ -26,7 +26,7 @@ const categories: { id: string; label: string; intro: string }[] = [
   {
     id: "return-to",
     label: "Books I keep returning to",
-    intro: "Outside the entrepreneurship canon — books that have changed how I think.",
+    intro: "Outside the entrepreneurship canon, books that have changed how I think.",
   },
   {
     id: "recent",
@@ -48,7 +48,7 @@ const booksByCategory = categories.map((cat) => ({
     }),
 }));
 
-// Manually maintained — update when adding or revising entries.
+// Manually maintained, update when adding or revising entries.
 const lastUpdated = "May 2026";
 ---
 
@@ -57,7 +57,7 @@ const lastUpdated = "May 2026";
   <h1 class="text-3xl w-full font-bold mb-5">Reading list</h1>
 
   <div class="mb-8 text-lg opacity-80 italic">
-    Books I recommend to entrepreneurs, students, and anyone trying to think more clearly about how innovation actually happens. Curated rather than comprehensive — opinions in the annotations are my own.
+    Books I recommend to entrepreneurs, students, and anyone trying to think more clearly about how innovation actually happens. Curated rather than comprehensive, opinions in the annotations are my own.
   </div>
 
   {booksByCategory.map((cat) => (
@@ -90,7 +90,7 @@ const lastUpdated = "May 2026";
   ))}
 
   <div class="border-t border-base-300 mt-16 pt-6 text-sm opacity-70 italic">
-    Last refreshed {lastUpdated}. New books added as I read or re-read them — each book annotated rather than just listed, because the annotation is what makes a list useful.
+    Last refreshed {lastUpdated}. New books added as I read or re-read them, each book annotated rather than just listed, because the annotation is what makes a list useful.
   </div>
 
 </BaseLayout>

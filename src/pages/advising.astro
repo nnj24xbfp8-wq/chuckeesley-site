@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const title = "Advising";
 const description = "PhD students, postdoctoral researchers, and former students from Chuck Eesley's research group at Stanford MS&E.";
 
-// Current PhD students — from CV (Section: STUDENTS / Current), updated May 2026
+// Current PhD students, from CV (Section: STUDENTS / Current), updated May 2026
 const currentPhD = [
   {
     name: "Yikai Cao",
@@ -25,7 +25,7 @@ const currentPhD = [
   },
 ];
 
-// Postdoctoral researchers — incoming and former
+// Postdoctoral researchers, incoming and former
 const incomingPostdocs = [
   {
     name: "Tess Lallemant",
@@ -46,7 +46,7 @@ const formerPostdocs = [
   },
 ];
 
-// Former PhD students — from CV (Section: STUDENTS / Former), sorted by graduation year (most recent first)
+// Former PhD students, from CV (Section: STUDENTS / Former), sorted by graduation year (most recent first)
 const formerPhD = [
   {
     name: "Wajeeha Ahmad",
@@ -151,7 +151,7 @@ const formerPhD = [
   },
 ];
 
-// Research assistants — current
+// Research assistants, current
 const currentRAs = [
   { name: "Lilly May Graham", link: "https://www.linkedin.com/in/lilly-graham-5013012b8/" },
   { name: "Karetina Fekade-Tessema", link: "https://stvp.stanford.edu/people/karetina-fekade-tessema" },
@@ -161,7 +161,7 @@ const currentRAs = [
   { name: "Luv Jawahrani", link: "https://www.linkedin.com/in/luv-jawahrani-503b43238/" },
 ];
 
-// Research assistants — former (sorted alphabetically by last name)
+// Research assistants, former (sorted alphabetically by last name)
 const formerRAs = [
   {
     name: "Anyada (Pim) Assavabhokhin",
@@ -220,7 +220,7 @@ const formerRAs = [
   },
   {
     name: "Merry Seng Maran",
-    note: "Stanford '25, MA '25 (political science + sociology); first Kachin-Burmese American Stanford graduate. King Center Research Fellow on the Uganda refugee entrepreneurship program — helped facilitate the program and expand enrollment to include refugees in camps and settlements across Uganda.",
+    note: "Stanford '25, MA '25 (political science + sociology); first Kachin-Burmese American Stanford graduate. King Center Research Fellow on the Uganda refugee entrepreneurship program, helped facilitate the program and expand enrollment to include refugees in camps and settlements across Uganda.",
     link: "https://www.linkedin.com/in/merry-seng-maran-b4b097344",
   },
   {
@@ -334,21 +334,21 @@ const formerRAs = [
     </figcaption>
   </figure>
 
-  {/* WHO I'VE WORKED WITH — diversity-in-doctoral-training + PRO pipeline callout */}
+  {/* WHO I'VE WORKED WITH, diversity-in-doctoral-training + PRO pipeline callout */}
   <div class="mb-12 border-l-4 border-base-300 pl-6 py-3">
     <div class="text-sm uppercase tracking-wider opacity-60 mb-2">Who I've worked with &middot; and the pipeline that makes it possible</div>
     <p class="text-base leading-relaxed opacity-90 mb-3">
-      The doctoral and postdoctoral pipeline above is deliberately broad on dimensions that matter for MS&amp;E and for engineering education more generally. Women have been the majority of advisees through several recent cohorts &mdash; Wajeeha Ahmad (incoming Columbia Business School), Zahra Hejrati (AMENA Center), Khonika Gope (University of Oregon Lundquist), Iris Wang (Yale SOM doctoral student), Tess Lallemant (incoming postdoc, King Center sponsored) &mdash; and the international pipeline reaches NUS, CUHK Business School, Pontificia Universidad Cat&oacute;lica de Chile, Oxford Sa&iuml;d, CMU Tepper, and Johns Hopkins Carey.
+      The doctoral and postdoctoral pipeline above is deliberately broad on dimensions that matter for MS&amp;E and for engineering education more generally. Women have been the majority of advisees through several recent cohorts, Wajeeha Ahmad (incoming Columbia Business School), Zahra Hejrati (AMENA Center), Khonika Gope (University of Oregon Lundquist), Iris Wang (Yale SOM doctoral student), Tess Lallemant (incoming postdoc, King Center sponsored), and the international pipeline reaches NUS, CUHK Business School, Pontificia Universidad Cat&oacute;lica de Chile, Oxford Sa&iuml;d, CMU Tepper, and Johns Hopkins Carey.
     </p>
     <p class="text-base leading-relaxed opacity-90 mb-3">
-      The undergraduate research pipeline is built around <strong>Stanford SURF (Undergraduate Research Fellows)</strong> and <strong>UGVR (Undergraduate Visiting Research at Stanford)</strong> programs, and is explicitly oriented toward students who would otherwise have fewer paths into a research career &mdash; including first-generation and low-income (FLI) students, international undergraduates from outside the U.S. R1 pipeline, and Stanford undergraduates whose interests sit at the engineering / social-science boundary that MS&amp;E was built to occupy. Several former SURF and UGVR alumni have since gone on to PhD programs at Carnegie Mellon, Stanford itself, and elsewhere.
+      The undergraduate research pipeline is built around <strong>Stanford SURF (Undergraduate Research Fellows)</strong> and <strong>UGVR (Undergraduate Visiting Research at Stanford)</strong> programs, and is explicitly oriented toward students who would otherwise have fewer paths into a research career, including first-generation and low-income (FLI) students, international undergraduates from outside the U.S. R1 pipeline, and Stanford undergraduates whose interests sit at the engineering / social-science boundary that MS&amp;E was built to occupy. Several former SURF and UGVR alumni have since gone on to PhD programs at Carnegie Mellon, Stanford itself, and elsewhere.
     </p>
     <p class="text-base leading-relaxed opacity-90">
-      This pipeline work has a structural home in MS&amp;E. Since 2020 I have served as <strong>Chair of the department's Pathways to Research and Opportunity (PRO) Committee</strong>. The committee's mandate is to broaden the path into engineering for first-generation, low-income, and underrepresented students &mdash; into research experiences, into engineering graduate school, and into STEM careers. Six continuous years of chairing this work is how my own lab's pipeline (above) connects to the wider Stanford MS&amp;E pipeline I am responsible for as a faculty member.
+      This pipeline work has a structural home in MS&amp;E. Since 2020 I have served as <strong>Chair of the department's Pathways to Research and Opportunity (PRO) Committee</strong>. The committee's mandate is to broaden the path into engineering for first-generation, low-income, and underrepresented students, into research experiences, into engineering graduate school, and into STEM careers. Six continuous years of chairing this work is how my own lab's pipeline (above) connects to the wider Stanford MS&amp;E pipeline I am responsible for as a faculty member.
     </p>
   </div>
 
-  {/* PROSPECTIVE UNDERGRAD / MS&E COTERM ADVISEES — recurring-FAQ filter */}
+  {/* PROSPECTIVE UNDERGRAD / MS&E COTERM ADVISEES, recurring-FAQ filter */}
   <div id="prospective-advisees" class="mb-12 border border-base-300 rounded-lg p-6 bg-base-200">
     <div class="text-sm uppercase tracking-wider opacity-60 mb-2">For prospective undergraduate &amp; MS&amp;E coterm advisees</div>
     <div class="text-xl font-bold leading-snug mb-4">
@@ -356,20 +356,20 @@ const formerRAs = [
     </div>
 
     <p class="text-base leading-relaxed mb-4">
-      The most useful first email is one that includes your <strong>CV</strong>, your <strong>transcript</strong>, and a short paragraph on <strong>why you think I'd be a good match for what you want to work on</strong>. The third part matters more than people assume — it's the part that lets me tell whether your interests actually overlap with what I work on.
+      The most useful first email is one that includes your <strong>CV</strong>, your <strong>transcript</strong>, and a short paragraph on <strong>why you think I'd be a good match for what you want to work on</strong>. The third part matters more than people assume, it's the part that lets me tell whether your interests actually overlap with what I work on.
     </p>
 
     <div class="text-base font-bold mt-5 mb-2">What I'm looking for</div>
     <p class="text-base leading-relaxed mb-2">
-      Career interests that intersect the areas I work in — entrepreneurship, institutional design, industrial policy, the political economy of technology, or AI's effects on innovation and platforms. Most of my advisees are headed toward founding companies, working at startups, joining technology or AI-focused roles in industry, or going on to research; some combination of those tends to be the through-line. Students primarily oriented toward finance or consulting careers are usually better matched with other MS&amp;E faculty whose advising practice is closer to those paths; I'm happy to point you to colleagues if that's the better fit.
+      Career interests that intersect the areas I work in, entrepreneurship, institutional design, industrial policy, the political economy of technology, or AI's effects on innovation and platforms. Most of my advisees are headed toward founding companies, working at startups, joining technology or AI-focused roles in industry, or going on to research; some combination of those tends to be the through-line. Students primarily oriented toward finance or consulting careers are usually better matched with other MS&amp;E faculty whose advising practice is closer to those paths; I'm happy to point you to colleagues if that's the better fit.
     </p>
     <p class="text-base leading-relaxed mb-2">
-      Evidence of strong academic performance on the transcript. I also take seriously that students from <strong>first-generation and low-income (FLI) backgrounds</strong> often navigate headwinds that the transcript alone doesn't capture — context and trajectory matter, not just the GPA in isolation.
+      Evidence of strong academic performance on the transcript. I also take seriously that students from <strong>first-generation and low-income (FLI) backgrounds</strong> often navigate headwinds that the transcript alone doesn't capture, context and trajectory matter, not just the GPA in isolation.
     </p>
 
     <div class="text-base font-bold mt-5 mb-2">What I encourage advisees to do</div>
     <p class="text-base leading-relaxed mb-2">
-      Stay as technical as you can for as long as you can. Take more of the technical coursework in engineering and in MS&amp;E core before broadening into entrepreneurship and leadership courses. The entrepreneurship and management material is more useful — and more honest — on top of a real technical base than as a substitute for one.
+      Stay as technical as you can for as long as you can. Take more of the technical coursework in engineering and in MS&amp;E core before broadening into entrepreneurship and leadership courses. The entrepreneurship and management material is more useful, and more honest, on top of a real technical base than as a substitute for one.
     </p>
 
     <div class="text-base font-bold mt-5 mb-2">For prospective MS&amp;E coterm applicants</div>
@@ -379,7 +379,7 @@ const formerRAs = [
 
     <div class="text-base font-bold mt-5 mb-2">A note on recommendation letters</div>
     <p class="text-base leading-relaxed">
-      I only write recommendation letters for students I've worked with <strong>outside the classroom</strong> — on research, an independent study, an advising relationship, or a substantive project. Coursework alone, even excellent coursework, doesn't give me enough specific evidence to write a letter that would actually help you.
+      I only write recommendation letters for students I've worked with <strong>outside the classroom</strong>, on research, an independent study, an advising relationship, or a substantive project. Coursework alone, even excellent coursework, doesn't give me enough specific evidence to write a letter that would actually help you.
     </p>
   </div>
 
@@ -390,7 +390,7 @@ const formerRAs = [
       9 of 11 former doctoral students hold tenure-track faculty positions.
     </div>
     <p class="text-base opacity-80 leading-relaxed">
-      Placements include Columbia Business School, Oxford Saïd, Carnegie Mellon Tepper, Johns Hopkins Carey, National University of Singapore, CUHK Business School, the University of Oregon Lundquist, the University of San Diego, and Pontificia Universidad Católica de Chile — alongside leadership roles in industry research and policy at organizations including the AMENA Center for Entrepreneurship and Development and Project Eleven.
+      Placements include Columbia Business School, Oxford Saïd, Carnegie Mellon Tepper, Johns Hopkins Carey, National University of Singapore, CUHK Business School, the University of Oregon Lundquist, the University of San Diego, and Pontificia Universidad Católica de Chile, alongside leadership roles in industry research and policy at organizations including the AMENA Center for Entrepreneurship and Development and Project Eleven.
     </p>
   </div>
 
@@ -424,7 +424,7 @@ const formerRAs = [
     ))}
   </ul>
 
-  {/* POSTDOCTORAL RESEARCHERS — INCOMING */}
+  {/* POSTDOCTORAL RESEARCHERS, INCOMING */}
   {incomingPostdocs.length > 0 && (
     <>
       <h2 class="text-2xl w-full font-bold mt-12 mb-2">Incoming postdoctoral researchers</h2>
@@ -446,7 +446,7 @@ const formerRAs = [
     </>
   )}
 
-  {/* POSTDOCTORAL RESEARCHERS — FORMER */}
+  {/* POSTDOCTORAL RESEARCHERS, FORMER */}
   {formerPostdocs.length > 0 && (
     <>
       <h2 class="text-2xl w-full font-bold mt-12 mb-2">Former postdoctoral researchers</h2>
@@ -560,7 +560,7 @@ const formerRAs = [
 
   {/* ACKNOWLEDGMENT */}
   <div class="border-t border-base-300 mt-16 pt-6 text-sm opacity-70 italic">
-    Pulled from my Stanford School of Engineering CV (last updated January 2026), with current affiliations verified as of May 2026. Predoctoral researchers and external collaborators not yet listed — those additions are coming.
+    Pulled from my Stanford School of Engineering CV (last updated January 2026), with current affiliations verified as of May 2026. Predoctoral researchers and external collaborators not yet listed, those additions are coming.
   </div>
 
 </BaseLayout>
