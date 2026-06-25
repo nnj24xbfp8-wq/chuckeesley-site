@@ -11,7 +11,7 @@ This essay is published on Substack. [Read the full post →](https://newsletter
 
 ---
 
-When Cluely's CEO admitted to inflating ARR by 35%, the easy story was founder ethics. The harder story is institutional design — what happens when an entire ecosystem builds an investment thesis around a metric with no agreed definition and no countervailing institution incentivized to police it.
+When Cluely's CEO admitted to inflating ARR by 35%, the easy story was founder ethics. The harder story is institutional design, what happens when an entire ecosystem builds an investment thesis around a metric with no agreed definition and no countervailing institution incentivized to police it.
 
 [Continue reading on Substack →](https://newsletter.chuckeesley.com/p/arr-is-not-the-problem-the-institutional)
 
