@@ -1,5 +1,5 @@
 ---
-title: "NSF I-Corps — AccelCorps MVP Pilot Kickoff"
+title: "NSF I-Corps: AccelCorps MVP Pilot Kickoff"
 description: "The Chicago kickoff of AccelCorps's NSF I-Corps pilot on MVP development and testing — a research project I'm advising."
 pubDate: "Apr 12 2026"
 heroImage: "/images/nsf-icorps-kickoff-2026.webp"
