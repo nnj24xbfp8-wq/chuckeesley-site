@@ -1,3 +1,15 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+
+/* Only the `lofi` theme is used (see data-theme on <html> in BaseLayout.astro).
+   daisyUI 4 was configured with `themes: true`, which emitted CSS for every
+   bundled theme. */
+@plugin "daisyui" {
+  themes: lofi --default;
+  logs: false;
+}
+
 /* ===== Typography ===== */
 
 body {

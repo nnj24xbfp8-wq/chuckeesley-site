@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 // Pull all books from the reading collection.
 const allBooks = await getCollection("reading");
 
-// Category display order + labels. Keys must match the enum in src/content/config.ts.
+// Category display order + labels. Keys must match the enum in src/content.config.ts.
 // To reorder categories on the page, reorder this array.
 const categories: { id: string; label: string; intro: string }[] = [
   {
