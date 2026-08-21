@@ -53,7 +53,7 @@ export async function getStaticPaths({ paginate }) {
   const substack = await fetchSubstack();
   const local = (await getCollection("blog")).map<Essay>((post) => ({
     title: post.data.title,
-    url: "/blog/" + createSlug(post.data.title, post.slug),
+    url: "/blog/" + createSlug(post.data.title, post.id),
     description: post.data.description,
     pubDate: new Date(post.data.pubDate),
     target: "_self",

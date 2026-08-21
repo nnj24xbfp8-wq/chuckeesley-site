@@ -1,4 +1,7 @@
-import { z, defineCollection } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
+import { glob } from "astro/loaders";
+
 const blogSchema = z.object({
     title: z.string(),
     description: z.string(),
@@ -38,7 +41,7 @@ const readingSchema = z.object({
         'recent',           // Recently
     ]),
     why: z.string(),        // One-line annotation: why this book matters
-    link: z.string().url().optional(),
+    link: z.url().optional(),
     order: z.number().optional(), // optional fine-tuning of order within a category (lower = earlier)
 });
 
@@ -46,12 +49,21 @@ export type BlogSchema = z.infer<typeof blogSchema>;
 export type StoreSchema = z.infer<typeof storeSchema>;
 export type ReadingSchema = z.infer<typeof readingSchema>;
 
-const blogCollection = defineCollection({ schema: blogSchema });
-const storeCollection = defineCollection({ schema: storeSchema });
-const readingCollection = defineCollection({ type: 'data', schema: readingSchema });
+const blogCollection = defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
+    schema: blogSchema,
+});
 
+const readingCollection = defineCollection({
+    loader: glob({ pattern: '**/*.{yaml,yml}', base: './src/content/reading' }),
+    schema: readingSchema,
+});
+
+// NOTE: the `store` collection has no content directory in this repo and is not
+// read by any page. Its schema and exported type are kept because
+// src/layouts/StoreItemLayout.astro imports StoreSchema, but registering it as a
+// collection would point a glob loader at a directory that does not exist.
 export const collections = {
     'blog': blogCollection,
-    'store': storeCollection,
     'reading': readingCollection,
 }
