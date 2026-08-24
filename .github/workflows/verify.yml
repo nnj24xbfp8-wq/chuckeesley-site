@@ -2,11 +2,16 @@ name: Verify (install, build, audit)
 
 # Runs a clean `npm ci` from the committed lockfile, builds the site, and
 # reports `npm audit` findings. Exists so install/build/audit can be verified
-# without a local Node toolchain. Runs on demand from the Actions tab, and
-# automatically on pushes that touch dependencies or this workflow.
+# without a local Node toolchain. Runs weekly on a schedule, on demand from the
+# Actions tab, and on pushes that touch dependencies or this workflow.
 
 on:
   workflow_dispatch: # "Run workflow" button in the Actions tab
+  schedule:
+    # Mondays at 15:00 UTC (~08:00 Pacific; UTC does not shift with DST).
+    # Catches advisories published against dependencies that have not changed,
+    # which the push trigger below would never notice.
+    - cron: "0 15 * * 1"
   push:
     branches: [main]
     paths:
@@ -39,12 +44,11 @@ jobs:
         run: npm run build
 
       - name: Audit dependencies
-        # Audit findings should surface in the log without failing the job;
-        # triage happens against the accepted-findings list, not the exit code.
-        continue-on-error: true
+        # Print the full report, then re-run with a threshold so the job goes
+        # red on moderate-or-worse findings. A scheduled run that always passed
+        # would never tell anyone anything; a red run sends a notification.
         run: |
-          echo "===== npm audit (human readable) ====="
+          echo "===== npm audit ====="
           npm audit || true
           echo
-          echo "===== npm audit (json) ====="
-          npm audit --json || true
+          npm audit --audit-level=moderate
