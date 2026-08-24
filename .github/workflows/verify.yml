@@ -18,6 +18,14 @@ on:
       - package.json
       - package-lock.json
       - .github/workflows/verify.yml
+  pull_request:
+    # So dependency-bump PRs (Dependabot's included) are install/build/audit
+    # tested before merge, rather than only after they land on main.
+    branches: [main]
+    paths:
+      - package.json
+      - package-lock.json
+      - .github/workflows/verify.yml
 
 jobs:
   verify:
@@ -44,11 +52,9 @@ jobs:
         run: npm run build
 
       - name: Audit dependencies
-        # Print the full report, then re-run with a threshold so the job goes
-        # red on moderate-or-worse findings. A scheduled run that always passed
-        # would never tell anyone anything; a red run sends a notification.
+        # `--audit-level` controls the exit code only; the full report prints
+        # either way. So one call both reports and gates: clean runs print
+        # "found 0 vulnerabilities" and pass, findings print and fail.
         run: |
           echo "===== npm audit ====="
-          npm audit || true
-          echo
           npm audit --audit-level=moderate
