@@ -1,5 +1,9 @@
 # Astrofy | Personal Portfolio Website Template
 
+> This README is the upstream Astrofy template's. For this deployment's
+> operational notes — CI, dependency updates, the daily Vercel rebuild, and
+> security-advisory history — see [MAINTENANCE.md](MAINTENANCE.md).
+
 ![Astrofy | Personal Porfolio Website Template](public/social_img.webp)
 
 Astrofy is a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS. Create in minutes a website with a Blog, CV, Project Section, Store, and RSS Feed.

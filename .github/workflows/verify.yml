@@ -1,0 +1,60 @@
+name: Verify (install, build, audit)
+
+# Runs a clean `npm ci` from the committed lockfile, builds the site, and
+# reports `npm audit` findings. Exists so install/build/audit can be verified
+# without a local Node toolchain. Runs weekly on a schedule, on demand from the
+# Actions tab, and on pushes that touch dependencies or this workflow.
+
+on:
+  workflow_dispatch: # "Run workflow" button in the Actions tab
+  schedule:
+    # Mondays at 15:00 UTC (~08:00 Pacific; UTC does not shift with DST).
+    # Catches advisories published against dependencies that have not changed,
+    # which the push trigger below would never notice.
+    - cron: "0 15 * * 1"
+  push:
+    branches: [main]
+    paths:
+      - package.json
+      - package-lock.json
+      - .github/workflows/verify.yml
+  pull_request:
+    # So dependency-bump PRs (Dependabot's included) are install/build/audit
+    # tested before merge, rather than only after they land on main.
+    branches: [main]
+    paths:
+      - package.json
+      - package-lock.json
+      - .github/workflows/verify.yml
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Report toolchain versions
+        run: |
+          echo "node: $(node --version)"
+          echo "npm:  $(npm --version)"
+
+      - name: Clean install from lockfile
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Audit dependencies
+        # `--audit-level` controls the exit code only; the full report prints
+        # either way. So one call both reports and gates: clean runs print
+        # "found 0 vulnerabilities" and pass, findings print and fail.
+        run: |
+          echo "===== npm audit ====="
+          npm audit --audit-level=moderate
